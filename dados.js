@@ -7,7 +7,6 @@ const siteData = {
   cabecalho: {
     titulo: "SixOnTop",
     subtitulo: "Uma nova jornada",
-    // imagem de fundo do herói (dentro da pasta imagens/)
     imagemHeroi: "imagens/hero.jpg"
   },
 
@@ -22,42 +21,37 @@ const siteData = {
     imagemSobre: "imagens/sobre.jpg"
   },
 
-  // ----------  FUNDADORES ----------      
+  // ---------- MEMBROS (UMA LISTA ÚNICA) ----------
   membros: {
-    titulo: "Fundadores",
+    titulo: "Nossa Equipe",
     lista: [
+      // ---- Fundadores (mantive os cargos originais) ----
       { nome: "Saulofuzi", cargo: "Fundador", foto: "imagens/membro1.png" },
       { nome: "Suzly", cargo: "Lider", foto: "imagens/membro2.png" },
       { nome: "uCarlsoXz_", cargo: "Sub Lider", foto: "imagens/membro3.png" },
       { nome: "uJosca", cargo: "Gerente", foto: "imagens/membro4.png" },
-      { nome: "Black_KiritoXz", cargo: "Mobile kkk", foto: "imagens/membro5.png" }
+      { nome: "Black_KiritoXz", cargo: "Mobile kkk", foto: "imagens/membro5.png" },
+      
+      // ---- Membros novos (preencha com nomes reais depois) ----
+      { nome: "Membro1", cargo: "PvP", foto: "imagens/membro6.png" },
+      { nome: "Membro2", cargo: "Construtor", foto: "imagens/membro7.png" },
+      { nome: "Membro3", cargo: "Redstone", foto: "imagens/membro8.png" },
+      { nome: "Membro4", cargo: "Arqueiro", foto: "imagens/membro9.png" },
+      { nome: "Membro5", cargo: "Suporte", foto: "imagens/membro10.png" },
+      { nome: "Membro6", cargo: "Explorador", foto: "imagens/membro11.png" },
+      { nome: "Membro7", cargo: "PvP", foto: "imagens/membro12.png" },
+      { nome: "Membro8", cargo: "Base Builder", foto: "imagens/membro13.png" },
+      { nome: "Membro9", cargo: "Farming", foto: "imagens/membro14.png" },
+      { nome: "Membro10", cargo: "Trainee", foto: "imagens/membro15.png" }
     ]
   },
 
-  // ---------- MEMBROS   ----------
-membrosAtuais: {
-  titulo: "Membros",
-  lista: [
-    { nome: "teste", cargo: " teste", foto: "imagens/membro6.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro7.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro8.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro8.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro9.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro10.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro11.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro12.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro13.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro14.png" },
-    { nome: "teste", cargo: "teste", foto: "imagens/membro15.png" },
-  ]
-},
-  
-  // ---------- CONQUISTAS (opcional) ----------
+  // ---------- CONQUISTAS ----------
   conquistas: {
     titulo: "Conquistas da SIX",
     itens: [
-    "🏆 O Clã com mais vitorias em guerras no servidor 'Minezinho' (30+) ",
-    "⚔️ O Clã vencedor da Primeira LIGA DE CLÃ do servidor 'Minezinho' ",
+      "🏆 O Clã com mais vitorias em guerras no servidor 'Minezinho' (30+) ",
+      "⚔️ O Clã vencedor da Primeira LIGA DE CLÃ do servidor 'Minezinho' "
     ]
   },
 
@@ -77,7 +71,6 @@ membrosAtuais: {
 };
 
 // Exporta para ser usado no script principal
-// (não mexa nesta linha)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = siteData;
 }
