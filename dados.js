@@ -22,7 +22,7 @@ const siteData = {
     imagemSobre: "imagens/sobre.jpg"
   },
 
-  // ---------- MEMBROS FUNDADORES ----------      
+  // ----------  FUNDADORES ----------      
   membros: {
     titulo: "Fundadores",
     lista: [
@@ -34,6 +34,24 @@ const siteData = {
     ]
   },
 
+  // ---------- MEMBROS   ----------
+membrosAtuais: {
+  titulo: "Membros",
+  lista: [
+    { nome: "teste", cargo: " teste", foto: "imagens/membro6.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro7.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro8.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro8.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro9.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro10.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro11.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro12.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro13.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro14.png" },
+    { nome: "teste", cargo: "teste", foto: "imagens/membro15.png" },
+  ]
+},
+  
   // ---------- CONQUISTAS (opcional) ----------
   conquistas: {
     titulo: "Conquistas da SIX",
