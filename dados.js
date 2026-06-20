@@ -6,7 +6,7 @@ const siteData = {
   // ---------- CABEÇALHO ----------
   cabecalho: {
     titulo: "SixOnTop",
-    subtitulo: "A jornada de um clã fora do comum",
+    subtitulo: "Uma nova jornada",
     // imagem de fundo do herói (dentro da pasta imagens/)
     imagemHeroi: "imagens/hero.jpg"
   },
@@ -15,9 +15,9 @@ const siteData = {
   sobre: {
     titulo: "Quem somos?",
     historia: [
-      "Nascemos em uma noite chuvosa de 2022, quando cinco amigos cansados de clãs genéricos decidiram criar o nosso próprio espaço.",
-      "Não somos 'o maior clã', nem 'o mais forte'. Somos simplesmente SixOnTop – um grupo onde o respeito e a criatividade vêm antes de qualquer rank.",
-      "Hoje somos mais de 30 membros ativos, com construções próprias, eventos semanais e uma base que é a nossa segunda casa."
+      "Somos a antiga SEGA 666, um clã criado originalmente por Black_KiritoXz e continuado por saulofuzis",
+      "Somos um clã de minecraft focado em PvP 1.9+.",
+      "Um clã de amigos, e muita resenha !."
     ],
     imagemSobre: "imagens/sobre.jpg"
   },
@@ -26,11 +26,11 @@ const siteData = {
   membros: {
     titulo: "Fundadores",
     lista: [
-      { nome: "Lucas_OP", cargo: "Líder & Construtor", foto: "imagens/membro1.png" },
-      { nome: "Mineiro_72", cargo: "Redstone Engineer", foto: "imagens/membro2.png" },
-      { nome: "Dark_Wolf", cargo: "PvP Trainer", foto: "imagens/membro3.png" },
-      { nome: "Aranha_Z", cargo: "Explorador Chefe", foto: "imagens/membro4.png" },
-      { nome: "Foxy_YT", cargo: "Mídias & Eventos", foto: "imagens/membro5.png" }
+      { nome: "Saulofuzi", cargo: "Fundador", foto: "imagens/membro1.png" },
+      { nome: "Suzly", cargo: "Lider", foto: "imagens/membro2.png" },
+      { nome: "uCarlsoXz_", cargo: "Sub Lider", foto: "imagens/membro3.png" },
+      { nome: "uJosca", cargo: "Gerente", foto: "imagens/membro4.png" },
+      { nome: "Black_KiritoXz", cargo: "Mobile kkk", foto: "imagens/membro5.png" }
     ]
   },
 
