@@ -1,0 +1,220 @@
+/* ====================================================
+   RESET & BASE
+   ==================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  background: #1a0a0a; /* fundo escuro com tom vermelho */
+  color: #f5e6e6;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ====================================================
+   ANIMAÇÕES GLOBAIS
+   ==================================================== */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* ====================================================
+   HERO
+   ==================================================== */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #2a0a0a 0%, #660000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('imagens/hero.jpg') center/cover no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 1.2s ease;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  color: #ff4d4d;
+  text-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+  letter-spacing: 4px;
+}
+
+.hero p {
+  font-size: 1.6rem;
+  color: #ffb3b3;
+  margin-top: 10px;
+}
+
+/* ====================================================
+   SEÇÕES
+   ==================================================== */
+section {
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(200, 50, 50, 0.2);
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: #ff4d4d;
+  margin-bottom: 30px;
+  border-left: 6px solid #ff1a1a;
+  padding-left: 20px;
+}
+
+/* SOBRE */
+.sobre-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.15rem;
+  max-width: 700px;
+}
+
+.sobre-texto p {
+  background: rgba(100, 0, 0, 0.3);
+  padding: 16px 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+}
+
+.sobre-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 0 10px 40px rgba(200, 0, 0, 0.3);
+  transition: transform 0.4s;
+}
+
+.sobre-img:hover {
+  transform: scale(1.02);
+}
+
+/* MEMBROS */
+.membros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.membro-card {
+  background: rgba(60, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 20px 10px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  border: 1px solid #b30000;
+  transition: 0.3s;
+}
+
+.membro-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(255, 0, 0, 0.3);
+}
+
+.membro-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ff3333;
+  margin-bottom: 12px;
+}
+
+.membro-card h3 {
+  color: #ff9999;
+  font-size: 1.3rem;
+}
+
+.membro-card p {
+  color: #d9a0a0;
+  font-size: 0.9rem;
+}
+
+/* CONQUISTAS */
+.conquistas-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1.1rem;
+}
+
+.conquistas-lista li {
+  background: rgba(80, 0, 0, 0.3);
+  padding: 14px 24px;
+  border-radius: 40px;
+  border-left: 6px solid #ff1a1a;
+}
+
+/* CONTATO */
+.contato-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.contato-links a {
+  background: #b30000;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contato-links a:hover {
+  background: #ff1a1a;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff000088;
+}
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  background: #0d0404;
+  color: #aa7777;
+  font-size: 0.9rem;
+}
+
+/* ====================================================
+   RESPONSIVO
+   ==================================================== */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 3rem; }
+  .hero p { font-size: 1.2rem; }
+  h2 { font-size: 2rem; }
+}
