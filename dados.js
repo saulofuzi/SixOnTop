@@ -45,16 +45,16 @@ const siteData = {
 
   // ---------- REDES SOCIAIS / CONTATO ----------
   contato: {
-    titulo: "Venha jogar conosco!",
-    texto: "Se você se identificou com a nossa vibe, manda um oi no Discord ou no Instagram.",
-    discord: "https://discord.gg/seu-link",
-    instagram: "https://instagram.com/seu-perfil",
-    email: "contato@sixontop.com"
+    titulo: "Quer entrar na Six?",
+    texto: "Venha ser membro da SixOnTop, clique no link abaixo !",
+    discord: "https://discord.gg/eEMaUAhSC2",
+    instagram: "https://instagram.com/sixontop",
+    email: "sixontop@gmail.com"
   },
 
   // ---------- RODAPÉ ----------
   rodape: {
-    texto: "© 2025 SixOnTop – Feito com blocos e muita paixão."
+    texto: "© 2024 SixOnTop – Sempre no topo"
   }
 };
 
