@@ -22,7 +22,7 @@ const siteData = {
     imagemSobre: "imagens/sobre.jpg"
   },
 
-  // ---------- MEMBROS FUNDADORES ----------
+  // ---------- MEMBROS FUNDADORES ----------      
   membros: {
     titulo: "Fundadores",
     lista: [
