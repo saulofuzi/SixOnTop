@@ -36,11 +36,10 @@ const siteData = {
 
   // ---------- CONQUISTAS (opcional) ----------
   conquistas: {
-    titulo: "Conquistas que carregamos com orgulho",
+    titulo: "Conquistas da SIX",
     itens: [
-      "🏆 Base mais bonita do servidor (votação popular – 2023)",
-      "⚔️ Vencedores do Torneio de Inverno (categoria equipes)",
-      "🧱 Primeiro clã a construir um castelo no Nether (sério, temos provas!)"
+      "🏆 O Clã com mais vitorias em guerras no servidor " Minezinho " (30+) ",
+      "⚔️ O Clã vencedor da Primeira LIGA DE CLÃ do servidor " Minezinho " ",
     ]
   },
 
