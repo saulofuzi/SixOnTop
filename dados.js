@@ -54,7 +54,7 @@ const siteData = {
 
   // ---------- RODAPÉ ----------
   rodape: {
-    texto: "© 2024 SixOnTop – Sempre no topo"
+    texto: "© 2024 SixOnTop – O terror da EyE"
   }
 };
 
