@@ -34,6 +34,18 @@ const siteData = {
     ]
   },
 
+    // ---------- MEMBROS ----------
+  membross: {
+    titulo: "Membros",
+    lista: [
+      { nome: "teste", cargo: "teste", foto: "imagens/membro.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro.png" }
+    ]
+  },
+
   // ---------- CONQUISTAS (opcional) ----------
   conquistas: {
     titulo: "Conquistas da SIX",
