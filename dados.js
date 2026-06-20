@@ -38,8 +38,8 @@ const siteData = {
   conquistas: {
     titulo: "Conquistas da SIX",
     itens: [
-      "🏆 O Clã com mais vitorias em guerras no servidor " Minezinho " (30+) ",
-      "⚔️ O Clã vencedor da Primeira LIGA DE CLÃ do servidor " Minezinho " ",
+    "🏆 O Clã com mais vitorias em guerras no servidor 'Minezinho' (30+) ",
+    "⚔️ O Clã vencedor da Primeira LIGA DE CLÃ do servidor 'Minezinho' ",
     ]
   },
 
