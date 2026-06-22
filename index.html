@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SixOnTop – Clã Minecraft</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -59,7 +58,7 @@
                     </div>
                 </div>
                 <div class="sobre-img">
-                    <img src="imagens/sobre.jpg" alt="Sobre o clã" />
+                    <img src="imagens/sobre.jpg" alt="Sobre o clã" onerror="this.style.display='none'" />
                     <div class="img-overlay">
                         <i class="fas fa-play-circle"></i>
                     </div>
@@ -68,36 +67,30 @@
         </div>
     </section>
 
-<!-- ===== FUNDADORES ===== -->
-<section id="fundadores" class="section bg-light">
-    <div class="container">
-        <h2><i class="fas fa-crown"></i> Fundadores</h2>
-        <p class="subtitulo">Os criadores da SixOnTop</p>
-        <div class="membros-grid" id="fundadores-grid">
-            <!-- Gerado pelo JavaScript -->
+    <!-- ===== FUNDADORES ===== -->
+    <section id="fundadores" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-crown"></i> Fundadores</h2>
+            <p class="subtitulo">Os criadores da SixOnTop</p>
+            <div class="membros-grid" id="fundadores-grid"></div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== MEMBROS ===== -->
-<section id="membros" class="section bg-dark">
-    <div class="container">
-        <h2><i class="fas fa-user-group"></i> Membros</h2>
-        <p class="subtitulo">Nossa equipe atual</p>
-        <div class="membros-grid" id="membros-grid">
-            <!-- Gerado pelo JavaScript -->
+    <!-- ===== MEMBROS ===== -->
+    <section id="membros" class="section bg-dark">
+        <div class="container">
+            <h2><i class="fas fa-user-group"></i> Membros</h2>
+            <p class="subtitulo">Nossa equipe atual</p>
+            <div class="membros-grid" id="membros-grid"></div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- ===== TIERS ===== -->
     <section id="tiers" class="section bg-light">
         <div class="container">
             <h2><i class="fas fa-ranking-star"></i> Tiers da Six</h2>
             <p class="subtitulo">Nossos níveis no PvP</p>
-            <div class="tiers-container" id="tiers-container">
-                <!-- Gerado pelo JavaScript -->
-            </div>
+            <div class="tiers-container" id="tiers-container"></div>
         </div>
     </section>
 
@@ -106,48 +99,20 @@
         <div class="container">
             <h2><i class="fas fa-trophy"></i> Conquistas</h2>
             <p class="subtitulo">Nossas vitórias</p>
-            <ul class="conquistas-lista" id="conquistas-lista">
-                <!-- Gerado pelo JavaScript -->
-            </ul>
+            <ul class="conquistas-lista" id="conquistas-lista"></ul>
         </div>
     </section>
 
-    <!-- ===== GALERIA / PRINT DO CLÃ ===== -->
+    <!-- ===== GALERIA ===== -->
     <section id="galeria" class="section bg-light">
         <div class="container">
             <h2><i class="fas fa-image"></i> Galeria do Clã</h2>
             <p class="subtitulo">Nossos momentos juntos</p>
-            <div class="galeria-grid">
-                <div class="galeria-item principal">
-                    <img src="imagens/cla-print.jpg" alt="Print do clã todo junto" />
-                    <div class="galeria-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span>Clã completo</span>
-                    </div>
-                </div>
-                <div class="galeria-item">
-                    <img src="imagens/cla-print2.jpg" alt="Momento do clã" />
-                    <div class="galeria-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="galeria-item">
-                    <img src="imagens/cla-print3.jpg" alt="Momento do clã" />
-                    <div class="galeria-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="galeria-item">
-                    <img src="imagens/cla-print4.jpg" alt="Momento do clã" />
-                    <div class="galeria-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-            </div>
+            <div class="galeria-grid" id="galeria-grid"></div>
         </div>
     </section>
 
-    <!-- ===== CONTATO / REDES SOCIAIS ===== -->
+    <!-- ===== CONTATO ===== -->
     <section id="contato" class="section bg-dark">
         <div class="container">
             <h2><i class="fas fa-envelope"></i> Quer entrar na Six?</h2>
@@ -158,35 +123,24 @@
             </div>
 
             <div class="redes-sociais">
-                <!-- DISCORD -->
                 <a href="https://discord.gg/eEMaUAhSC2" target="_blank" class="rede-card discord">
-                    <div class="rede-icon">
-                        <i class="fab fa-discord"></i>
-                    </div>
+                    <div class="rede-icon"><i class="fab fa-discord"></i></div>
                     <div class="rede-info">
                         <h4>Discord</h4>
                         <p>Entre no nosso servidor</p>
                     </div>
                     <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
-
-                <!-- INSTAGRAM -->
                 <a href="https://instagram.com/sixontop" target="_blank" class="rede-card instagram">
-                    <div class="rede-icon">
-                        <i class="fab fa-instagram"></i>
-                    </div>
+                    <div class="rede-icon"><i class="fab fa-instagram"></i></div>
                     <div class="rede-info">
                         <h4>Instagram</h4>
                         <p>Nos siga no Instagram</p>
                     </div>
                     <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
-
-                <!-- EMAIL -->
                 <a href="mailto:sixontop@gmail.com" class="rede-card email">
-                    <div class="rede-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+                    <div class="rede-icon"><i class="fas fa-envelope"></i></div>
                     <div class="rede-info">
                         <h4>Email</h4>
                         <p>sixontop@gmail.com</p>
@@ -231,7 +185,6 @@
         </div>
     </footer>
 
-    <!-- ===== SCRIPTS ===== -->
     <script src="siteData.js"></script>
     <script src="script.js"></script>
 </body>
