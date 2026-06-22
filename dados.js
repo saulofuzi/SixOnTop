@@ -23,7 +23,7 @@ const siteData = {
   },
 
   // ---------- FUNDADORES ----------
-  fundadores: {
+  membros: {
     titulo: "Fundadores",
     lista: [
       { nome: "Saulofuzi", cargo: "Fundador", foto: "imagens/membro1.png" },
@@ -92,7 +92,7 @@ const siteData = {
   // ---------- REDES SOCIAIS / CONTATO ----------
   contato: {
     titulo: "Quer entrar na Six?",
-    texto: "Venha ser membro da SixOnTop, clique no link abaixo!",
+    texto: "Venha ser membro da SixOnTop!",
     discord: "https://discord.gg/eEMaUAhSC2",
     instagram: "https://instagram.com/sixontop",
     email: "sixontop@gmail.com",
