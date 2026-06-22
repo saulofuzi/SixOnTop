@@ -46,10 +46,9 @@ const siteData = {
       { nome: "Statella", cargo: "Elite", foto: "imagens/statella.png" },
       { nome: "Uriel", cargo: "Elite", foto: "imagens/uriel.png" },
       { nome: "Usovo", cargo: "Membro", foto: "imagens/usovo.png" },
-      { nome: "OPdrzINSn7x", cargo: "Aliado", foto: "imagens/pdr.png" }
+      { nome: "OPdrzINSn7x", cargo: "Aliado", foto: "imagens/pdr.png" },
       { nome: "LznLuiz", cargo: "Membro", foto: "imagens/luiz.png" },
       { nome: "Alazevedo", cargo: "Membro", foto: "imagens/azevedo.png" },
-      { nome: "OPdrzINSn7x", cargo: "Aliado", foto: "imagens/pdr.png" }
       { nome: "MARECHAL_01", cargo: "Membro", foto: "imagens/marechal.png" },
       { nome: "IMENINAINOCENTE", cargo: "Membro", foto: "imagens/jessica.png" },
       { nome: "FenixH4X", cargo: "Membro", foto: "imagens/Fenix.png" },
@@ -58,7 +57,7 @@ const siteData = {
       { nome: "tecks", cargo: "Membro", foto: "imagens/tecks.png" },
       { nome: "sou_home", cargo: "Membro", foto: "imagens/souhome.png" },
       { nome: "swy", cargo: "Membro", foto: "imagens/swy.png" },
-      { nome: "Zeusx", cargo: "Membro", foto: "imagens/zeus.png" },
+      { nome: "Zeusx", cargo: "Membro", foto: "imagens/zeus.png" }
     ]
   },
 
