@@ -1,3 +1,10 @@
+/* =====================================================
+   SIXONTOP - ESTILOS VERMELHOS
+   ===================================================== */
+
+/* ===== IMPORTAÇÃO DE FONTE ===== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap');
+
 /* ===== RESET ===== */
 * {
     margin: 0;
@@ -5,11 +12,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #fff;
+    background: #0a0000;
+    overflow-x: hidden;
 }
 
 .container {
@@ -18,35 +30,127 @@ body {
     padding: 0 20px;
 }
 
-/* ===== SECTION ===== */
+/* ===== SCROLLBAR PERSONALIZADA ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #cc0000, #ff1a1a, #cc0000);
+    border-radius: 10px;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: linear-gradient(135deg, #cc0000, #ff1a1a, #cc0000);
+    background-size: 200% 200%;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(204, 0, 0, 0.4);
+    animation: btnAnim 3s ease infinite;
+}
+
+@keyframes btnAnim {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(204, 0, 0, 0.6);
+}
+
+/* ===== SEÇÕES ===== */
 .section {
-    padding: 60px 0;
+    padding: 80px 0;
+    position: relative;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #cc0000, #ff1a1a, #cc0000, transparent);
 }
 
 .section.bg-dark {
-    background-color: #1a1a2e;
-    color: #fff;
+    background: linear-gradient(180deg, #0a0000, #1a0000);
+}
+
+.section.bg-light {
+    background: linear-gradient(180deg, #1a0000, #0a0000);
 }
 
 .section h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #cc0000, #ff1a1a, #ff4444, #cc0000);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradienteAnim 4s ease infinite;
+    letter-spacing: 3px;
+}
+
+@keyframes gradienteAnim {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.section .subtitulo {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff6666;
     margin-bottom: 40px;
-    position: relative;
+    letter-spacing: 2px;
 }
 
 .section h2::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: #e94560;
-    margin: 10px auto 0;
+    display: none;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO / CABEÇALHO ===== */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -65,60 +169,144 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, rgba(10, 0, 0, 0.9), rgba(26, 0, 0, 0.8));
+    z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(0deg, #0a0000, transparent);
+    z-index: 0;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
+    padding: 20px;
+}
+
+.hero-content .badge {
+    display: inline-block;
+    padding: 8px 25px;
+    background: rgba(204, 0, 0, 0.2);
+    border: 2px solid #cc0000;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ff4444;
+    margin-bottom: 20px;
+    animation: pulseBadge 2s ease-in-out infinite;
+}
+
+@keyframes pulseBadge {
+    0%, 100% { box-shadow: 0 0 20px rgba(204, 0, 0, 0.2); }
+    50% { box-shadow: 0 0 50px rgba(204, 0, 0, 0.6); }
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    text-shadow: 0 0 30px rgba(233, 69, 96, 0.5);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff, #ff4444, #cc0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    letter-spacing: 5px;
+}
+
+.hero-content .destaque {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff1a1a;
+    margin-bottom: 10px;
+    letter-spacing: 8px;
+    text-shadow: 0 0 30px rgba(204, 0, 0, 0.5);
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 30px;
+    color: #ff6666;
+    letter-spacing: 2px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 35px;
-    background: #e94560;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+.hero-content .btn {
+    font-size: 1.2rem;
+    padding: 16px 50px;
 }
 
 /* ===== SOBRE ===== */
 .sobre-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 50px;
     align-items: center;
 }
 
-.sobre-content p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+.sobre-content .historia p {
+    font-size: 1.15rem;
+    margin-bottom: 18px;
+    color: #ff9999;
+    padding-left: 20px;
+    border-left: 3px solid #cc0000;
+    transition: all 0.3s;
+}
+
+.sobre-content .historia p:hover {
+    border-left-color: #ff1a1a;
+    padding-left: 25px;
+    color: #fff;
+}
+
+.sobre-content .historia p:last-child {
+    margin-bottom: 0;
+}
+
+.sobre-img {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(204, 0, 0, 0.3);
+}
+
+.sobre-img::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, #cc0000, #ff1a1a, #ff4444, #cc0000);
+    background-size: 400% 400%;
+    border-radius: 22px;
+    z-index: -1;
+    animation: bordaAnim 4s ease infinite;
+}
+
+@keyframes bordaAnim {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .sobre-img img {
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.sobre-img:hover img {
+    transform: scale(1.03);
 }
 
 /* ===== MEMBROS ===== */
@@ -126,19 +314,41 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
+    margin-top: 10px;
 }
 
 .membro-card {
     text-align: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 15px;
-    transition: all 0.3s;
+    background: rgba(204, 0, 0, 0.05);
+    padding: 25px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(204, 0, 0, 0.2);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.membro-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(204, 0, 0, 0.05), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.membro-card:hover::before {
+    opacity: 1;
 }
 
 .membro-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-color: #cc0000;
+    box-shadow: 0 15px 50px rgba(204, 0, 0, 0.2);
+    background: rgba(204, 0, 0, 0.1);
 }
 
 .membro-card img {
@@ -147,21 +357,35 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 4px solid #e94560;
+    border: 4px solid #cc0000;
+    transition: all 0.4s;
+    position: relative;
+    z-index: 1;
+}
+
+.membro-card:hover img {
+    border-color: #ff1a1a;
+    box-shadow: 0 0 40px rgba(204, 0, 0, 0.4);
+    transform: scale(1.05);
 }
 
 .membro-card h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
 }
 
 .membro-card p {
-    color: #888;
+    color: #ff6666;
     font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
 }
 
 .section.bg-dark .membro-card p {
-    color: #aaa;
+    color: #ff6666;
 }
 
 /* ===== TIERS ===== */
@@ -175,7 +399,10 @@ body {
     text-align: center;
     font-size: 1.8rem;
     margin-bottom: 25px;
-    color: #e94560;
+    color: #ff1a1a;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+    text-shadow: 0 0 30px rgba(204, 0, 0, 0.3);
 }
 
 .tiers-grid {
@@ -186,16 +413,36 @@ body {
 
 .tier-card {
     text-align: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(204, 0, 0, 0.05);
     padding: 20px;
     border-radius: 15px;
-    border: 3px solid #555;
-    transition: all 0.3s;
+    border: 2px solid rgba(204, 0, 0, 0.3);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.tier-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #cc0000, #ff1a1a, #cc0000, transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+}
+
+.tier-card:hover::after {
+    transform: scaleX(1);
 }
 
 .tier-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(1.08);
+    border-color: #cc0000;
+    box-shadow: 0 10px 40px rgba(204, 0, 0, 0.3);
+    background: rgba(204, 0, 0, 0.1);
 }
 
 .tier-card img {
@@ -203,17 +450,24 @@ body {
     height: 80px;
     object-fit: contain;
     margin-bottom: 10px;
+    filter: drop-shadow(0 0 20px rgba(204, 0, 0, 0.2));
+    transition: filter 0.4s;
+}
+
+.tier-card:hover img {
+    filter: drop-shadow(0 0 40px rgba(204, 0, 0, 0.5));
 }
 
 .tier-card .tier-nome {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .tier-card .tier-desc {
     font-size: 0.9rem;
-    color: #aaa;
+    color: #ff6666;
 }
 
 /* ===== CONQUISTAS ===== */
@@ -224,12 +478,29 @@ body {
 }
 
 .conquistas-lista li {
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    background: rgba(233, 69, 96, 0.1);
-    border-left: 4px solid #e94560;
-    border-radius: 5px;
+    padding: 18px 25px;
+    margin-bottom: 12px;
+    background: rgba(204, 0, 0, 0.08);
+    border-left: 4px solid #cc0000;
+    border-radius: 8px;
     font-size: 1.1rem;
+    color: #ff9999;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.conquistas-lista li::before {
+    content: '◆';
+    color: #cc0000;
+    margin-right: 12px;
+    font-size: 0.8rem;
+}
+
+.conquistas-lista li:hover {
+    background: rgba(204, 0, 0, 0.15);
+    border-left-color: #ff1a1a;
+    color: #fff;
+    transform: translateX(5px);
 }
 
 /* ===== CONTATO ===== */
@@ -237,6 +508,7 @@ body {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 30px;
+    color: #ff9999;
 }
 
 .contato-links {
@@ -247,55 +519,95 @@ body {
 }
 
 .contato-links .btn {
-    min-width: 150px;
+    min-width: 160px;
     text-align: center;
+    padding: 14px 30px;
 }
 
 .contato-links .btn.discord {
-    background: #5865F2;
+    background: linear-gradient(135deg, #cc0000, #ff1a1a);
+    box-shadow: 0 5px 25px rgba(204, 0, 0, 0.3);
 }
 
 .contato-links .btn.instagram {
-    background: #E4405F;
+    background: linear-gradient(135deg, #cc0000, #ff1a1a);
+    box-shadow: 0 5px 25px rgba(204, 0, 0, 0.3);
 }
 
 .contato-links .btn.email {
-    background: #34A853;
+    background: linear-gradient(135deg, #cc0000, #ff1a1a);
+    box-shadow: 0 5px 25px rgba(204, 0, 0, 0.3);
 }
 
 .contato-links .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(204, 0, 0, 0.5);
 }
 
 /* ===== RODAPÉ ===== */
 footer {
-    background: #0f0f1a;
-    color: #666;
+    background: #050000;
+    color: #ff4444;
     text-align: center;
-    padding: 20px 0;
+    padding: 25px 0;
+    border-top: 2px solid rgba(204, 0, 0, 0.2);
+}
+
+footer p {
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+}
+
+/* ===== PARTÍCULAS / EFEITOS ===== */
+.glow-red {
+    text-shadow: 0 0 30px rgba(204, 0, 0, 0.3);
 }
 
 /* ===== RESPONSIVIDADE ===== */
+@media (max-width: 992px) {
+    .sobre-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .sobre-content .historia p {
+        border-left: none;
+        padding-left: 0;
+    }
+    
+    .sobre-content .historia p:hover {
+        padding-left: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        letter-spacing: 3px;
+    }
+    
+    .hero-content .destaque {
+        font-size: 1rem;
+        letter-spacing: 4px;
     }
     
     .hero-content p {
-        font-size: 1.2rem;
-    }
-    
-    .sobre-content {
-        grid-template-columns: 1fr;
+        font-size: 1.1rem;
     }
     
     .section h2 {
         font-size: 2rem;
+        letter-spacing: 2px;
     }
     
     .membros-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+    
+    .tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     
     .contato-links {
@@ -305,20 +617,66 @@ footer {
     
     .contato-links .btn {
         width: 100%;
-        max-width: 250px;
+        max-width: 280px;
+    }
+    
+    .section {
+        padding: 50px 0;
     }
 }
 
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
-    .tiers-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .hero-content .destaque {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+    
+    .section h2 {
+        font-size: 1.6rem;
     }
     
     .membros-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .membro-card {
+        padding: 15px 10px;
+    }
+    
+    .membro-card img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .tier-card {
+        padding: 12px;
+    }
+    
+    .tier-card img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .tier-card .tier-nome {
+        font-size: 1rem;
+    }
+    
+    .conquistas-lista li {
+        font-size: 0.95rem;
+        padding: 12px 15px;
     }
 }
