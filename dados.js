@@ -21,28 +21,89 @@ const siteData = {
     imagemSobre: "imagens/sobre.jpg"
   },
 
-  // ---------- MEMBROS (UMA LISTA ÚNICA) ----------
+  // ---------- FUNDADORES ----------
   membros: {
-    titulo: "Nossa Equipe",
+    titulo: "Fundadores",
     lista: [
-      // ---- Fundadores (mantive os cargos originais) ----
       { nome: "Saulofuzi", cargo: "Fundador", foto: "imagens/membro1.png" },
       { nome: "Suzly", cargo: "Lider", foto: "imagens/membro2.png" },
       { nome: "uCarlsoXz_", cargo: "Sub Lider", foto: "imagens/membro3.png" },
       { nome: "uJosca", cargo: "Gerente", foto: "imagens/membro4.png" },
-      { nome: "Black_KiritoXz", cargo: "Mobile kkk", foto: "imagens/membro5.png" },
-      
-      // ---- Membros novos (preencha com nomes reais depois) ----
-      { nome: "Membro1", cargo: "PvP", foto: "imagens/membro6.png" },
-      { nome: "Membro2", cargo: "Construtor", foto: "imagens/membro7.png" },
-      { nome: "Membro3", cargo: "Redstone", foto: "imagens/membro8.png" },
-      { nome: "Membro4", cargo: "Arqueiro", foto: "imagens/membro9.png" },
-      { nome: "Membro5", cargo: "Suporte", foto: "imagens/membro10.png" },
-      { nome: "Membro6", cargo: "Explorador", foto: "imagens/membro11.png" },
-      { nome: "Membro7", cargo: "PvP", foto: "imagens/membro12.png" },
-      { nome: "Membro8", cargo: "Base Builder", foto: "imagens/membro13.png" },
-      { nome: "Membro9", cargo: "Farming", foto: "imagens/membro14.png" },
-      { nome: "Membro10", cargo: "Trainee", foto: "imagens/membro15.png" }
+      { nome: "Black_KiritoXz", cargo: "Mobile kkk", foto: "imagens/membro5.png" }
+    ]
+  },
+
+  // ---------- MEMBROS ----------
+  membrosAtuais: {
+    titulo: "Membros",
+    lista: [
+      { nome: "teste", cargo: " teste", foto: "imagens/membro6.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro7.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro8.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro8.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro9.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro10.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro11.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro12.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro13.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro14.png" },
+      { nome: "teste", cargo: "teste", foto: "imagens/membro15.png" }
+    ]
+  },
+
+  // ---------- TIERS DE PVP ----------
+  tiers: {
+    titulo: "Tiers da SixOnTop",
+    subtitulo: "Nossos níveis no PvP",
+    lista: [
+      {
+        tier: "LT3",
+        nome: "Lendário Tier 3",
+        icone: "imagens/tier-lt3.png",
+        cor: "#FFD700" // dourado (opcional, pode usar para borda/fundo)
+      },
+      {
+        tier: "LT2",
+        nome: "Lendário Tier 2",
+        icone: "imagens/tier-lt2.png",
+        cor: "#C0C0C0" // prateado
+      },
+      {
+        tier: "LT1",
+        nome: "Lendário Tier 1",
+        icone: "imagens/tier-lt1.png",
+        cor: "#CD7F32" // bronze
+      },
+      {
+        tier: "Crystal",
+        nome: "Crystal (Topo)",
+        icone: "imagens/tier-crystal.png",
+        cor: "#00FFFF" // ciano
+      },
+      {
+        tier: "Diamante",
+        nome: "Diamante",
+        icone: "imagens/tier-diamante.png",
+        cor: "#00BFFF"
+      },
+      {
+        tier: "Ouro",
+        nome: "Ouro",
+        icone: "imagens/tier-ouro.png",
+        cor: "#FFD700"
+      },
+      {
+        tier: "Ferro",
+        nome: "Ferro",
+        icone: "imagens/tier-ferro.png",
+        cor: "#A9A9A9"
+      },
+      {
+        tier: "Pedra",
+        nome: "Pedra",
+        icone: "imagens/tier-pedra.png",
+        cor: "#808080"
+      }
     ]
   },
 
