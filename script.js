@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ===== VERIFICA SE OS DADOS EXISTEM =====
   if (typeof siteData === 'undefined') {
-    console.error('❌ siteData não encontrado! Verifique se o arquivo siteData.js foi carregado.');
+    console.error('❌ siteData não encontrado! Verifique se o arquivo sitedata.js foi carregado.');
     return;
   }
 
@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('📊 Carregando fundadores:', siteData.fundadores.lista.length);
       fundadoresGrid.innerHTML = siteData.fundadores.lista.map(membro => `
         <div class="membro-card">
-          <img src="${membro.foto}" alt="${membro.nome}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect fill=%22%231a0000%22 width=%22120%22 height=%22120%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2240%22 font-family=%22Arial%22%3E👤%3C/text%3E%3C/svg%3E'">
+          <img src="${membro.foto}" alt="${membro.nome}" loading="lazy" 
+               onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect fill=%22%231a0000%22 width=%22120%22 height=%22120%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2240%22 font-family=%22Arial%22%3E👤%3C/text%3E%3C/svg%3E'">
           <h3>${membro.nome}</h3>
           <p>${membro.cargo}</p>
           <div class="membro-badge">👑</div>
         </div>
       `).join('');
     } else {
-      console.warn('⚠️ Fundadores não encontrados em siteData.fundadores');
       fundadoresGrid.innerHTML = '<p style="color:#ff6666;text-align:center;grid-column:1/-1;">⚠️ Nenhum fundador cadastrado.</p>';
     }
   }
@@ -40,13 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('📊 Carregando membros:', siteData.membrosAtuais.lista.length);
       membrosGrid.innerHTML = siteData.membrosAtuais.lista.map(membro => `
         <div class="membro-card">
-          <img src="${membro.foto}" alt="${membro.nome}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect fill=%22%231a0000%22 width=%22120%22 height=%22120%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2240%22 font-family=%22Arial%22%3E👤%3C/text%3E%3C/svg%3E'">
+          <img src="${membro.foto}" alt="${membro.nome}" loading="lazy" 
+               onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect fill=%22%231a0000%22 width=%22120%22 height=%22120%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2240%22 font-family=%22Arial%22%3E👤%3C/text%3E%3C/svg%3E'">
           <h3>${membro.nome}</h3>
           <p>${membro.cargo}</p>
         </div>
       `).join('');
     } else {
-      console.warn('⚠️ Membros não encontrados em siteData.membrosAtuais');
       membrosGrid.innerHTML = '<p style="color:#ff6666;text-align:center;grid-column:1/-1;">⚠️ Nenhum membro cadastrado.</p>';
     }
   }
@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
         mcTiers.forEach(t => {
           html += `
             <div class="tier-card" style="border-color: ${t.cor}">
-              <img src="${t.icone}" alt="${t.tier}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22%231a0000%22 width=%2280%22 height=%2280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2230%22 font-family=%22Arial%22%3E⭐%3C/text%3E%3C/svg%3E'">
+              <img src="${t.icone}" alt="${t.tier}" loading="lazy" 
+                   onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22%231a0000%22 width=%2280%22 height=%2280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2230%22 font-family=%22Arial%22%3E⭐%3C/text%3E%3C/svg%3E'">
               <div class="tier-nome">${t.tier}</div>
               <div class="tier-desc">${t.nome}</div>
             </div>
@@ -77,7 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
         subTiers.forEach(t => {
           html += `
             <div class="tier-card" style="border-color: ${t.cor}">
-              <img src="${t.icone}" alt="${t.tier}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22%231a0000%22 width=%2280%22 height=%2280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2230%22 font-family=%22Arial%22%3E⚔️%3C/text%3E%3C/svg%3E'">
+              <img src="${t.icone}" alt="${t.tier}" loading="lazy" 
+                   onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22%231a0000%22 width=%2280%22 height=%2280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2230%22 font-family=%22Arial%22%3E⚔️%3C/text%3E%3C/svg%3E'">
               <div class="tier-nome">${t.tier}</div>
               <div class="tier-desc">${t.nome}</div>
             </div>
