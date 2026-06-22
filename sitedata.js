@@ -47,9 +47,9 @@ const siteData = {
       { nome: "Uriel", cargo: "Elite", foto: "imagens/uriel.png" },
       { nome: "Usovo", cargo: "Membro", foto: "imagens/usovo.png" },
       { nome: "Zeusx", cargo: "Membro", foto: "imagens/zeus.png" },
-      { nome: "LznLuiz", cargo: "Membro", foto: "imagens/luiz.png" }
+      { nome: "LznLuiz", cargo: "Membro", foto: "imagens/luiz.png" },
       { nome: "Alazevedo", cargo: "Membro", foto: "imagens/azevedo.png" },
-      { nome: "FenixH4X", cargo: "Membro", foto: "imagens/Fenix.png" 
+      { nome: "FenixH4X", cargo: "Membro", foto: "imagens/Fenix.png" },
       { nome: "IaLouça", cargo: "Membro", foto: "imagens/louça.png" },
       { nome: "MARECHAL_01", cargo: "Membro", foto: "imagens/marechal.png" },
       { nome: "S6fz", cargo: "Elite", foto: "imagens/s6fz.png" },
@@ -57,7 +57,7 @@ const siteData = {
       { nome: "tecks", cargo: "Membro", foto: "imagens/tecks.png" },
       { nome: "sou_home", cargo: "Membro", foto: "imagens/souhome.png" },
       { nome: "swy", cargo: "Membro", foto: "imagens/swy.png" },
-      { nome: "ᴏP𝚍𝚛ᴢIɴSn7𝔵", cargo: "Aliado", foto: "imagens/pdr.png" },
+      { nome: "ᴏP𝚍𝚛ᴢIɴSn7𝔵", cargo: "Aliado", foto: "imagens/pdr.png" }
     ]
   },
 
@@ -111,7 +111,7 @@ const siteData = {
 
   // ---------- RODAPÉ ----------
   rodape: {
-    texto: "© 2024 SixOnTop "
+    texto: "© 2024 SixOnTop"
   }
 };
 
