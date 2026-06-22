@@ -1,55 +1,143 @@
 // =====================================================
-//  SCRIPT PRINCIPAL – Pega os dados e injeta no HTML
+//  SCRIPT PRINCIPAL – Gera todo o site
 // =====================================================
 
-// Aguarda o DOM carregar
-document.addEventListener('DOMContentLoaded', function () {
-  // Se os dados não existirem, avisa
-  if (typeof siteData === 'undefined') {
-    console.error('Arquivo dados.js não carregado ou com erro.');
-    return;
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // ---------- CABEÇALHO ----------
+  const cabecalho = document.querySelector('.hero');
+  if (cabecalho) {
+    cabecalho.style.backgroundImage = `url('${siteData.cabecalho.imagemHeroi}')`;
+    document.querySelector('.hero-content h1').textContent = siteData.cabecalho.titulo;
+    document.querySelector('.hero-content p').textContent = siteData.cabecalho.subtitulo;
   }
 
-  const d = siteData;
+  // ---------- SOBRE ----------
+  const sobreSection = document.getElementById('sobre');
+  if (sobreSection) {
+    sobreSection.querySelector('h2').textContent = siteData.sobre.titulo;
+    const historiaDiv = sobreSection.querySelector('.historia');
+    if (historiaDiv) {
+      historiaDiv.innerHTML = siteData.sobre.historia.map(p => `<p>${p}</p>`).join('');
+    }
+    const imgSobre = sobreSection.querySelector('.sobre-img img');
+    if (imgSobre) {
+      imgSobre.src = siteData.sobre.imagemSobre;
+    }
+  }
 
-  // ----- HERO -----
-  document.getElementById('hero-titulo').textContent = d.cabecalho.titulo;
-  document.getElementById('hero-subtitulo').textContent = d.cabecalho.subtitulo;
-  // A imagem de fundo já está no CSS, mas podemos também setar via JS se quiser
-  // (opcional) document.querySelector('.hero').style.backgroundImage = `url(${d.cabecalho.imagemHeroi})`;
+  // ---------- FUNDADORES ----------
+  const membrosSection = document.getElementById('membros');
+  if (membrosSection) {
+    membrosSection.querySelector('h2').textContent = siteData.membros.titulo;
+    const grid = membrosSection.querySelector('.membros-grid');
+    if (grid) {
+      grid.innerHTML = siteData.membros.lista.map(membro => `
+        <div class="membro-card">
+          <img src="${membro.foto}" alt="${membro.nome}" loading="lazy">
+          <h3>${membro.nome}</h3>
+          <p>${membro.cargo}</p>
+        </div>
+      `).join('');
+    }
+  }
 
-  // ----- SOBRE -----
-  document.getElementById('sobre-titulo').textContent = d.sobre.titulo;
-  const sobreTextoDiv = document.getElementById('sobre-texto');
-  sobreTextoDiv.innerHTML = d.sobre.historia.map(p => `<p>${p}</p>`).join('');
-  document.getElementById('sobre-imagem').src = d.sobre.imagemSobre;
+  // ---------- MEMBROS ATUAIS ----------
+  const membrosAtuaisSection = document.getElementById('membros-atuais');
+  if (membrosAtuaisSection) {
+    membrosAtuaisSection.querySelector('h2').textContent = siteData.membrosAtuais.titulo;
+    const grid = membrosAtuaisSection.querySelector('.membros-grid');
+    if (grid) {
+      grid.innerHTML = siteData.membrosAtuais.lista.map(membro => `
+        <div class="membro-card">
+          <img src="${membro.foto}" alt="${membro.nome}" loading="lazy">
+          <h3>${membro.nome}</h3>
+          <p>${membro.cargo}</p>
+        </div>
+      `).join('');
+    }
+  }
 
-  // ----- MEMBROS -----
-  document.getElementById('membros-titulo').textContent = d.membros.titulo;
-  const membrosGrid = document.getElementById('membros-lista');
-  membrosGrid.innerHTML = d.membros.lista.map(m => `
-    <div class="membro-card fade-up">
-      <img src="${m.foto}" alt="${m.nome}" />
-      <h3>${m.nome}</h3>
-      <p>${m.cargo}</p>
-    </div>
-  `).join('');
+  // ---------- TIERS DE PVP ----------
+  const tiersSection = document.getElementById('tiers');
+  if (tiersSection) {
+    tiersSection.querySelector('h2').textContent = siteData.tiers.titulo;
+    const subtitulo = tiersSection.querySelector('.subtitulo');
+    if (subtitulo) subtitulo.textContent = siteData.tiers.subtitulo;
+    
+    const container = tiersSection.querySelector('.tiers-container');
+    if (container) {
+      // Separar por categoria
+      const mcTiers = siteData.tiers.lista.filter(t => t.categoria === 'MCTier');
+      const subTiers = siteData.tiers.lista.filter(t => t.categoria === 'SubTier');
+      
+      let html = '';
+      
+      // MCTiers
+      if (mcTiers.length > 0) {
+        html += `<div class="tier-categoria">
+          <h3>⭐ MCTiers</h3>
+          <div class="tiers-grid">
+            ${mcTiers.map(t => `
+              <div class="tier-card" style="border-color: ${t.cor}">
+                <img src="${t.icone}" alt="${t.tier}" loading="lazy">
+                <div class="tier-nome">${t.tier}</div>
+                <div class="tier-desc">${t.nome}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>`;
+      }
+      
+      // SubTiers
+      if (subTiers.length > 0) {
+        html += `<div class="tier-categoria">
+          <h3>⚔️ SubTiers</h3>
+          <div class="tiers-grid">
+            ${subTiers.map(t => `
+              <div class="tier-card" style="border-color: ${t.cor}">
+                <img src="${t.icone}" alt="${t.tier}" loading="lazy">
+                <div class="tier-nome">${t.tier}</div>
+                <div class="tier-desc">${t.nome}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>`;
+      }
+      
+      container.innerHTML = html;
+    }
+  }
 
-  // ----- CONQUISTAS -----
-  document.getElementById('conquistas-titulo').textContent = d.conquistas.titulo;
-  const conquistasLista = document.getElementById('conquistas-lista');
-  conquistasLista.innerHTML = d.conquistas.itens.map(item => `<li>${item}</li>`).join('');
+  // ---------- CONQUISTAS ----------
+  const conquistasSection = document.getElementById('conquistas');
+  if (conquistasSection) {
+    conquistasSection.querySelector('h2').textContent = siteData.conquistas.titulo;
+    const lista = conquistasSection.querySelector('.conquistas-lista');
+    if (lista) {
+      lista.innerHTML = siteData.conquistas.itens.map(item => `<li>${item}</li>`).join('');
+    }
+  }
 
-  // ----- CONTATO -----
-  document.getElementById('contato-titulo').textContent = d.contato.titulo;
-  document.getElementById('contato-texto').textContent = d.contato.texto;
-  document.getElementById('contato-discord').href = d.contato.discord;
-  document.getElementById('contato-instagram').href = d.contato.instagram;
-  document.getElementById('contato-email').href = `mailto:${d.contato.email}`;
+  // ---------- CONTATO ----------
+  const contatoSection = document.getElementById('contato');
+  if (contatoSection) {
+    contatoSection.querySelector('h2').textContent = siteData.contato.titulo;
+    contatoSection.querySelector('.contato-texto').textContent = siteData.contato.texto;
+    const links = contatoSection.querySelector('.contato-links');
+    if (links) {
+      links.innerHTML = `
+        <a href="${siteData.contato.discord}" target="_blank" class="btn discord">💬 Discord</a>
+        <a href="${siteData.contato.instagram}" target="_blank" class="btn instagram">📸 Instagram</a>
+        <a href="mailto:${siteData.contato.email}" class="btn email">📧 Email</a>
+      `;
+    }
+  }
 
-  // ----- RODAPÉ -----
-  document.getElementById('rodape-texto').textContent = d.rodape.texto;
+  // ---------- RODAPÉ ----------
+  const rodape = document.querySelector('footer p');
+  if (rodape) {
+    rodape.textContent = siteData.rodape.texto;
+  }
 
-  // Adiciona classe de animação para elementos visíveis (opcional)
-  // Você pode usar IntersectionObserver para animar ao rolar, mas já temos fade-up nos cards.
 });
