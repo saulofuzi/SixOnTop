@@ -23,7 +23,7 @@ const siteData = {
   },
 
   // ---------- FUNDADORES ----------
-  membros: {
+  fundadores: {
     titulo: "Fundadores",
     lista: [
       { nome: "Saulofuzi", cargo: "Fundador", foto: "imagens/membro1.png" },
