@@ -1,143 +1,206 @@
 // =====================================================
-//  SCRIPT PRINCIPAL – Gera todo o site
+//  SCRIPT PRINCIPAL – Com animações e interatividade
 // =====================================================
 
 document.addEventListener('DOMContentLoaded', function() {
-  
-  // ---------- CABEÇALHO ----------
-  const cabecalho = document.querySelector('.hero');
-  if (cabecalho) {
-    cabecalho.style.backgroundImage = `url('${siteData.cabecalho.imagemHeroi}')`;
-    document.querySelector('.hero-content h1').textContent = siteData.cabecalho.titulo;
-    document.querySelector('.hero-content p').textContent = siteData.cabecalho.subtitulo;
+
+  // ===== ANIMAÇÃO DE NÚMEROS (COUNTER) =====
+  function animateNumbers() {
+    const counters = document.querySelectorAll('.num');
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const duration = 2000;
+      const step = Math.max(1, Math.floor(target / 60));
+      let current = 0;
+
+      const updateCounter = () => {
+        current += step;
+        if (current >= target) {
+          counter.textContent = target;
+          return;
+        }
+        counter.textContent = current;
+        requestAnimationFrame(updateCounter);
+      };
+      updateCounter();
+    });
   }
 
-  // ---------- SOBRE ----------
-  const sobreSection = document.getElementById('sobre');
-  if (sobreSection) {
-    sobreSection.querySelector('h2').textContent = siteData.sobre.titulo;
-    const historiaDiv = sobreSection.querySelector('.historia');
-    if (historiaDiv) {
-      historiaDiv.innerHTML = siteData.sobre.historia.map(p => `<p>${p}</p>`).join('');
-    }
-    const imgSobre = sobreSection.querySelector('.sobre-img img');
-    if (imgSobre) {
-      imgSobre.src = siteData.sobre.imagemSobre;
-    }
+  // ===== OBSERVER PARA ANIMAÇÃO AO SCROLL =====
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        
+        // Se for a seção de conquistas, anima os itens
+        if (entry.target.id === 'conquistas') {
+          const items = entry.target.querySelectorAll('.conquistas-lista li');
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateX(0)';
+            }, 200 * index);
+          });
+        }
+        
+        // Se for a galeria, anima as imagens
+        if (entry.target.id === 'galeria') {
+          const items = entry.target.querySelectorAll('.galeria-item');
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            }, 200 * index);
+          });
+        }
+      }
+    });
+  }, observerOptions);
+
+  // Observa todas as seções
+  document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+  });
+
+  // ===== ANIMAÇÃO DE ENTRADA DOS CARDS =====
+  function animateCards() {
+    document.querySelectorAll('.membro-card, .tier-card, .rede-card').forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      setTimeout(() => {
+        card.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 100 * index);
+    });
   }
 
-  // ---------- FUNDADORES ----------
-  const membrosSection = document.getElementById('membros');
-  if (membrosSection) {
-    membrosSection.querySelector('h2').textContent = siteData.membros.titulo;
-    const grid = membrosSection.querySelector('.membros-grid');
-    if (grid) {
-      grid.innerHTML = siteData.membros.lista.map(membro => `
-        <div class="membro-card">
-          <img src="${membro.foto}" alt="${membro.nome}" loading="lazy">
-          <h3>${membro.nome}</h3>
-          <p>${membro.cargo}</p>
-        </div>
-      `).join('');
-    }
+  // ===== PREENCHER CONTEÚDO =====
+
+  // Fundadores
+  const fundadoresGrid = document.getElementById('fundadores-grid');
+  if (fundadoresGrid && siteData.fundadores) {
+    fundadoresGrid.innerHTML = siteData.fundadores.lista.map(membro => `
+      <div class="membro-card">
+        <img src="${membro.foto}" alt="${membro.nome}" loading="lazy">
+        <h3>${membro.nome}</h3>
+        <p>${membro.cargo}</p>
+        <div class="membro-badge">👑</div>
+      </div>
+    `).join('');
   }
 
-  // ---------- MEMBROS ATUAIS ----------
-  const membrosAtuaisSection = document.getElementById('membros-atuais');
-  if (membrosAtuaisSection) {
-    membrosAtuaisSection.querySelector('h2').textContent = siteData.membrosAtuais.titulo;
-    const grid = membrosAtuaisSection.querySelector('.membros-grid');
-    if (grid) {
-      grid.innerHTML = siteData.membrosAtuais.lista.map(membro => `
-        <div class="membro-card">
-          <img src="${membro.foto}" alt="${membro.nome}" loading="lazy">
-          <h3>${membro.nome}</h3>
-          <p>${membro.cargo}</p>
-        </div>
-      `).join('');
-    }
+  // Membros Atuais
+  const membrosGrid = document.getElementById('membros-grid');
+  if (membrosGrid && siteData.membrosAtuais) {
+    membrosGrid.innerHTML = siteData.membrosAtuais.lista.map(membro => `
+      <div class="membro-card">
+        <img src="${membro.foto}" alt="${membro.nome}" loading="lazy">
+        <h3>${membro.nome}</h3>
+        <p>${membro.cargo}</p>
+      </div>
+    `).join('');
   }
 
-  // ---------- TIERS DE PVP ----------
-  const tiersSection = document.getElementById('tiers');
-  if (tiersSection) {
-    tiersSection.querySelector('h2').textContent = siteData.tiers.titulo;
-    const subtitulo = tiersSection.querySelector('.subtitulo');
-    if (subtitulo) subtitulo.textContent = siteData.tiers.subtitulo;
+  // Tiers
+  const tiersContainer = document.getElementById('tiers-container');
+  if (tiersContainer && siteData.tiers) {
+    const mcTiers = siteData.tiers.lista.filter(t => t.categoria === 'MCTier');
+    const subTiers = siteData.tiers.lista.filter(t => t.categoria === 'SubTier');
     
-    const container = tiersSection.querySelector('.tiers-container');
-    if (container) {
-      // Separar por categoria
-      const mcTiers = siteData.tiers.lista.filter(t => t.categoria === 'MCTier');
-      const subTiers = siteData.tiers.lista.filter(t => t.categoria === 'SubTier');
-      
-      let html = '';
-      
-      // MCTiers
-      if (mcTiers.length > 0) {
-        html += `<div class="tier-categoria">
-          <h3>⭐ MCTiers</h3>
-          <div class="tiers-grid">
-            ${mcTiers.map(t => `
-              <div class="tier-card" style="border-color: ${t.cor}">
-                <img src="${t.icone}" alt="${t.tier}" loading="lazy">
-                <div class="tier-nome">${t.tier}</div>
-                <div class="tier-desc">${t.nome}</div>
-              </div>
-            `).join('')}
+    let html = '';
+    if (mcTiers.length) {
+      html += `<div class="tier-categoria"><h3>⭐ MCTiers</h3><div class="tiers-grid">`;
+      mcTiers.forEach(t => {
+        html += `
+          <div class="tier-card" style="border-color: ${t.cor}">
+            <img src="${t.icone}" alt="${t.tier}" loading="lazy">
+            <div class="tier-nome">${t.tier}</div>
+            <div class="tier-desc">${t.nome}</div>
           </div>
-        </div>`;
-      }
-      
-      // SubTiers
-      if (subTiers.length > 0) {
-        html += `<div class="tier-categoria">
-          <h3>⚔️ SubTiers</h3>
-          <div class="tiers-grid">
-            ${subTiers.map(t => `
-              <div class="tier-card" style="border-color: ${t.cor}">
-                <img src="${t.icone}" alt="${t.tier}" loading="lazy">
-                <div class="tier-nome">${t.tier}</div>
-                <div class="tier-desc">${t.nome}</div>
-              </div>
-            `).join('')}
+        `;
+      });
+      html += `</div></div>`;
+    }
+    if (subTiers.length) {
+      html += `<div class="tier-categoria"><h3>⚔️ SubTiers</h3><div class="tiers-grid">`;
+      subTiers.forEach(t => {
+        html += `
+          <div class="tier-card" style="border-color: ${t.cor}">
+            <img src="${t.icone}" alt="${t.tier}" loading="lazy">
+            <div class="tier-nome">${t.tier}</div>
+            <div class="tier-desc">${t.nome}</div>
           </div>
-        </div>`;
+        `;
+      });
+      html += `</div></div>`;
+    }
+    tiersContainer.innerHTML = html;
+  }
+
+  // Conquistas
+  const conquistasLista = document.getElementById('conquistas-lista');
+  if (conquistasLista && siteData.conquistas) {
+    conquistasLista.innerHTML = siteData.conquistas.itens.map(item => 
+      `<li>${item}</li>`
+    ).join('');
+    // Esconde os itens inicialmente para animação
+    conquistasLista.querySelectorAll('li').forEach(li => {
+      li.style.opacity = '0';
+      li.style.transform = 'translateX(-20px)';
+      li.style.transition = 'all 0.5s ease';
+    });
+  }
+
+  // Atualiza o contador de online
+  const onlineCount = document.querySelector('.online-count');
+  if (onlineCount && siteData.contato) {
+    onlineCount.textContent = siteData.contato.onlineCount || 12;
+  }
+
+  // ===== ATIVAR ANIMAÇÕES =====
+  setTimeout(() => {
+    animateNumbers();
+    animateCards();
+  }, 500);
+
+  // ===== SCROLL SUAVE =====
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
-      
-      container.innerHTML = html;
-    }
-  }
+    });
+  });
 
-  // ---------- CONQUISTAS ----------
-  const conquistasSection = document.getElementById('conquistas');
-  if (conquistasSection) {
-    conquistasSection.querySelector('h2').textContent = siteData.conquistas.titulo;
-    const lista = conquistasSection.querySelector('.conquistas-lista');
-    if (lista) {
-      lista.innerHTML = siteData.conquistas.itens.map(item => `<li>${item}</li>`).join('');
-    }
-  }
+  // ===== PARALLAX NO HERO =====
+  window.addEventListener('scroll', () => {
+    const hero = document.querySelector('.hero');
+    const scrolled = window.pageYOffset;
+    hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+  });
 
-  // ---------- CONTATO ----------
-  const contatoSection = document.getElementById('contato');
-  if (contatoSection) {
-    contatoSection.querySelector('h2').textContent = siteData.contato.titulo;
-    contatoSection.querySelector('.contato-texto').textContent = siteData.contato.texto;
-    const links = contatoSection.querySelector('.contato-links');
-    if (links) {
-      links.innerHTML = `
-        <a href="${siteData.contato.discord}" target="_blank" class="btn discord">💬 Discord</a>
-        <a href="${siteData.contato.instagram}" target="_blank" class="btn instagram">📸 Instagram</a>
-        <a href="mailto:${siteData.contato.email}" class="btn email">📧 Email</a>
-      `;
-    }
-  }
+  // ===== EFEITO DE GLOW NOS CARDS AO PASSAR O MOUSE =====
+  document.querySelectorAll('.membro-card, .tier-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-10px) scale(1.02)';
+      this.style.boxShadow = '0 20px 60px rgba(204, 0, 0, 0.3)';
+    });
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+      this.style.boxShadow = 'none';
+    });
+  });
 
-  // ---------- RODAPÉ ----------
-  const rodape = document.querySelector('footer p');
-  if (rodape) {
-    rodape.textContent = siteData.rodape.texto;
-  }
-
+  console.log('🔥 SixOnTop carregado com sucesso!');
 });
