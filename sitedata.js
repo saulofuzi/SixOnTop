@@ -66,13 +66,13 @@ const siteData = {
     titulo: "Tiers da SixOnTop",
     subtitulo: "Nossos níveis no PvP",
     lista: [
-      { tier: "HT4", nome: "High Tier 4", icone: "imagens/crystal.png", cor: "#ff0000", categoria: "MCTier" },
-      { tier: "LT3", nome: "Sword", icone: "imagens/statella.png", cor: "#cc0000", categoria: "MCTier" },
-      { tier: "LT4", nome: "Low Tier 4", icone: "imagens/axe.png", cor: "#990000", categoria: "MCTier" },
-      { tier: "Dima Crystal", nome: "Dima Crystal", icone: "imagens/dimacrystal.png", cor: "#ff1a1a", categoria: "SubTier" },
-      { tier: "Creeper", nome: "Creeper", icone: "imagens/Creeper.png", cor: "#ff3333", categoria: "SubTier" },
-      { tier: "Elytra", nome: "Elytra", icone: "imagens/Elytra.png", cor: "#ff4d4d", categoria: "SubTier" },
-      { tier: "Vazio", nome: "Vazio", icone: "imagens/tier-ferro.png", cor: "#ff6666", categoria: "SubTier" },
+      { tier: "HT4 Sword", nome: "S6yx", icone: "imagens/membro1.png", cor: "#ff0000", categoria: "MCTier" },
+      { tier: "LT3 Sword", nome: "Statella", icone: "imagens/statella.png", cor: "#cc0000", categoria: "MCTier" },
+      { tier: "LT4 Crystal", nome: "S6yx", icone: "imagens/membro1.png", cor: "#990000", categoria: "MCTier" },
+      { tier: "HT4 D.Crystal", nome: "mntdino", icone: "imagens/dino.png", cor: "#ff1a1a", categoria: "SubTier" },
+      { tier: "HT5 Creeper", nome: "Statella", icone: "imagens/statella.png", cor: "#ff3333", categoria: "SubTier" },
+      { tier: "LT3 Elytra", nome: "Statella", icone: "imagens/statella.png", cor: "#ff4d4d", categoria: "SubTier" },
+      { tier: "Vazio", nome: "Vazio", icone: "imagens/bow.png", cor: "#ff6666", categoria: "SubTier" },
       { tier: "Vazio", nome: "Vazio", icone: "imagens/tier-pedra.png", cor: "#ff8080", categoria: "SubTier" }
     ]
   },
