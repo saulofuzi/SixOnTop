@@ -33,76 +33,85 @@ const siteData = {
     ]
   },
 
-  // ---------- MEMBROS ----------
+  // ---------- MEMBROS ATUAIS ----------
   membrosAtuais: {
     titulo: "Membros",
     lista: [
-      { nome: "teste", cargo: " teste", foto: "imagens/membro6.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro7.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro8.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro8.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro9.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro10.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro11.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro12.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro13.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro14.png" },
-      { nome: "teste", cargo: "teste", foto: "imagens/membro15.png" }
+      { nome: "Jogador1", cargo: "PvP", foto: "imagens/membro6.png" },
+      { nome: "Jogador2", cargo: "Construtor", foto: "imagens/membro7.png" },
+      { nome: "Jogador3", cargo: "Redstone", foto: "imagens/membro8.png" },
+      { nome: "Jogador4", cargo: "Arqueiro", foto: "imagens/membro9.png" },
+      { nome: "Jogador5", cargo: "Suporte", foto: "imagens/membro10.png" },
+      { nome: "Jogador6", cargo: "Explorador", foto: "imagens/membro11.png" },
+      { nome: "Jogador7", cargo: "PvP", foto: "imagens/membro12.png" },
+      { nome: "Jogador8", cargo: "Base Builder", foto: "imagens/membro13.png" },
+      { nome: "Jogador9", cargo: "Farming", foto: "imagens/membro14.png" },
+      { nome: "Jogador10", cargo: "Trainee", foto: "imagens/membro15.png" }
     ]
   },
 
-  // ---------- TIERS DE PVP ----------
+  // ---------- TIERS DE PVP (MCTIERS & SUBTIERS) ----------
   tiers: {
     titulo: "Tiers da SixOnTop",
     subtitulo: "Nossos níveis no PvP",
     lista: [
+      // ===== MCTIERS =====
       {
         tier: "LT3",
         nome: "Lendário Tier 3",
         icone: "imagens/tier-lt3.png",
-        cor: "#FFD700" // dourado (opcional, pode usar para borda/fundo)
+        cor: "#FFD700",
+        categoria: "MCTier"
       },
       {
         tier: "LT2",
         nome: "Lendário Tier 2",
         icone: "imagens/tier-lt2.png",
-        cor: "#C0C0C0" // prateado
+        cor: "#C0C0C0",
+        categoria: "MCTier"
       },
       {
         tier: "LT1",
         nome: "Lendário Tier 1",
         icone: "imagens/tier-lt1.png",
-        cor: "#CD7F32" // bronze
+        cor: "#CD7F32",
+        categoria: "MCTier"
       },
+      // ===== SUBTIERS =====
       {
         tier: "Crystal",
         nome: "Crystal (Topo)",
         icone: "imagens/tier-crystal.png",
-        cor: "#00FFFF" // ciano
+        cor: "#00FFFF",
+        categoria: "SubTier"
       },
       {
         tier: "Diamante",
         nome: "Diamante",
         icone: "imagens/tier-diamante.png",
-        cor: "#00BFFF"
+        cor: "#4FC3F7",
+        categoria: "SubTier"
       },
       {
         tier: "Ouro",
         nome: "Ouro",
         icone: "imagens/tier-ouro.png",
-        cor: "#FFD700"
+        cor: "#FFD700",
+        categoria: "SubTier"
       },
       {
         tier: "Ferro",
         nome: "Ferro",
         icone: "imagens/tier-ferro.png",
-        cor: "#A9A9A9"
+        cor: "#A9A9A9",
+        categoria: "SubTier"
       },
       {
         tier: "Pedra",
         nome: "Pedra",
         icone: "imagens/tier-pedra.png",
-        cor: "#808080"
+        cor: "#808080",
+        categoria: "SubTier"
       }
     ]
   },
@@ -111,15 +120,15 @@ const siteData = {
   conquistas: {
     titulo: "Conquistas da SIX",
     itens: [
-      "🏆 O Clã com mais vitorias em guerras no servidor 'Minezinho' (30+) ",
-      "⚔️ O Clã vencedor da Primeira LIGA DE CLÃ do servidor 'Minezinho' "
+      "🏆 O Clã com mais vitorias em guerras no servidor 'Minezinho' (30+)",
+      "⚔️ O Clã vencedor da Primeira LIGA DE CLÃ do servidor 'Minezinho'"
     ]
   },
 
   // ---------- REDES SOCIAIS / CONTATO ----------
   contato: {
     titulo: "Quer entrar na Six?",
-    texto: "Venha ser membro da SixOnTop, clique no link abaixo !",
+    texto: "Venha ser membro da SixOnTop, clique no link abaixo!",
     discord: "https://discord.gg/eEMaUAhSC2",
     instagram: "https://instagram.com/sixontop",
     email: "sixontop@gmail.com"
