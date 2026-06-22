@@ -1,65 +1,100 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SixOnTop – Clã Minecraft</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SixOnTop – Clã Minecraft</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ====== HERO ====== -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1 id="hero-titulo"></h1>
-      <p id="hero-subtitulo"></p>
-    </div>
-  </section>
 
-  <!-- ====== SOBRE ====== -->
-  <section id="sobre" class="sobre">
-    <div class="container">
-      <h2 id="sobre-titulo"></h2>
-      <div id="sobre-texto" class="sobre-texto"></div>
-      <img id="sobre-imagem" src="" alt="Sobre o clã" class="sobre-img" />
-    </div>
-  </section>
+    <!-- ===== HERO / CABEÇALHO ===== -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>SixOnTop</h1>
+            <p>Uma nova jornada</p>
+            <a href="#contato" class="btn">Entre no clã</a>
+        </div>
+    </header>
 
-  <!-- ====== MEMBROS ====== -->
-  <section id="membros" class="membros">
-    <div class="container">
-      <h2 id="membros-titulo"></h2>
-      <div id="membros-lista" class="membros-grid"></div>
-    </div>
-  </section>
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2>Quem somos?</h2>
+            <div class="sobre-content">
+                <div class="historia">
+                    <p>Somos a antiga SEGA 666, um clã criado originalmente por Black_KiritoXz e continuado por saulofuzis</p>
+                    <p>Somos um clã de minecraft focado em PvP 1.9+.</p>
+                    <p>Um clã de amigos, e muita resenha !.</p>
+                </div>
+                <div class="sobre-img">
+                    <img src="imagens/sobre.jpg" alt="Sobre o clã">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ====== CONQUISTAS ====== -->
-  <section id="conquistas" class="conquistas">
-    <div class="container">
-      <h2 id="conquistas-titulo"></h2>
-      <ul id="conquistas-lista" class="conquistas-lista"></ul>
-    </div>
-  </section>
+    <!-- ===== FUNDADORES ===== -->
+    <section id="membros" class="section bg-dark">
+        <div class="container">
+            <h2>Fundadores</h2>
+            <div class="membros-grid">
+                <!-- Gerado pelo JavaScript -->
+            </div>
+        </div>
+    </section>
 
-  <!-- ====== CONTATO ====== -->
-  <section id="contato" class="contato">
-    <div class="container">
-      <h2 id="contato-titulo"></h2>
-      <p id="contato-texto"></p>
-      <div class="contato-links">
-        <a id="contato-discord" href="#" target="_blank">Discord</a>
-        <a id="contato-instagram" href="#" target="_blank">Instagram</a>
-        <a id="contato-email" href="#">E-mail</a>
-      </div>
-    </div>
-  </section>
+    <!-- ===== MEMBROS ATUAIS ===== -->
+    <section id="membros-atuais" class="section">
+        <div class="container">
+            <h2>Membros</h2>
+            <div class="membros-grid">
+                <!-- Gerado pelo JavaScript -->
+            </div>
+        </div>
+    </section>
 
-  <!-- ====== RODAPÉ ====== -->
-  <footer>
-    <p id="rodape-texto"></p>
-  </footer>
+    <!-- ===== TIERS DE PVP ===== -->
+    <section id="tiers" class="section bg-dark">
+        <div class="container">
+            <h2>Tiers da SixOnTop</h2>
+            <p class="subtitulo">Nossos níveis no PvP</p>
+            <div class="tiers-container">
+                <!-- Gerado pelo JavaScript -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Carrega os dados e o script -->
-  <script src="dados.js"></script>
-  <script src="script.js"></script>
+    <!-- ===== CONQUISTAS ===== -->
+    <section id="conquistas" class="section">
+        <div class="container">
+            <h2>Conquistas da SIX</h2>
+            <ul class="conquistas-lista">
+                <!-- Gerado pelo JavaScript -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section id="contato" class="section bg-dark">
+        <div class="container">
+            <h2>Quer entrar na Six?</h2>
+            <p class="contato-texto">Venha ser membro da SixOnTop, clique no link abaixo!</p>
+            <div class="contato-links">
+                <!-- Gerado pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer>
+        <div class="container">
+            <p>© 2024 SixOnTop – O terror da EyE</p>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="siteData.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
