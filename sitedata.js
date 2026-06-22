@@ -42,7 +42,7 @@ const siteData = {
       { nome: "CamaraJooJ", cargo: "Dupador", foto: "imagens/camara.png" },
       { nome: "Ryannz", cargo: "Elite", foto: "imagens/ryan.png" },
       { nome: "cremild0", cargo: "Elite", foto: "imagens/cremildo.png" },
-      { nome: "Snoopao", cargo: "Membro", foto: "imagens/snoopao.png" },
+      { nome: "Statella", cargo: "Elite", foto: "imagens/statella.png" },
       { nome: "Duck", cargo: "Membro", foto: "imagens/duck.png" },
       { nome: "Uriel", cargo: "Elite", foto: "imagens/uriel.png" },
       { nome: "Usovo", cargo: "Membro", foto: "imagens/usovo.png" },
@@ -58,6 +58,7 @@ const siteData = {
       { nome: "sou_home", cargo: "Membro", foto: "imagens/souhome.png" },
       { nome: "swy", cargo: "Membro", foto: "imagens/swy.png" },
       { nome: "ᴏP𝚍𝚛ᴢIɴSn7𝔵", cargo: "Aliado", foto: "imagens/pdr.png" }
+      { nome: "Snoopao", cargo: "Membro", foto: "imagens/snoopao.png" },
     ]
   },
 
