@@ -38,16 +38,26 @@ const siteData = {
   membrosAtuais: {
     titulo: "Membros",
     lista: [
-      { nome: "Jogador1", cargo: "PvP Master", foto: "imagens/membro6.png" },
-      { nome: "Jogador2", cargo: "Construtor", foto: "imagens/membro7.png" },
-      { nome: "Jogador3", cargo: "Redstone", foto: "imagens/membro8.png" },
-      { nome: "Jogador4", cargo: "Arqueiro", foto: "imagens/membro9.png" },
-      { nome: "Jogador5", cargo: "Suporte", foto: "imagens/membro10.png" },
-      { nome: "Jogador6", cargo: "Explorador", foto: "imagens/membro11.png" },
-      { nome: "Jogador7", cargo: "PvP Elite", foto: "imagens/membro12.png" },
-      { nome: "Jogador8", cargo: "Base Builder", foto: "imagens/membro13.png" },
-      { nome: "Jogador9", cargo: "Farming", foto: "imagens/membro14.png" },
-      { nome: "Jogador10", cargo: "Trainee", foto: "imagens/membro15.png" }
+      { nome: "mnitdino", cargo: "Elite PvP", foto: "imagens/dino.png" },
+      { nome: "CamaraJooJ", cargo: "Dupador", foto: "imagens/camara.png" },
+      { nome: "Ryannz", cargo: "Elite", foto: "imagens/ryan.png" },
+      { nome: "cremild0", cargo: "Elite", foto: "imagens/cremildo.png" },
+      { nome: "Snoopao", cargo: "Membro", foto: "imagens/snoopao.png" },
+      { nome: "Duck", cargo: "Membro", foto: "imagens/duck.png" },
+      { nome: "Uriel", cargo: "Elite", foto: "imagens/uriel.png" },
+      { nome: "Usovo", cargo: "Membro", foto: "imagens/usovo.png" },
+      { nome: "Zeusx", cargo: "Membro", foto: "imagens/zeus.png" },
+      { nome: "LznLuiz", cargo: "Membro", foto: "imagens/luiz.png" }
+      { nome: "Alazevedo", cargo: "Membro", foto: "imagens/azevedo.png" },
+      { nome: "FenixH4X", cargo: "Membro", foto: "imagens/Fenix.png" 
+      { nome: "IaLouça", cargo: "Membro", foto: "imagens/louça.png" },
+      { nome: "MARECHAL_01", cargo: "Membro", foto: "imagens/marechal.png" },
+      { nome: "S6fz", cargo: "Elite", foto: "imagens/s6fz.png" },
+      { nome: "IMENINAINOCENTE", cargo: "Membro", foto: "imagens/jessica.png" },
+      { nome: "tecks", cargo: "Membro", foto: "imagens/tecks.png" },
+      { nome: "sou_home", cargo: "Membro", foto: "imagens/souhome.png" },
+      { nome: "swy", cargo: "Membro", foto: "imagens/swy.png" },
+      { nome: "ᴏP𝚍𝚛ᴢIɴSn7𝔵", cargo: "Aliado", foto: "imagens/pdr.png" },
     ]
   },
 
@@ -56,14 +66,14 @@ const siteData = {
     titulo: "Tiers da SixOnTop",
     subtitulo: "Nossos níveis no PvP",
     lista: [
-      { tier: "LT3", nome: "Lendário Tier 3", icone: "imagens/tier-lt3.png", cor: "#ff0000", categoria: "MCTier" },
-      { tier: "LT2", nome: "Lendário Tier 2", icone: "imagens/tier-lt2.png", cor: "#cc0000", categoria: "MCTier" },
-      { tier: "LT1", nome: "Lendário Tier 1", icone: "imagens/tier-lt1.png", cor: "#990000", categoria: "MCTier" },
-      { tier: "Crystal", nome: "Crystal", icone: "imagens/tier-crystal.png", cor: "#ff1a1a", categoria: "SubTier" },
-      { tier: "Diamante", nome: "Diamante", icone: "imagens/tier-diamante.png", cor: "#ff3333", categoria: "SubTier" },
-      { tier: "Ouro", nome: "Ouro", icone: "imagens/tier-ouro.png", cor: "#ff4d4d", categoria: "SubTier" },
-      { tier: "Ferro", nome: "Ferro", icone: "imagens/tier-ferro.png", cor: "#ff6666", categoria: "SubTier" },
-      { tier: "Pedra", nome: "Pedra", icone: "imagens/tier-pedra.png", cor: "#ff8080", categoria: "SubTier" }
+      { tier: "HT4", nome: "High Tier 4", icone: "imagens/crystal.png", cor: "#ff0000", categoria: "MCTier" },
+      { tier: "LT3", nome: "Low Tier 3", icone: "imagens/sword.png", cor: "#cc0000", categoria: "MCTier" },
+      { tier: "LT4", nome: "Low Tier 4", icone: "imagens/axe.png", cor: "#990000", categoria: "MCTier" },
+      { tier: "Dima Crystal", nome: "Dima Crystal", icone: "imagens/dimacrystal.png", cor: "#ff1a1a", categoria: "SubTier" },
+      { tier: "Creeper", nome: "Creeper", icone: "imagens/Creeper.png", cor: "#ff3333", categoria: "SubTier" },
+      { tier: "Elytra", nome: "Elytra", icone: "imagens/Elytra.png", cor: "#ff4d4d", categoria: "SubTier" },
+      { tier: "Vazio", nome: "Vazio", icone: "imagens/tier-ferro.png", cor: "#ff6666", categoria: "SubTier" },
+      { tier: "Vazio", nome: "Vazio", icone: "imagens/tier-pedra.png", cor: "#ff8080", categoria: "SubTier" }
     ]
   },
 
@@ -82,10 +92,10 @@ const siteData = {
   galeria: {
     titulo: "Galeria do Clã",
     imagens: [
-      { src: "imagens/cla-print.jpg", legenda: "Clã completo", destaque: true },
-      { src: "imagens/cla-print2.jpg", legenda: "Momento épico" },
-      { src: "imagens/cla-print3.jpg", legenda: "Guerra" },
-      { src: "imagens/cla-print4.jpg", legenda: "Celebração" }
+      { src: "imagens/cla.jpg", legenda: "Six On Top", destaque: true },
+      { src: "imagens/cla2.jpg", legenda: "Vazio" },
+      { src: "imagens/cla3.jpg", legenda: "Vazio" },
+      { src: "imagens/cla4.jpg", legenda: "Vazio" }
     ]
   },
 
@@ -94,14 +104,14 @@ const siteData = {
     titulo: "Quer entrar na Six?",
     texto: "Venha ser membro da SixOnTop!",
     discord: "https://discord.gg/eEMaUAhSC2",
-    instagram: "https://instagram.com/sixontop",
+    instagram: "https://instagram.com/clasixontop",
     email: "sixontop@gmail.com",
-    onlineCount: 12
+    onlineCount: 67
   },
 
   // ---------- RODAPÉ ----------
   rodape: {
-    texto: "© 2024 SixOnTop – Feito com ❤️ e muito PvP"
+    texto: "© 2024 SixOnTop "
   }
 };
 
