@@ -67,7 +67,7 @@ const siteData = {
     subtitulo: "Nossos níveis no PvP",
     lista: [
       { tier: "HT4", nome: "High Tier 4", icone: "imagens/crystal.png", cor: "#ff0000", categoria: "MCTier" },
-      { tier: "LT3", nome: "Low Tier 3", icone: "imagens/sword.png", cor: "#cc0000", categoria: "MCTier" },
+      { tier: "LT3", nome: "Sword", icone: "imagens/statella.png", cor: "#cc0000", categoria: "MCTier" },
       { tier: "LT4", nome: "Low Tier 4", icone: "imagens/axe.png", cor: "#990000", categoria: "MCTier" },
       { tier: "Dima Crystal", nome: "Dima Crystal", icone: "imagens/dimacrystal.png", cor: "#ff1a1a", categoria: "SubTier" },
       { tier: "Creeper", nome: "Creeper", icone: "imagens/Creeper.png", cor: "#ff3333", categoria: "SubTier" },
