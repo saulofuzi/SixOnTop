@@ -1,5 +1,5 @@
 // =====================================================
-//  DADOS DO SITE – Edite somente este arquivo!
+//  DADOS DO SITE – sitedata.js
 // =====================================================
 
 const siteData = {
