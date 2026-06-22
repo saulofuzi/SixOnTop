@@ -16,22 +16,11 @@
             <h1>SixOnTop</h1>
             <div class="destaque">⚔️ SIX ⚔️</div>
             <p>Uma nova jornada começa agora</p>
-            <a href="#contato" class="btn">
-                <i class="fas fa-rocket"></i> Entre no Clã
-            </a>
+            <a href="#contato" class="btn"><i class="fas fa-rocket"></i> Entre no Clã</a>
             <div class="hero-stats">
-                <div class="stat">
-                    <span class="num" data-target="30">0</span>
-                    <span class="label">Guerras</span>
-                </div>
-                <div class="stat">
-                    <span class="num" data-target="15">0</span>
-                    <span class="label">Membros</span>
-                </div>
-                <div class="stat">
-                    <span class="num" data-target="5">0</span>
-                    <span class="label">Fundadores</span>
-                </div>
+                <div class="stat"><span class="num" data-target="30">0</span><span class="label">Guerras</span></div>
+                <div class="stat"><span class="num" data-target="15">0</span><span class="label">Membros</span></div>
+                <div class="stat"><span class="num" data-target="5">0</span><span class="label">Fundadores</span></div>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -59,9 +48,7 @@
                 </div>
                 <div class="sobre-img">
                     <img src="imagens/sobre.jpg" alt="Sobre o clã" onerror="this.style.display='none'" />
-                    <div class="img-overlay">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
+                    <div class="img-overlay"><i class="fas fa-play-circle"></i></div>
                 </div>
             </div>
         </div>
@@ -117,38 +104,26 @@
         <div class="container">
             <h2><i class="fas fa-envelope"></i> Quer entrar na Six?</h2>
             <p class="subtitulo">Venha fazer parte da nossa família</p>
-            
             <div class="contato-texto">
                 <p>Junte-se a nós e faça parte da melhor equipe de PvP!</p>
             </div>
-
             <div class="redes-sociais">
                 <a href="https://discord.gg/eEMaUAhSC2" target="_blank" class="rede-card discord">
                     <div class="rede-icon"><i class="fab fa-discord"></i></div>
-                    <div class="rede-info">
-                        <h4>Discord</h4>
-                        <p>Entre no nosso servidor</p>
-                    </div>
+                    <div class="rede-info"><h4>Discord</h4><p>Entre no nosso servidor</p></div>
                     <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
                 <a href="https://instagram.com/sixontop" target="_blank" class="rede-card instagram">
                     <div class="rede-icon"><i class="fab fa-instagram"></i></div>
-                    <div class="rede-info">
-                        <h4>Instagram</h4>
-                        <p>Nos siga no Instagram</p>
-                    </div>
+                    <div class="rede-info"><h4>Instagram</h4><p>Nos siga no Instagram</p></div>
                     <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
                 <a href="mailto:sixontop@gmail.com" class="rede-card email">
                     <div class="rede-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="rede-info">
-                        <h4>Email</h4>
-                        <p>sixontop@gmail.com</p>
-                    </div>
+                    <div class="rede-info"><h4>Email</h4><p>sixontop@gmail.com</p></div>
                     <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
-
             <div class="contato-bonus">
                 <div class="status-online">
                     <span class="pulse-dot"></span>
@@ -163,10 +138,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>SixOnTop</h3>
-                    <p>O terror da EyE</p>
-                </div>
+                <div class="footer-logo"><h3>SixOnTop</h3><p>O terror da EyE</p></div>
                 <div class="footer-links">
                     <a href="#home"><i class="fas fa-home"></i> Início</a>
                     <a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a>
@@ -179,13 +151,237 @@
                     <a href="mailto:sixontop@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2024 SixOnTop – Feito com ❤️ e muito PvP</p>
-            </div>
+            <div class="footer-bottom"><p>© 2024 SixOnTop – Feito com ❤️ e muito PvP</p></div>
         </div>
     </footer>
 
-    <script src="siteData.js"></script>
-    <script src="script.js"></script>
+    <!-- ===== SCRIPTS (TUDO JUNTO) ===== -->
+    <script>
+    // =====================================================
+    //  DADOS DO SITE
+    // =====================================================
+    const siteData = {
+        cabecalho: {
+            titulo: "SixOnTop",
+            subtitulo: "Uma nova jornada",
+            imagemHeroi: "imagens/hero.jpg"
+        },
+        sobre: {
+            titulo: "Quem somos?",
+            historia: [
+                "Somos a antiga SEGA 666, um clã criado originalmente por Black_KiritoXz e continuado por saulofuzis",
+                "Somos um clã de minecraft focado em PvP 1.9+.",
+                "Um clã de amigos, e muita resenha !."
+            ],
+            tags: ["⚔️ PvP", "🎮 Minecraft", "🤝 Amizade", "🔥 Resenha"],
+            imagemSobre: "imagens/sobre.jpg"
+        },
+        fundadores: {
+            titulo: "Fundadores",
+            lista: [
+                { nome: "Saulofuzi", cargo: "Fundador", foto: "imagens/membro1.png" },
+                { nome: "Suzly", cargo: "Lider", foto: "imagens/membro2.png" },
+                { nome: "uCarlsoXz_", cargo: "Sub Lider", foto: "imagens/membro3.png" },
+                { nome: "uJosca", cargo: "Gerente", foto: "imagens/membro4.png" },
+                { nome: "Black_KiritoXz", cargo: "Mobile kkk", foto: "imagens/membro5.png" }
+            ]
+        },
+        membrosAtuais: {
+            titulo: "Membros",
+            lista: [
+                { nome: "Jogador1", cargo: "PvP Master", foto: "imagens/membro6.png" },
+                { nome: "Jogador2", cargo: "Construtor", foto: "imagens/membro7.png" },
+                { nome: "Jogador3", cargo: "Redstone", foto: "imagens/membro8.png" },
+                { nome: "Jogador4", cargo: "Arqueiro", foto: "imagens/membro9.png" },
+                { nome: "Jogador5", cargo: "Suporte", foto: "imagens/membro10.png" },
+                { nome: "Jogador6", cargo: "Explorador", foto: "imagens/membro11.png" },
+                { nome: "Jogador7", cargo: "PvP Elite", foto: "imagens/membro12.png" },
+                { nome: "Jogador8", cargo: "Base Builder", foto: "imagens/membro13.png" },
+                { nome: "Jogador9", cargo: "Farming", foto: "imagens/membro14.png" },
+                { nome: "Jogador10", cargo: "Trainee", foto: "imagens/membro15.png" }
+            ]
+        },
+        tiers: {
+            titulo: "Tiers da SixOnTop",
+            subtitulo: "Nossos níveis no PvP",
+            lista: [
+                { tier: "LT3", nome: "Lendário Tier 3", icone: "imagens/tier-lt3.png", cor: "#ff0000", categoria: "MCTier" },
+                { tier: "LT2", nome: "Lendário Tier 2", icone: "imagens/tier-lt2.png", cor: "#cc0000", categoria: "MCTier" },
+                { tier: "LT1", nome: "Lendário Tier 1", icone: "imagens/tier-lt1.png", cor: "#990000", categoria: "MCTier" },
+                { tier: "Crystal", nome: "Crystal", icone: "imagens/tier-crystal.png", cor: "#ff1a1a", categoria: "SubTier" },
+                { tier: "Diamante", nome: "Diamante", icone: "imagens/tier-diamante.png", cor: "#ff3333", categoria: "SubTier" },
+                { tier: "Ouro", nome: "Ouro", icone: "imagens/tier-ouro.png", cor: "#ff4d4d", categoria: "SubTier" },
+                { tier: "Ferro", nome: "Ferro", icone: "imagens/tier-ferro.png", cor: "#ff6666", categoria: "SubTier" },
+                { tier: "Pedra", nome: "Pedra", icone: "imagens/tier-pedra.png", cor: "#ff8080", categoria: "SubTier" }
+            ]
+        },
+        conquistas: {
+            titulo: "Conquistas da SIX",
+            itens: [
+                "🏆 O Clã com mais vitórias em guerras no servidor 'Minezinho' (30+)",
+                "⚔️ O Clã vencedor da Primeira LIGA DE CLÃ do servidor 'Minezinho'",
+                "🔥 Melhor clã de PvP 1.9+ da temporada",
+                "👑 Clã mais temido do servidor"
+            ]
+        },
+        galeria: {
+            titulo: "Galeria do Clã",
+            imagens: [
+                { src: "imagens/cla-print.jpg", legenda: "Clã completo", destaque: true },
+                { src: "imagens/cla-print2.jpg", legenda: "Momento épico" },
+                { src: "imagens/cla-print3.jpg", legenda: "Guerra" },
+                { src: "imagens/cla-print4.jpg", legenda: "Celebração" }
+            ]
+        },
+        contato: {
+            titulo: "Quer entrar na Six?",
+            texto: "Venha ser membro da SixOnTop!",
+            discord: "https://discord.gg/eEMaUAhSC2",
+            instagram: "https://instagram.com/sixontop",
+            email: "sixontop@gmail.com",
+            onlineCount: 12
+        },
+        rodape: {
+            texto: "© 2024 SixOnTop – Feito com ❤️ e muito PvP"
+        }
+    };
+
+    // =====================================================
+    //  SCRIPT PRINCIPAL
+    // =====================================================
+    document.addEventListener('DOMContentLoaded', function() {
+
+        console.log('🔥 SixOnTop carregando...');
+
+        // ===== PREENCHER FUNDADORES =====
+        const fundadoresGrid = document.getElementById('fundadores-grid');
+        if (fundadoresGrid && siteData.fundadores) {
+            fundadoresGrid.innerHTML = siteData.fundadores.lista.map(membro => `
+                <div class="membro-card">
+                    <img src="${membro.foto}" alt="${membro.nome}" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect fill=%22%231a0000%22 width=%22120%22 height=%22120%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2240%22 font-family=%22Arial%22%3E👤%3C/text%3E%3C/svg%3E'">
+                    <h3>${membro.nome}</h3>
+                    <p>${membro.cargo}</p>
+                    <div class="membro-badge">👑</div>
+                </div>
+            `).join('');
+            console.log('✅ Fundadores carregados:', siteData.fundadores.lista.length);
+        }
+
+        // ===== PREENCHER MEMBROS =====
+        const membrosGrid = document.getElementById('membros-grid');
+        if (membrosGrid && siteData.membrosAtuais) {
+            membrosGrid.innerHTML = siteData.membrosAtuais.lista.map(membro => `
+                <div class="membro-card">
+                    <img src="${membro.foto}" alt="${membro.nome}" 
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Crect fill=%22%231a0000%22 width=%22120%22 height=%22120%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2240%22 font-family=%22Arial%22%3E👤%3C/text%3E%3C/svg%3E'">
+                    <h3>${membro.nome}</h3>
+                    <p>${membro.cargo}</p>
+                </div>
+            `).join('');
+            console.log('✅ Membros carregados:', siteData.membrosAtuais.lista.length);
+        }
+
+        // ===== PREENCHER TIERS =====
+        const tiersContainer = document.getElementById('tiers-container');
+        if (tiersContainer && siteData.tiers) {
+            const mcTiers = siteData.tiers.lista.filter(t => t.categoria === 'MCTier');
+            const subTiers = siteData.tiers.lista.filter(t => t.categoria === 'SubTier');
+            
+            let html = '';
+            if (mcTiers.length) {
+                html += `<div class="tier-categoria"><h3>⭐ MCTiers</h3><div class="tiers-grid">`;
+                mcTiers.forEach(t => {
+                    html += `
+                        <div class="tier-card" style="border-color: ${t.cor}">
+                            <img src="${t.icone}" alt="${t.tier}" 
+                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22%231a0000%22 width=%2280%22 height=%2280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2230%22 font-family=%22Arial%22%3E⭐%3C/text%3E%3C/svg%3E'">
+                            <div class="tier-nome">${t.tier}</div>
+                            <div class="tier-desc">${t.nome}</div>
+                        </div>
+                    `;
+                });
+                html += `</div></div>`;
+            }
+            if (subTiers.length) {
+                html += `<div class="tier-categoria"><h3>⚔️ SubTiers</h3><div class="tiers-grid">`;
+                subTiers.forEach(t => {
+                    html += `
+                        <div class="tier-card" style="border-color: ${t.cor}">
+                            <img src="${t.icone}" alt="${t.tier}" 
+                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Crect fill=%22%231a0000%22 width=%2280%22 height=%2280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2230%22 font-family=%22Arial%22%3E⚔️%3C/text%3E%3C/svg%3E'">
+                            <div class="tier-nome">${t.tier}</div>
+                            <div class="tier-desc">${t.nome}</div>
+                        </div>
+                    `;
+                });
+                html += `</div></div>`;
+            }
+            tiersContainer.innerHTML = html;
+            console.log('✅ Tiers carregados:', siteData.tiers.lista.length);
+        }
+
+        // ===== PREENCHER CONQUISTAS =====
+        const conquistasLista = document.getElementById('conquistas-lista');
+        if (conquistasLista && siteData.conquistas) {
+            conquistasLista.innerHTML = siteData.conquistas.itens.map(item => 
+                `<li>${item}</li>`
+            ).join('');
+            console.log('✅ Conquistas carregadas:', siteData.conquistas.itens.length);
+        }
+
+        // ===== PREENCHER GALERIA =====
+        const galeriaGrid = document.getElementById('galeria-grid');
+        if (galeriaGrid && siteData.galeria) {
+            galeriaGrid.innerHTML = siteData.galeria.imagens.map(img => `
+                <div class="galeria-item ${img.destaque ? 'principal' : ''}">
+                    <img src="${img.src}" alt="${img.legenda}" onerror="this.style.display='none'">
+                    <div class="galeria-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>${img.legenda}</span>
+                    </div>
+                </div>
+            `).join('');
+            console.log('✅ Galeria carregada:', siteData.galeria.imagens.length);
+        }
+
+        // ===== ANIMAÇÕES =====
+        // Animar números
+        const counters = document.querySelectorAll('.num');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            let current = 0;
+            const increment = Math.ceil(target / 40);
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = current;
+                }
+            }, 50);
+        });
+
+        // Animar cards
+        document.querySelectorAll('.membro-card, .tier-card, .rede-card').forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100 * index);
+        });
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        console.log('✅ SixOnTop carregado com sucesso!');
+    });
+    </script>
 </body>
 </html>
