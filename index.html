@@ -1,87 +1,206 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SixOnTop – Clã Minecraft</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-    <!-- ===== HERO / CABEÇALHO ===== -->
-    <header class="hero">
+    <!-- ===== HERO ===== -->
+    <header class="hero" id="home">
         <div class="hero-content">
+            <span class="badge">🔥 Clã Oficial</span>
             <h1>SixOnTop</h1>
-            <p>Uma nova jornada</p>
-            <a href="#contato" class="btn">Entre no clã</a>
+            <div class="destaque">⚔️ SIX ⚔️</div>
+            <p>Uma nova jornada começa agora</p>
+            <a href="#contato" class="btn">
+                <i class="fas fa-rocket"></i> Entre no Clã
+            </a>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="num" data-target="30">0</span>
+                    <span class="label">Guerras</span>
+                </div>
+                <div class="stat">
+                    <span class="num" data-target="15">0</span>
+                    <span class="label">Membros</span>
+                </div>
+                <div class="stat">
+                    <span class="num" data-target="5">0</span>
+                    <span class="label">Fundadores</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </header>
 
     <!-- ===== SOBRE ===== -->
-    <section id="sobre" class="section">
+    <section id="sobre" class="section bg-dark">
         <div class="container">
-            <h2>Quem somos?</h2>
+            <h2><i class="fas fa-users"></i> Quem somos?</h2>
+            <p class="subtitulo">Conheça a história da SixOnTop</p>
             <div class="sobre-content">
                 <div class="historia">
                     <p>Somos a antiga SEGA 666, um clã criado originalmente por Black_KiritoXz e continuado por saulofuzis</p>
                     <p>Somos um clã de minecraft focado em PvP 1.9+.</p>
                     <p>Um clã de amigos, e muita resenha !.</p>
+                    <div class="sobre-tags">
+                        <span class="tag">⚔️ PvP</span>
+                        <span class="tag">🎮 Minecraft</span>
+                        <span class="tag">🤝 Amizade</span>
+                        <span class="tag">🔥 Resenha</span>
+                    </div>
                 </div>
                 <div class="sobre-img">
-                    <img src="imagens/sobre.jpg" alt="Sobre o clã">
+                    <img src="imagens/sobre.jpg" alt="Sobre o clã" />
+                    <div class="img-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== FUNDADORES ===== -->
+    <section id="fundadores" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-crown"></i> Fundadores</h2>
+            <p class="subtitulo">Os criadores da SixOnTop</p>
+            <div class="membros-grid" id="fundadores-grid">
+                <!-- Gerado pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MEMBROS ===== -->
     <section id="membros" class="section bg-dark">
         <div class="container">
-            <h2>Fundadores</h2>
-            <div class="membros-grid">
+            <h2><i class="fas fa-user-group"></i> Membros</h2>
+            <p class="subtitulo">Nossa equipe atual</p>
+            <div class="membros-grid" id="membros-grid">
                 <!-- Gerado pelo JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- ===== MEMBROS ATUAIS ===== -->
-    <section id="membros-atuais" class="section">
+    <!-- ===== TIERS ===== -->
+    <section id="tiers" class="section bg-light">
         <div class="container">
-            <h2>Membros</h2>
-            <div class="membros-grid">
-                <!-- Gerado pelo JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TIERS DE PVP ===== -->
-    <section id="tiers" class="section bg-dark">
-        <div class="container">
-            <h2>Tiers da SixOnTop</h2>
+            <h2><i class="fas fa-ranking-star"></i> Tiers da Six</h2>
             <p class="subtitulo">Nossos níveis no PvP</p>
-            <div class="tiers-container">
+            <div class="tiers-container" id="tiers-container">
                 <!-- Gerado pelo JavaScript -->
             </div>
         </div>
     </section>
 
     <!-- ===== CONQUISTAS ===== -->
-    <section id="conquistas" class="section">
+    <section id="conquistas" class="section bg-dark">
         <div class="container">
-            <h2>Conquistas da SIX</h2>
-            <ul class="conquistas-lista">
+            <h2><i class="fas fa-trophy"></i> Conquistas</h2>
+            <p class="subtitulo">Nossas vitórias</p>
+            <ul class="conquistas-lista" id="conquistas-lista">
                 <!-- Gerado pelo JavaScript -->
             </ul>
         </div>
     </section>
 
-    <!-- ===== CONTATO ===== -->
+    <!-- ===== GALERIA / PRINT DO CLÃ ===== -->
+    <section id="galeria" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-image"></i> Galeria do Clã</h2>
+            <p class="subtitulo">Nossos momentos juntos</p>
+            <div class="galeria-grid">
+                <div class="galeria-item principal">
+                    <img src="imagens/cla-print.jpg" alt="Print do clã todo junto" />
+                    <div class="galeria-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Clã completo</span>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="imagens/cla-print2.jpg" alt="Momento do clã" />
+                    <div class="galeria-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="imagens/cla-print3.jpg" alt="Momento do clã" />
+                    <div class="galeria-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="imagens/cla-print4.jpg" alt="Momento do clã" />
+                    <div class="galeria-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTATO / REDES SOCIAIS ===== -->
     <section id="contato" class="section bg-dark">
         <div class="container">
-            <h2>Quer entrar na Six?</h2>
-            <p class="contato-texto">Venha ser membro da SixOnTop, clique no link abaixo!</p>
-            <div class="contato-links">
-                <!-- Gerado pelo JavaScript -->
+            <h2><i class="fas fa-envelope"></i> Quer entrar na Six?</h2>
+            <p class="subtitulo">Venha fazer parte da nossa família</p>
+            
+            <div class="contato-texto">
+                <p>Junte-se a nós e faça parte da melhor equipe de PvP!</p>
+            </div>
+
+            <div class="redes-sociais">
+                <!-- DISCORD -->
+                <a href="https://discord.gg/eEMaUAhSC2" target="_blank" class="rede-card discord">
+                    <div class="rede-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <div class="rede-info">
+                        <h4>Discord</h4>
+                        <p>Entre no nosso servidor</p>
+                    </div>
+                    <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- INSTAGRAM -->
+                <a href="https://instagram.com/sixontop" target="_blank" class="rede-card instagram">
+                    <div class="rede-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="rede-info">
+                        <h4>Instagram</h4>
+                        <p>Nos siga no Instagram</p>
+                    </div>
+                    <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- EMAIL -->
+                <a href="mailto:sixontop@gmail.com" class="rede-card email">
+                    <div class="rede-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="rede-info">
+                        <h4>Email</h4>
+                        <p>sixontop@gmail.com</p>
+                    </div>
+                    <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <div class="contato-bonus">
+                <div class="status-online">
+                    <span class="pulse-dot"></span>
+                    <span>Jogadores online agora</span>
+                    <span class="online-count">12</span>
+                </div>
             </div>
         </div>
     </section>
@@ -89,7 +208,26 @@
     <!-- ===== RODAPÉ ===== -->
     <footer>
         <div class="container">
-            <p>© 2024 SixOnTop – O terror da EyE</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>SixOnTop</h3>
+                    <p>O terror da EyE</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home"><i class="fas fa-home"></i> Início</a>
+                    <a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a>
+                    <a href="#membros"><i class="fas fa-users"></i> Membros</a>
+                    <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://discord.gg/eEMaUAhSC2" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="https://instagram.com/sixontop" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:sixontop@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 SixOnTop – Feito com ❤️ e muito PvP</p>
+            </div>
         </div>
     </footer>
 
