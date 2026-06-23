@@ -38,6 +38,7 @@ const siteData = {
   membrosAtuais: {
     titulo: "Membros",
     lista: [
+      { nome: "EduUuTriste", cargo: "Melhor Staff", foto: "imagens/edu.png" },
       { nome: "mnitdino", cargo: "Elite PvP", foto: "imagens/dino.png" },
       { nome: "CamaraJooJ", cargo: "Dupador", foto: "imagens/camara.png" },
       { nome: "Ryannz", cargo: "Elite", foto: "imagens/ryan.png" },
