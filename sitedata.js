@@ -70,7 +70,7 @@ const siteData = {
       nome: "Statella",
       cargo: "Elite",
       foto: "imagens/statella.png",
-      motivo: "🏆 Melhor PvP do mês !",
+      motivo: "🏆 Melhor PvP player do mês !",
       destaque: "🔥 "
     }
   },
