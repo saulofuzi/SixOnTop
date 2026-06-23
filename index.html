@@ -18,8 +18,8 @@
             <p>Uma nova jornada começa agora</p>
             <a href="#contato" class="btn"><i class="fas fa-rocket"></i> Entre no Clã</a>
             <div class="hero-stats">
-                <div class="stat"><span class="num" data-target="30+">0</span><span class="label">Guerras</span></div>
-                <div class="stat"><span class="num" data-target="15">0</span><span class="label">Membros</span></div>
+                <div class="stat"><span class="num" data-target="30">0</span><span class="label">Guerras</span></div>
+                <div class="stat"><span class="num" data-target="20">0</span><span class="label">Membros</span></div>
                 <div class="stat"><span class="num" data-target="5">0</span><span class="label">Fundadores</span></div>
             </div>
         </div>
@@ -72,8 +72,19 @@
         </div>
     </section>
 
+    <!-- ===== MEMBRO DO MÊS ===== -->
+    <section id="membro-mes" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-star"></i> Membro do Mês</h2>
+            <p class="subtitulo">O membro mais foda do mês!</p>
+            <div class="membro-mes-container" id="membro-mes-container">
+                <!-- Gerado pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- ===== TIERS ===== -->
-    <section id="tiers" class="section bg-light">
+    <section id="tiers" class="section bg-dark">
         <div class="container">
             <h2><i class="fas fa-ranking-star"></i> Tiers da Six</h2>
             <p class="subtitulo">Nossos níveis no PvP</p>
@@ -82,7 +93,7 @@
     </section>
 
     <!-- ===== CONQUISTAS ===== -->
-    <section id="conquistas" class="section bg-dark">
+    <section id="conquistas" class="section bg-light">
         <div class="container">
             <h2><i class="fas fa-trophy"></i> Conquistas</h2>
             <p class="subtitulo">Nossas vitórias</p>
@@ -90,7 +101,26 @@
         </div>
     </section>
 
-    <!-- ===== GALERIA ===== -->
+    <!-- ===== MÍDIAS (PRINTS E VÍDEOS) ===== -->
+    <section id="midias" class="section bg-dark">
+        <div class="container">
+            <h2><i class="fas fa-photo-video"></i> Mídias</h2>
+            <p class="subtitulo">Prints e vídeos do clã</p>
+            
+            <!-- Filtros -->
+            <div class="midias-filtros">
+                <button class="filtro-btn active" data-filtro="todos">📸 Todos</button>
+                <button class="filtro-btn" data-filtro="imagem">🖼️ Imagens</button>
+                <button class="filtro-btn" data-filtro="video">🎬 Vídeos</button>
+            </div>
+
+            <div class="midias-grid" id="midias-grid">
+                <!-- Gerado pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERIA (ANTIGA) ===== -->
     <section id="galeria" class="section bg-light">
         <div class="container">
             <h2><i class="fas fa-image"></i> Galeria do Clã</h2>
@@ -143,6 +173,7 @@
                     <a href="#home"><i class="fas fa-home"></i> Início</a>
                     <a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a>
                     <a href="#membros"><i class="fas fa-users"></i> Membros</a>
+                    <a href="#midias"><i class="fas fa-photo-video"></i> Mídias</a>
                     <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
                 </div>
                 <div class="footer-social">
