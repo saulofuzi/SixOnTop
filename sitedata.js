@@ -44,7 +44,7 @@ const siteData = {
       { nome: "cremild0", cargo: "Elite", foto: "imagens/cremildo.png" },
       { nome: "Snoopao", cargo: "Membro", foto: "imagens/snoopao.png" },
       { nome: "Statella", cargo: "Elite", foto: "imagens/statella.png" },
-      { nome: "Uriel", cargo: "Elite", foto: "imagens/uriel.png" },
+      { nome: "Uriel", cargo: "Capitão", foto: "imagens/uriel.png" },
       { nome: "Usovo", cargo: "Membro", foto: "imagens/usovo.png" },
       { nome: "OPdrzINSn7x", cargo: "Aliado", foto: "imagens/pdr.png" },
       { nome: "LznLuiz", cargo: "Membro", foto: "imagens/luiz.png" },
@@ -64,7 +64,7 @@ const siteData = {
   // ---------- TIERS DE PVP ----------
   tiers: {
     titulo: "Tiers da SixOnTop",
-    subtitulo: "Nossos níveis no PvP",
+    subtitulo: "Nossos Tiers de PvP",
     lista: [
       { tier: "HT4 Sword", nome: "S6yx", icone: "imagens/membro1.png", cor: "#ff0000", categoria: "MCTier" },
       { tier: "LT3 Sword", nome: "Statella", icone: "imagens/statella.png", cor: "#cc0000", categoria: "MCTier" },
