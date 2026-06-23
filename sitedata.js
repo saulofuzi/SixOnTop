@@ -44,7 +44,7 @@ const siteData = {
       { nome: "cremild0", cargo: "Elite", foto: "imagens/cremildo.png" },
       { nome: "Snoopao", cargo: "Membro", foto: "imagens/snoopao.png" },
       { nome: "Statella", cargo: "Elite", foto: "imagens/statella.png" },
-      { nome: "Uriel", cargo: "Capitão", foto: "imagens/uriel.png" },
+      { nome: "Uriel", cargo: "Elite", foto: "imagens/uriel.png" },
       { nome: "Usovo", cargo: "Membro", foto: "imagens/usovo.png" },
       { nome: "OPdrzINSn7x", cargo: "Aliado", foto: "imagens/pdr.png" },
       { nome: "LznLuiz", cargo: "Membro", foto: "imagens/luiz.png" },
@@ -61,10 +61,24 @@ const siteData = {
     ]
   },
 
+  // ---------- MEMBRO DO MÊS ----------
+  membroMes: {
+    titulo: "Membro do Mês",
+    subtitulo: "O membro mais foda do mês!",
+    mes: "Junho 2024",
+    membro: {
+      nome: "Statella",
+      cargo: "Elite",
+      foto: "imagens/statella.png",
+      motivo: "🏆 Melhor PvP do mês com 25 vitórias consecutivas!",
+      destaque: "🔥 Lendário"
+    }
+  },
+
   // ---------- TIERS DE PVP ----------
   tiers: {
     titulo: "Tiers da SixOnTop",
-    subtitulo: "Nossos Tiers de PvP",
+    subtitulo: "Nossos níveis no PvP",
     lista: [
       { tier: "HT4 Sword", nome: "S6yx", icone: "imagens/membro1.png", cor: "#ff0000", categoria: "MCTier" },
       { tier: "LT3 Sword", nome: "Statella", icone: "imagens/statella.png", cor: "#cc0000", categoria: "MCTier" },
@@ -85,6 +99,64 @@ const siteData = {
       "⚔️ O Clã vencedor da Primeira LIGA DE CLÃ do servidor 'Minezinho'",
       "🔥 Melhor clã de PvP 1.9+ da temporada",
       "👑 Clã mais temido do servidor"
+    ]
+  },
+
+  // ---------- MÍDIAS (PRINTS E VÍDEOS) ----------
+  midias: {
+    titulo: "Mídias",
+    subtitulo: "Prints e vídeos do clã",
+    lista: [
+      // ===== IMAGENS =====
+      { 
+        tipo: "imagem",
+        src: "imagens/cla.jpg",
+        legenda: "Clã completo reunido",
+        destaque: true
+      },
+      { 
+        tipo: "imagem",
+        src: "imagens/cla2.jpg",
+        legenda: "Guerra épica"
+      },
+      { 
+        tipo: "imagem",
+        src: "imagens/cla3.jpg",
+        legenda: "Momento de resenha"
+      },
+      { 
+        tipo: "imagem",
+        src: "imagens/cla4.jpg",
+        legenda: "Celebração"
+      },
+      
+      // ===== VÍDEOS (YOUTUBE) =====
+      { 
+        tipo: "video",
+        tipoVideo: "youtube",
+        id: "dQw4w9WgXcQ", // Coloque o ID do vídeo do YouTube
+        legenda: "Melhores momentos do clã"
+      },
+      { 
+        tipo: "video",
+        tipoVideo: "youtube",
+        id: "VIDEO_ID_AQUI",
+        legenda: "Guerra contra o clã rival"
+      },
+      
+      // ===== VÍDEOS (MP4 LOCAL) =====
+      { 
+        tipo: "video",
+        tipoVideo: "mp4",
+        src: "imagens/clan-video.mp4",
+        legenda: "Gameplay do clã"
+      },
+      { 
+        tipo: "video",
+        tipoVideo: "mp4",
+        src: "imagens/clan-video2.mp4",
+        legenda: "PvP intenso"
+      }
     ]
   },
 
