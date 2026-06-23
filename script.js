@@ -42,6 +42,34 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('✅ Membros carregados:', siteData.membrosAtuais.lista.length);
   }
 
+  // ===== MEMBRO DO MÊS =====
+  const membroMesContainer = document.getElementById('membro-mes-container');
+  if (membroMesContainer && siteData.membroMes) {
+    const m = siteData.membroMes.membro;
+    membroMesContainer.innerHTML = `
+      <div class="membro-mes-card">
+        <div class="membro-mes-badge">⭐ MÊS DE ${siteData.membroMes.mes}</div>
+        <div class="membro-mes-content">
+          <div class="membro-mes-foto">
+            <img src="${m.foto}" alt="${m.nome}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Crect fill=%22%231a0000%22 width=%22150%22 height=%22150%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23cc0000%22 font-size=%2250%22 font-family=%22Arial%22%3E⭐%3C/text%3E%3C/svg%3E'">
+            <div class="membro-mes-destaque">${m.destaque || '🏆 Destaque'}</div>
+          </div>
+          <div class="membro-mes-info">
+            <h3>${m.nome}</h3>
+            <p class="membro-mes-cargo">${m.cargo}</p>
+            <p class="membro-mes-motivo">${m.motivo || 'Membro foda do mês!'}</p>
+            <div class="membro-mes-stats">
+              <span><i class="fas fa-trophy"></i> 25 vitórias</span>
+              <span><i class="fas fa-fire"></i> 10+ kills</span>
+              <span><i class="fas fa-star"></i> MVP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    console.log('✅ Membro do mês carregado:', siteData.membroMes.membro.nome);
+  }
+
   // ===== TIERS =====
   const tiersContainer = document.getElementById('tiers-container');
   if (tiersContainer && siteData.tiers) {
@@ -89,6 +117,81 @@ document.addEventListener('DOMContentLoaded', function() {
     ).join('');
     console.log('✅ Conquistas carregadas:', siteData.conquistas.itens.length);
   }
+
+  // ===== MÍDIAS =====
+  const midiasGrid = document.getElementById('midias-grid');
+  if (midiasGrid && siteData.midias) {
+    midiasGrid.innerHTML = siteData.midias.lista.map(midia => {
+      let html = '';
+      
+      if (midia.tipo === 'imagem') {
+        html = `
+          <div class="midia-item imagem" data-tipo="imagem">
+            <img src="${midia.src}" alt="${midia.legenda}" loading="lazy" onerror="this.style.display='none'">
+            <div class="midia-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>${midia.legenda}</span>
+            </div>
+          </div>
+        `;
+      } else if (midia.tipo === 'video') {
+        if (midia.tipoVideo === 'youtube') {
+          html = `
+            <div class="midia-item video" data-tipo="video">
+              <div class="video-container">
+                <iframe 
+                  src="https://www.youtube.com/embed/${midia.id}" 
+                  title="${midia.legenda}"
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="midia-legenda">${midia.legenda}</div>
+            </div>
+          `;
+        } else if (midia.tipoVideo === 'mp4') {
+          html = `
+            <div class="midia-item video" data-tipo="video">
+              <video controls preload="metadata">
+                <source src="${midia.src}" type="video/mp4">
+                Seu navegador não suporta vídeos.
+              </video>
+              <div class="midia-legenda">${midia.legenda}</div>
+            </div>
+          `;
+        }
+      }
+      
+      return html;
+    }).join('');
+    console.log('✅ Mídias carregadas:', siteData.midias.lista.length);
+  }
+
+  // ===== FILTROS DAS MÍDIAS =====
+  const filtros = document.querySelectorAll('.filtro-btn');
+  filtros.forEach(filtro => {
+    filtro.addEventListener('click', function() {
+      // Remove active de todos
+      filtros.forEach(f => f.classList.remove('active'));
+      this.classList.add('active');
+      
+      const filtroTipo = this.dataset.filtro;
+      const midiasItems = document.querySelectorAll('.midia-item');
+      
+      midiasItems.forEach(item => {
+        if (filtroTipo === 'todos') {
+          item.style.display = 'block';
+        } else {
+          if (item.dataset.tipo === filtroTipo) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
 
   // ===== GALERIA =====
   const galeriaGrid = document.getElementById('galeria-grid');
@@ -145,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ===== ANIMAÇÃO DOS CARDS =====
   function animateCards() {
-    document.querySelectorAll('.membro-card, .tier-card, .rede-card').forEach((card, index) => {
+    document.querySelectorAll('.membro-card, .tier-card, .rede-card, .midia-item').forEach((card, index) => {
       setTimeout(() => {
         card.style.opacity = '1';
         card.style.transform = 'translateY(0)';
