@@ -65,20 +65,20 @@ const siteData = {
   membroMes: {
     titulo: "Membro do Mês",
     subtitulo: "O membro mais foda do mês!",
-    mes: "Junho 2024",
+    mes: "Junho 2026",
     membro: {
       nome: "Statella",
       cargo: "Elite",
       foto: "imagens/statella.png",
-      motivo: "🏆 Melhor PvP do mês com 25 vitórias consecutivas!",
-      destaque: "🔥 Lendário"
+      motivo: "🏆 Melhor PvP do mês !",
+      destaque: "🔥 "
     }
   },
 
   // ---------- TIERS DE PVP ----------
   tiers: {
     titulo: "Tiers da SixOnTop",
-    subtitulo: "Nossos níveis no PvP",
+    subtitulo: "Nossos Tiers de PvP",
     lista: [
       { tier: "HT4 Sword", nome: "S6yx", icone: "imagens/membro1.png", cor: "#ff0000", categoria: "MCTier" },
       { tier: "LT3 Sword", nome: "Statella", icone: "imagens/statella.png", cor: "#cc0000", categoria: "MCTier" },
@@ -111,23 +111,23 @@ const siteData = {
       { 
         tipo: "imagem",
         src: "imagens/cla.jpg",
-        legenda: "Clã completo reunido",
+        legenda: "Vazio",
         destaque: true
       },
       { 
         tipo: "imagem",
         src: "imagens/cla2.jpg",
-        legenda: "Guerra épica"
+        legenda: "Vazio"
       },
       { 
         tipo: "imagem",
         src: "imagens/cla3.jpg",
-        legenda: "Momento de resenha"
+        legenda: "Vazio"
       },
       { 
         tipo: "imagem",
         src: "imagens/cla4.jpg",
-        legenda: "Celebração"
+        legenda: "Vazio"
       },
       
       // ===== VÍDEOS (YOUTUBE) =====
@@ -135,13 +135,13 @@ const siteData = {
         tipo: "video",
         tipoVideo: "youtube",
         id: "dQw4w9WgXcQ", // Coloque o ID do vídeo do YouTube
-        legenda: "Melhores momentos do clã"
+        legenda: "kkkkk"
       },
       { 
         tipo: "video",
         tipoVideo: "youtube",
-        id: "VIDEO_ID_AQUI",
-        legenda: "Guerra contra o clã rival"
+        id: "M_V5JrN1150",
+        legenda: "Guerra Minezinho !"
       },
       
       // ===== VÍDEOS (MP4 LOCAL) =====
@@ -149,13 +149,13 @@ const siteData = {
         tipo: "video",
         tipoVideo: "mp4",
         src: "imagens/clan-video.mp4",
-        legenda: "Gameplay do clã"
+        legenda: "Vazio"
       },
       { 
         tipo: "video",
         tipoVideo: "mp4",
         src: "imagens/clan-video2.mp4",
-        legenda: "PvP intenso"
+        legenda: "Vazio"
       }
     ]
   },
