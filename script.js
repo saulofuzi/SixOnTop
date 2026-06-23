@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="membro-mes-cargo">${m.cargo}</p>
             <p class="membro-mes-motivo">${m.motivo || 'Membro foda do mês!'}</p>
             <div class="membro-mes-stats">
-              <span><i class="fas fa-trophy"></i> 25 vitórias</span>
-              <span><i class="fas fa-fire"></i> 10+ kills</span>
-              <span><i class="fas fa-star"></i> MVP</span>
+              <span><i class="fas fa-trophy"></i> Os melhores tiers</span>
+              <span><i class="fas fa-fire"></i> LT3</span>
+              <span><i class="fas fa-star"></i> Goat !</span>
             </div>
           </div>
         </div>
