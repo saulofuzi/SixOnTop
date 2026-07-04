@@ -126,6 +126,7 @@ img {
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 8px;
+    color: #fff;
 }
 
 .section-header p {
@@ -292,6 +293,7 @@ img {
     line-height: 1.1;
     margin-bottom: 16px;
     animation: fadeInUp 1s ease 0.2s both;
+    color: #fff;
 }
 
 .hero-title .gradient-text {
@@ -419,6 +421,7 @@ img {
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 12px;
+    color: #fff;
 }
 
 .info-card p {
@@ -461,6 +464,7 @@ img {
 .info-detail {
     font-size: 0.9rem;
     margin: 4px 0;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .badge {
@@ -512,6 +516,10 @@ img {
 /* ===== GALERIA DE IMAGENS ===== */
 .image-gallery {
     margin-top: 40px;
+}
+
+.image-gallery h3 {
+    color: #fff;
 }
 
 .gallery-grid {
@@ -588,6 +596,7 @@ img {
 .update-content h3 {
     font-size: 1.05rem;
     margin-bottom: 4px;
+    color: #fff;
 }
 
 .update-content h3 i {
@@ -623,7 +632,6 @@ img {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== SKINS DOS STAFFS (CORPO COMPLETO) ===== */
 .staff-skin {
     position: relative;
     width: 120px;
@@ -667,6 +675,7 @@ img {
     font-size: 1.2rem;
     font-weight: 700;
     margin-top: 4px;
+    color: #fff;
 }
 
 .staff-role {
@@ -730,6 +739,7 @@ img {
 .rule-text h4 {
     font-size: 1rem;
     font-weight: 700;
+    color: #fff;
 }
 
 .rule-text h4 i {
@@ -809,6 +819,7 @@ img {
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 6px;
+    color: #fff;
 }
 
 .news-body h3 i {
@@ -851,6 +862,7 @@ img {
     gap: 10px;
     font-size: 1.1rem;
     font-weight: 700;
+    color: #fff;
 }
 
 .footer-brand img {
