@@ -3,190 +3,384 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SixOnTop – Clã Minecraft</title>
+    <title>🐭 Minezinho Magis - Servidor Survival</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-    <!-- ===== HERO ===== -->
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <span class="badge">🔥 Clã Oficial</span>
-            <h1>SixOnTop</h1>
-            <div class="destaque">⚔️ SIX ⚔️</div>
-            <p>Uma nova jornada começa agora</p>
-            <a href="#contato" class="btn"><i class="fas fa-rocket"></i> Entre no Clã</a>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/40x40/FF6B35/FFFFFF?text=M" alt="Logo Minezinho" class="logo-img" />
+                <span class="logo-text">Minezinho</span>
+                <span class="logo-badge">Magis</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Início</a></li>
+                <li><a href="#informacoes">Informações</a></li>
+                <li><a href="#atualizacoes">Atualizações</a></li>
+                <li><a href="#staff">Staff</a></li>
+                <li><a href="#regras">Regras</a></li>
+                <li><a href="#novidades">Novidades</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HOME / HERO ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-badge">✨ Nova Temporada</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Minezinho</span> Magis
+            </h1>
+            <p class="hero-subtitle">
+                O Survival mais mágico da rede <strong>Minezinho</strong>!
+                <br />Venha construir, explorar e viver aventuras épicas.
+            </p>
+            <div class="hero-buttons">
+                <a href="#informacoes" class="btn btn-primary">
+                    🚀 Jogar Agora
+                </a>
+                <a href="https://discord.gg/minezinho" target="_blank" class="btn btn-discord">
+                    💬 Discord
+                </a>
+            </div>
             <div class="hero-stats">
-                <div class="stat"><span class="num" data-target="30">0</span><span class="label">Guerras</span></div>
-                <div class="stat"><span class="num" data-target="20">0</span><span class="label">Membros</span></div>
-                <div class="stat"><span class="num" data-target="5">0</span><span class="label">Fundadores</span></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="200">0</span>
+                    <span class="stat-label">Slots</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="1.21">1.21</span>
+                    <span class="stat-label">Versão</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="24">0</span>
+                    <span class="stat-label">Online Agora</span>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down"></i>
+            <span>↓</span>
         </div>
-    </header>
+    </section>
 
-    <!-- ===== SOBRE ===== -->
-    <section id="sobre" class="section bg-dark">
+    <!-- ==================== INFORMAÇÕES ==================== -->
+    <section class="section informacoes" id="informacoes">
         <div class="container">
-            <h2><i class="fas fa-users"></i> Quem somos?</h2>
-            <p class="subtitulo">Conheça a história da SixOnTop</p>
-            <div class="sobre-content">
-                <div class="historia">
-                    <p>Somos a antiga SEGA 666, um clã criado originalmente por Black_KiritoXz e continuado por saulofuzis</p>
-                    <p>Somos um clã de minecraft focado em PvP 1.9+.</p>
-                    <p>Um clã de amigos, e muita resenha !.</p>
-                    <div class="sobre-tags">
-                        <span class="tag">⚔️ PvP</span>
-                        <span class="tag">🎮 Minecraft</span>
-                        <span class="tag">🤝 Amizade</span>
-                        <span class="tag">🔥 Resenha</span>
+            <div class="section-header">
+                <span class="section-tag">📋 Sobre</span>
+                <h2>Informações do Servidor</h2>
+                <p>Tudo que você precisa saber para começar sua jornada</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🌍</div>
+                    <h3>IP do Servidor</h3>
+                    <div class="ip-box">
+                        <code>jogar.minezinho.com</code>
+                        <button class="copy-btn" data-copy="jogar.minezinho.com">📋</button>
+                    </div>
+                    <p class="info-detail"><strong>Java:</strong> jogar.minezinho.com</p>
+                    <p class="info-detail"><strong>Bedrock:</strong> jogar.minezinho.com <span class="badge">Porta 19132</span></p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">⚡</div>
+                    <h3>Versões</h3>
+                    <p><strong>Recomendada:</strong> 1.21.4</p>
+                    <p><strong>Compatível:</strong> 1.16.5 até a mais recente</p>
+                    <div class="warning-box">
+                        ⚠️ Versões abaixo de 1.21.4 podem ter funcionalidades limitadas
                     </div>
                 </div>
-                <div class="sobre-img">
-                    <img src="imagens/sobre.jpg" alt="Sobre o clã" onerror="this.style.display='none'" />
-                    <div class="img-overlay"><i class="fas fa-play-circle"></i></div>
+
+                <div class="info-card">
+                    <div class="info-icon">🎮</div>
+                    <h3>Modos de Jogo</h3>
+                    <ul class="info-list">
+                        <li>🏆 <strong>Survival</strong> – O clássico com um toque mágico</li>
+                        <li>⚔️ <strong>Skills (mcMMO)</strong> – Evolua suas habilidades</li>
+                        <li>🏰 <strong>Clãs e Guerras</strong> – Domine o mundo</li>
+                        <li>💰 <strong>Economia Dinâmica</strong> – Mercado vivo</li>
+                        <li>🎁 <strong>Caixas de Recompensas</strong> – Sorte todos os dias</li>
+                        <li>🐾 <strong>Pets</strong> – Seu companheiro fiel</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">💬</div>
+                    <h3>Comunidade</h3>
+                    <p>Faça parte da maior comunidade brasileira de Minecraft!</p>
+                    <a href="https://discord.gg/minezinho" target="_blank" class="btn btn-discord" style="margin-top: 12px;">
+                        💬 Entre no Discord
+                    </a>
+                    <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.7;">
+                        <strong>Membros:</strong> 31.500+ online
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ===== FUNDADORES ===== -->
-    <section id="fundadores" class="section bg-light">
-        <div class="container">
-            <h2><i class="fas fa-crown"></i> Fundadores</h2>
-            <p class="subtitulo">Os criadores da SixOnTop</p>
-            <div class="membros-grid" id="fundadores-grid"></div>
-        </div>
-    </section>
-
-    <!-- ===== MEMBROS ===== -->
-    <section id="membros" class="section bg-dark">
-        <div class="container">
-            <h2><i class="fas fa-user-group"></i> Membros</h2>
-            <p class="subtitulo">Nossa equipe atual</p>
-            <div class="membros-grid" id="membros-grid"></div>
-        </div>
-    </section>
-
-    <!-- ===== MEMBRO DO MÊS ===== -->
-    <section id="membro-mes" class="section bg-light">
-        <div class="container">
-            <h2><i class="fas fa-star"></i> Membro do Mês</h2>
-            <p class="subtitulo">O membro mais foda do mês!</p>
-            <div class="membro-mes-container" id="membro-mes-container">
-                <!-- Gerado pelo JavaScript -->
+            <!-- ===== IMAGENS EDITÁVEIS ===== -->
+            <div class="image-gallery">
+                <h3 style="text-align:center; margin-bottom: 20px;">📸 Galeria do Servidor</h3>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- As imagens aqui você pode substituir pelos links das suas imagens -->
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/400x250/2d2d44/FF6B35?text=Survival" alt="Survival" />
+                        <span class="gallery-label">Survival</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/400x250/2d2d44/FF6B35?text=Construções" alt="Construções" />
+                        <span class="gallery-label">Construções</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/400x250/2d2d44/FF6B35?text=Eventos" alt="Eventos" />
+                        <span class="gallery-label">Eventos</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/400x250/2d2d44/FF6B35?text=Comunidade" alt="Comunidade" />
+                        <span class="gallery-label">Comunidade</span>
+                    </div>
+                </div>
+                <p style="text-align:center; font-size:0.85rem; opacity:0.6; margin-top:12px;">
+                    💡 Substitua os links das imagens no HTML para colocar as suas
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- ===== TIERS ===== -->
-    <section id="tiers" class="section bg-dark">
+    <!-- ==================== ATUALIZAÇÕES ==================== -->
+    <section class="section atualizacoes" id="atualizacoes">
         <div class="container">
-            <h2><i class="fas fa-ranking-star"></i> Tiers da Six</h2>
-            <p class="subtitulo">Nossos níveis no PvP</p>
-            <div class="tiers-container" id="tiers-container"></div>
-        </div>
-    </section>
-
-    <!-- ===== CONQUISTAS ===== -->
-    <section id="conquistas" class="section bg-light">
-        <div class="container">
-            <h2><i class="fas fa-trophy"></i> Conquistas</h2>
-            <p class="subtitulo">Nossas vitórias</p>
-            <ul class="conquistas-lista" id="conquistas-lista"></ul>
-        </div>
-    </section>
-
-    <!-- ===== MÍDIAS (PRINTS E VÍDEOS) ===== -->
-    <section id="midias" class="section bg-dark">
-        <div class="container">
-            <h2><i class="fas fa-photo-video"></i> Mídias</h2>
-            <p class="subtitulo">Prints e vídeos do clã</p>
-            
-            <!-- Filtros -->
-            <div class="midias-filtros">
-                <button class="filtro-btn active" data-filtro="todos">📸 Todos</button>
-                <button class="filtro-btn" data-filtro="imagem">🖼️ Imagens</button>
-                <button class="filtro-btn" data-filtro="video">🎬 Vídeos</button>
+            <div class="section-header">
+                <span class="section-tag">📢 Novidades</span>
+                <h2>Atualizações do Servidor</h2>
+                <p>Fique por dentro de todas as novidades e melhorias</p>
             </div>
 
-            <div class="midias-grid" id="midias-grid">
-                <!-- Gerado pelo JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== GALERIA (ANTIGA) ===== -->
-    <section id="galeria" class="section bg-light">
-        <div class="container">
-            <h2><i class="fas fa-image"></i> Galeria do Clã</h2>
-            <p class="subtitulo">Nossos momentos juntos</p>
-            <div class="galeria-grid" id="galeria-grid"></div>
-        </div>
-    </section>
-
-    <!-- ===== CONTATO ===== -->
-    <section id="contato" class="section bg-dark">
-        <div class="container">
-            <h2><i class="fas fa-envelope"></i> Quer entrar na Six?</h2>
-            <p class="subtitulo">Venha fazer parte da nossa família</p>
-            <div class="contato-texto">
-                <p>Junte-se a nós e faça parte da melhor equipe de PvP!</p>
-            </div>
-            <div class="redes-sociais">
-                <a href="https://discord.gg/eEMaUAhSC2" target="_blank" class="rede-card discord">
-                    <div class="rede-icon"><i class="fab fa-discord"></i></div>
-                    <div class="rede-info"><h4>Discord</h4><p>Entre no nosso servidor</p></div>
-                    <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="https://instagram.com/clasixontop" target="_blank" class="rede-card instagram">
-                    <div class="rede-icon"><i class="fab fa-instagram"></i></div>
-                    <div class="rede-info"><h4>Instagram</h4><p>Nos siga no Instagram</p></div>
-                    <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="mailto:sixontop@gmail.com" class="rede-card email">
-                    <div class="rede-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="rede-info"><h4>Email</h4><p>sixontop@gmail.com</p></div>
-                    <span class="rede-arrow"><i class="fas fa-arrow-right"></i></span>
-                </a>
-            </div>
-            <div class="contato-bonus">
-                <div class="status-online">
-                    <span class="pulse-dot"></span>
-                    <span>Jogadores online agora</span>
-                    <span class="online-count">67</span>
+            <div class="updates-list" id="updatesList">
+                <!-- Exemplo de atualização - EDITÁVEL -->
+                <div class="update-item">
+                    <div class="update-date">15/01/2026</div>
+                    <div class="update-content">
+                        <h3>🎉 Nova Temporada Lançada!</h3>
+                        <p>Começamos a Temporada 3 com mundo novo, eventos especiais e recompensas exclusivas para os primeiros jogadores.</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">10/01/2026</div>
+                    <div class="update-content">
+                        <h3>⚔️ Sistema de Clãs Reformulado</h3>
+                        <p>Novas mecânicas de guerra, ranking de clãs e batalhas épicas. Prepare seu time!</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">05/01/2026</div>
+                    <div class="update-content">
+                        <h3>🐾 Novos Pets Disponíveis</h3>
+                        <p>Adicione 5 novas criaturas mágicas ao seu lado: Lobo Lunar, Raposa de Fogo, e mais!</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">28/12/2025</div>
+                    <div class="update-content">
+                        <h3>🎄 Evento de Natal</h3>
+                        <p>O evento de Natal foi um sucesso! Agradecemos a todos que participaram. Em breve mais eventos.</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="admin-actions">
+                <button class="btn btn-outline" id="addUpdateBtn">➕ Adicionar Atualização</button>
+                <span style="font-size:0.8rem; opacity:0.5;">(Clique para editar as atualizações existentes)</span>
+            </div>
         </div>
     </section>
 
-    <!-- ===== RODAPÉ ===== -->
-    <footer>
+    <!-- ==================== STAFF ==================== -->
+    <section class="section staff" id="staff">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">👑 Equipe</span>
+                <h2>Staff do Servidor</h2>
+                <p>Conheça quem está por trás do Minezinho Magis</p>
+            </div>
+
+            <div class="staff-grid" id="staffGrid">
+                <!-- EDITÁVEL: Adicione ou remova membros da staff -->
+                <div class="staff-card">
+                    <div class="staff-avatar">👑</div>
+                    <h4>Fulano</h4>
+                    <span class="staff-role">Dono</span>
+                    <p>Fundador do Minezinho e criador da rede.</p>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-avatar">⚡</div>
+                    <h4>Ciclano</h4>
+                    <span class="staff-role">Administrador</span>
+                    <p>Gerencia o servidor e organiza eventos.</p>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-avatar">🛡️</div>
+                    <h4>Beltrano</h4>
+                    <span class="staff-role">Moderador</span>
+                    <p>Garante que as regras sejam cumpridas.</p>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-avatar">🌟</div>
+                    <h4>Fulana</h4>
+                    <span class="staff-role">Helper</span>
+                    <p>Ajuda novos jogadores e tira dúvidas.</p>
+                </div>
+            </div>
+
+            <div class="admin-actions">
+                <button class="btn btn-outline" id="addStaffBtn">➕ Adicionar Staff</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== REGRAS ==================== -->
+    <section class="section regras" id="regras">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📜 Código</span>
+                <h2>Regras do Servidor</h2>
+                <p>Para manter a diversão e o respeito entre todos</p>
+            </div>
+
+            <div class="rules-container" id="rulesContainer">
+                <!-- EDITÁVEL: Adicione ou remova regras -->
+                <div class="rule-item">
+                    <span class="rule-number">01</span>
+                    <div class="rule-text">
+                        <h4>Respeito Acima de Tudo</h4>
+                        <p>Trate todos com respeito. Sem preconceito, bullying ou comportamento tóxico.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">02</span>
+                    <div class="rule-text">
+                        <h4>Sem Hacks ou Exploits</h4>
+                        <p>O uso de hacks, cheats ou qualquer tipo de exploit resultará em banimento permanente.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">03</span>
+                    <div class="rule-text">
+                        <h4>Construção Responsável</h4>
+                        <p>Não construa perto da Spawn sem autorização. Respeite as áreas de outros jogadores.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">04</span>
+                    <div class="rule-text">
+                        <h4>PvP Permitido com Consentimento</h4>
+                        <p>PvP é permitido apenas com consentimento de ambas as partes, exceto em áreas designadas.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">05</span>
+                    <div class="rule-text">
+                        <h4>Chat em Português</h4>
+                        <p>Use o português no chat geral para que todos possam participar da conversa.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">06</span>
+                    <div class="rule-text">
+                        <h4>Divirta-se!</h4>
+                        <p>Acima de tudo, divirta-se e faça novos amigos! Essa é a essência do Minezinho.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-actions">
+                <button class="btn btn-outline" id="addRuleBtn">➕ Adicionar Regra</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NOVIDADES ==================== -->
+    <section class="section novidades" id="novidades">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🔥 Destaque</span>
+                <h2>Novidades</h2>
+                <p>O que está pegando fogo no Minezinho Magis</p>
+            </div>
+
+            <div class="news-grid" id="newsGrid">
+                <!-- EDITÁVEL: Adicione suas novidades -->
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/500x280/2d2d44/FF6B35?text=Evento+Semanal" alt="Evento" />
+                        <span class="news-tag">Evento</span>
+                    </div>
+                    <div class="news-body">
+                        <h3>🏆 Campeonato de Construção</h3>
+                        <p>Todo sábado às 20h. Tema: "Castelos Mágicos". Participe e ganhe prêmios exclusivos!</p>
+                        <span class="news-date">📅 Próximo: 18/01/2026</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/500x280/2d2d44/FF6B35?text=Novo+Update" alt="Update" />
+                        <span class="news-tag">Update</span>
+                    </div>
+                    <div class="news-body">
+                        <h3>⚡ Update 2.0.1</h3>
+                        <p>Correções de bugs, otimização de performance e novos itens mágicos adicionados ao jogo.</p>
+                        <span class="news-date">📅 Lançado: 14/01/2026</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/500x280/2d2d44/FF6B35?text=Comunidade" alt="Comunidade" />
+                        <span class="news-tag">Comunidade</span>
+                    </div>
+                    <div class="news-body">
+                        <h3>🎉 30.000 Membros!</h3>
+                        <p>Alcançamos 30.000 membros no Discord! Agradecemos a todos que fazem parte dessa comunidade incrível.</p>
+                        <span class="news-date">📅 10/01/2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-actions">
+                <button class="btn btn-outline" id="addNewsBtn">➕ Adicionar Novidade</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo"><h3>SixOnTop</h3><p>O terror da EyE</p></div>
+                <div class="footer-brand">
+                    <img src="https://via.placeholder.com/40x40/FF6B35/FFFFFF?text=M" alt="Minezinho" />
+                    <span>Minezinho Magis</span>
+                </div>
                 <div class="footer-links">
-                    <a href="#home"><i class="fas fa-home"></i> Início</a>
-                    <a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a>
-                    <a href="#membros"><i class="fas fa-users"></i> Membros</a>
-                    <a href="#midias"><i class="fas fa-photo-video"></i> Mídias</a>
-                    <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+                    <a href="https://discord.gg/minezinho" target="_blank">💬 Discord</a>
+                    <a href="https://www.instagram.com/minezinhoservidor" target="_blank">📸 Instagram</a>
+                    <a href="https://www.minezinho.com" target="_blank">🌐 Site Oficial</a>
                 </div>
-                <div class="footer-social">
-                    <a href="https://discord.gg/eEMaUAhSC2" target="_blank"><i class="fab fa-discord"></i></a>
-                    <a href="https://instagram.com/clasixontop" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:sixontop@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
+                <p class="footer-copy">© 2026 Minezinho. Todos os direitos reservados. 🐭</p>
             </div>
-            <div class="footer-bottom"><p>© 2024 SixOnTop</p></div>
         </div>
     </footer>
 
-    <script src="sitedata.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
