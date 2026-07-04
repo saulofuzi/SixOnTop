@@ -326,12 +326,6 @@ img {
     height: 40px;
     border-radius: 10px;
     object-fit: cover;
-    animation: spinLogo 10s linear infinite;
-}
-
-@keyframes spinLogo {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 .logo-text {
@@ -1178,7 +1172,6 @@ img {
     width: 36px;
     height: 36px;
     border-radius: 8px;
-    animation: spinLogo 10s linear infinite;
 }
 
 .footer-links {
