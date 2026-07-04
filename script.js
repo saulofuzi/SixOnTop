@@ -175,7 +175,7 @@ document.getElementById('addRuleBtn').addEventListener('click', () => {
     rulesContainer.appendChild(newRule);
 });
 
-// ===== ADICIONAR NOVIDADE =====
+// ===== ADICIONAR NOVIDADE (COM IMAGEM LOCAL) =====
 document.getElementById('addNewsBtn').addEventListener('click', () => {
     const title = prompt('Digite o título da novidade:');
     if (!title) return;
@@ -185,13 +185,26 @@ document.getElementById('addNewsBtn').addEventListener('click', () => {
     if (!date) return;
     const tag = prompt('Digite a tag (ex: Evento, Update, Comunidade):');
     if (!tag) return;
+    
+    // Escolher imagem da pasta imagens
+    const imageOptions = {
+        'Evento': 'imagens/eventos.jpg',
+        'Update': 'imagens/survival.jpg',
+        'Comunidade': 'imagens/comunidade.jpg',
+        'Construções': 'imagens/construcoes.jpg'
+    };
+    
+    let imagePath = 'imagens/survival.jpg'; // imagem padrão
+    if (imageOptions[tag]) {
+        imagePath = imageOptions[tag];
+    }
 
     const newsGrid = document.getElementById('newsGrid');
     const newNews = document.createElement('div');
     newNews.className = 'news-card';
     newNews.innerHTML = `
         <div class="news-image">
-            <img src="https://via.placeholder.com/500x280/2d2d44/9B59B6?text=${encodeURIComponent(tag)}" alt="${tag}" />
+            <img src="${imagePath}" alt="${tag}" />
             <span class="news-tag" style="background: #9B59B6;">${tag}</span>
         </div>
         <div class="news-body">
