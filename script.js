@@ -52,10 +52,10 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const text = btn.getAttribute('data-copy');
         navigator.clipboard.writeText(text).then(() => {
-            const originalText = btn.textContent;
-            btn.textContent = '✅';
+            const originalIcon = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check" style="color: #2ECC71;"></i>';
             setTimeout(() => {
-                btn.textContent = originalText;
+                btn.innerHTML = originalIcon;
             }, 2000);
         });
     });
