@@ -12,6 +12,9 @@
 </head>
 <body>
 
+    <!-- ==================== PARTICULAS MAGICAS ==================== -->
+    <div class="particles-container" id="particles"></div>
+
     <!-- ==================== NAVBAR ==================== -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
@@ -38,6 +41,12 @@
     <!-- ==================== HOME / HERO ==================== -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
         <div class="container hero-content">
             <div class="hero-badge"><i class="fas fa-star"></i> Nova Temporada</div>
             <h1 class="hero-title">
@@ -48,19 +57,19 @@
                 <br />Venha construir, explorar e viver aventuras épicas.
             </p>
             <div class="hero-buttons">
-                <a href="#informacoes" class="btn btn-primary">
+                <a href="#informacoes" class="btn btn-primary pulse">
                     <i class="fas fa-rocket"></i> Jogar Agora
                 </a>
-                <a href="https://discord.gg/minezinho" target="_blank" class="btn btn-discord">
+                <a href="https://discord.gg/minezinho" target="_blank" class="btn btn-discord pulse-delay">
                     <i class="fab fa-discord"></i> Discord
                 </a>
             </div>
             <div class="hero-stats">
-                <div class="stat">
+                <div class="stat floating">
                     <span class="stat-number" data-target="1.21+">1.21+</span>
                     <span class="stat-label"><i class="fas fa-code-branch"></i> Versão</span>
                 </div>
-                <div class="stat">
+                <div class="stat floating-delay">
                     <span class="stat-number" data-target="24">0</span>
                     <span class="stat-label"><i class="fas fa-circle" style="color: #2ECC71; font-size: 0.6rem;"></i> Online Agora</span>
                 </div>
@@ -164,29 +173,6 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- ===== GALERIA DE IMAGENS ===== -->
-            <div class="image-gallery">
-                <h3 style="text-align:center; margin-bottom: 20px; color: #fff;"><i class="fas fa-images"></i> Galeria do Servidor</h3>
-                <div class="gallery-grid" id="galleryGrid">
-                    <div class="gallery-item">
-                        <img src="imagens/survival.jpg" alt="Survival" />
-                        <span class="gallery-label"><i class="fas fa-tree"></i> Survival</span>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="imagens/construcoes.jpg" alt="Construções" />
-                        <span class="gallery-label"><i class="fas fa-building"></i> Construções</span>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="imagens/eventos.jpg" alt="Eventos" />
-                        <span class="gallery-label"><i class="fas fa-calendar-star"></i> Eventos</span>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="imagens/comunidade.jpg" alt="Comunidade" />
-                        <span class="gallery-label"><i class="fas fa-heart"></i> Comunidade</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -239,7 +225,7 @@
         </div>
     </section>
 
-    <!-- ==================== STAFF (COM SKINS E DISCORD) ==================== -->
+    <!-- ==================== STAFF ==================== -->
     <section class="section staff" id="staff">
         <div class="container">
             <div class="section-header">
@@ -249,7 +235,6 @@
             </div>
 
             <div class="staff-grid" id="staffGrid">
-                <!-- ===== STAFF 1 - Taks ===== -->
                 <div class="staff-card">
                     <div class="staff-skin">
                         <img src="https://mc-heads.net/body/Takxs/120" alt="Skin do Taks" />
@@ -265,7 +250,6 @@
                     </div>
                 </div>
 
-                <!-- ===== STAFF 2 - EduTriste ===== -->
                 <div class="staff-card">
                     <div class="staff-skin">
                         <img src="https://mc-heads.net/body/EduUuTriste/120" alt="Skin do EduTriste" />
@@ -281,7 +265,6 @@
                     </div>
                 </div>
 
-                <!-- ===== STAFF 3 - Apoph1s ===== -->
                 <div class="staff-card">
                     <div class="staff-skin">
                         <img src="https://mc-heads.net/body/Apoph1s/120" alt="Skin do Apoph1s" />
