@@ -1,19 +1,20 @@
-/* ===== STAFF SKINS ===== */
+/* ===== STAFF SKINS - CORPO INTEIRO ===== */
 .staff-skin {
     position: relative;
     width: 120px;
-    height: 120px;
+    height: 160px; /* Aumentei a altura para caber o corpo */
     margin: 0 auto 16px;
-    border-radius: 50%;
+    border-radius: 16px; /* Bordas arredondadas para o corpo */
     overflow: hidden;
     border: 3px solid rgba(155, 89, 182, 0.3);
     transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .staff-skin img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Mantém a proporção da skin */
     display: block;
 }
 
@@ -26,8 +27,8 @@
 .skin-glow {
     position: absolute;
     inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(155, 89, 182, 0.2), transparent 70%);
+    border-radius: 16px;
+    background: radial-gradient(circle at 30% 30%, rgba(155, 89, 182, 0.15), transparent 70%);
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -37,15 +38,10 @@
     opacity: 1;
 }
 
-/* Avatar alternativo caso a skin não carregue */
-.staff-avatar {
-    display: none;
-}
-
-/* Ajuste no grid para acomodar as skins */
+/* Ajuste no grid para acomodar o corpo maior */
 .staff-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 32px;
     max-width: 960px;
     margin: 0 auto;
@@ -55,7 +51,7 @@
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
-    padding: 28px 20px;
+    padding: 28px 20px 24px;
     text-align: center;
     transition: all 0.3s ease;
 }
