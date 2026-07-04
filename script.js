@@ -1,3 +1,23 @@
+// ===== PARTICULAS MAGICAS =====
+function createParticles() {
+    const container = document.getElementById('particles');
+    const colors = ['#9B59B6', '#2ECC71', '#7B2FBE', '#27AE60', '#8E44AD'];
+    
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.width = (Math.random() * 4 + 2) + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particle.style.animationDelay = (Math.random() * 10) + 's';
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.opacity = Math.random() * 0.5 + 0.2;
+        container.appendChild(particle);
+    }
+}
+createParticles();
+
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.getElementById('navbar');
 
@@ -18,7 +38,6 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('open');
 });
 
-// Fechar menu ao clicar em um link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
@@ -65,8 +84,13 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
 const stats = document.querySelectorAll('.stat-number');
 
 const animateCounter = (el) => {
-    const target = parseFloat(el.getAttribute('data-target'));
-    const isDecimal = target % 1 !== 0;
+    const target = el.getAttribute('data-target');
+    if (target.includes('+')) {
+        el.textContent = target;
+        return;
+    }
+    
+    const numTarget = parseFloat(target);
     const duration = 2000;
     const startTime = performance.now();
 
@@ -74,29 +98,20 @@ const animateCounter = (el) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
         const ease = 1 - Math.pow(1 - progress, 3);
-        const current = ease * target;
+        const current = ease * numTarget;
 
-        if (isDecimal) {
-            el.textContent = current.toFixed(2);
-        } else {
-            el.textContent = Math.floor(current);
-        }
+        el.textContent = Math.floor(current);
 
         if (progress < 1) {
             requestAnimationFrame(update);
         } else {
-            if (isDecimal) {
-                el.textContent = target.toFixed(2);
-            } else {
-                el.textContent = target;
-            }
+            el.textContent = numTarget;
         }
     };
 
     requestAnimationFrame(update);
 };
 
-// Intersection Observer para os contadores
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -109,7 +124,7 @@ const observer = new IntersectionObserver((entries) => {
 stats.forEach(stat => observer.observe(stat));
 
 // ===== ANIMAÇÃO DE ENTRADA AO SCROLL =====
-const revealElements = document.querySelectorAll('.info-card, .update-item, .staff-card, .rule-item, .news-card');
+const revealElements = document.querySelectorAll('.info-card, .update-item, .staff-card, .rule-item, .news-card, .sobre-text');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -122,9 +137,21 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.8s ease';
     revealObserver.observe(el);
+});
+
+// ===== EFEITO DE PARALLAX NO HERO =====
+document.addEventListener('mousemove', (e) => {
+    const shapes = document.querySelectorAll('.shape');
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    
+    shapes.forEach((shape, index) => {
+        const speed = 1 + index * 0.3;
+        shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+    });
 });
 
 console.log('🐭 Minezinho Magis - Site carregado com sucesso! 💜');
