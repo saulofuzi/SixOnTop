@@ -96,16 +96,6 @@ img {
     box-shadow: 0 8px 30px rgba(88, 101, 242, 0.5);
 }
 
-.btn-outline {
-    background: transparent;
-    color: #9B59B6;
-    border: 2px solid #9B59B6;
-}
-.btn-outline:hover {
-    background: #9B59B6;
-    color: #fff;
-}
-
 .section {
     padding: 80px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -722,16 +712,6 @@ img {
     margin-top: 10px;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.4);
-}
-
-/* ===== ADMIN ACTIONS ===== */
-.admin-actions {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-    align-items: center;
 }
 
 /* ===== FOOTER ===== */
