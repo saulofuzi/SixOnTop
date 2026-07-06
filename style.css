@@ -568,59 +568,66 @@ img {
     margin-bottom: 40px;
 }
 
-.anuncio-banner {
-    position: relative;
-    background: linear-gradient(135deg, #1a0a2e, #2d1b4e, #1a0a2e);
+.anuncio-banner-simples {
     border-radius: 20px;
-    padding: 50px 40px;
     overflow: hidden;
     border: 2px solid rgba(155, 89, 182, 0.3);
     box-shadow: 0 0 60px rgba(155, 89, 182, 0.1);
     transition: all 0.4s ease;
+    background: #1a0a2e;
 }
 
-.anuncio-banner:hover {
+.anuncio-banner-simples:hover {
     border-color: #9B59B6;
     box-shadow: 0 0 80px rgba(155, 89, 182, 0.2);
     transform: scale(1.01);
 }
 
-.banner-glow {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(155, 89, 182, 0.1), transparent 60%);
-    animation: glowPulse 4s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 1; }
-}
-
-.banner-content {
+.banner-image {
     position: relative;
-    z-index: 1;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 20, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
     text-align: center;
+    backdrop-filter: blur(4px);
 }
 
 .banner-tag {
     display: inline-block;
-    background: rgba(231, 76, 60, 0.2);
+    background: rgba(231, 76, 60, 0.25);
     color: #E74C3C;
-    padding: 4px 16px;
+    padding: 6px 20px;
     border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
     letter-spacing: 0.5px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     border: 1px solid rgba(231, 76, 60, 0.3);
     animation: pulse 2s ease-in-out infinite;
 }
 
-.banner-content h2 {
+.banner-overlay h2 {
     font-size: 3.5rem;
     font-weight: 900;
     color: #fff;
@@ -628,36 +635,63 @@ img {
     text-shadow: 0 0 30px rgba(155, 89, 182, 0.3);
 }
 
-.banner-content p {
+.banner-overlay p {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 16px;
 }
 
 .banner-features {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
+    gap: 24px;
+    margin-bottom: 12px;
     flex-wrap: wrap;
 }
 
 .banner-features span {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.95rem;
     display: flex;
     align-items: center;
     gap: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px 14px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .banner-features span i {
     color: #9B59B6;
 }
 
+.banner-info {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.banner-info span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 14px;
+    border-radius: 50px;
+}
+
+.banner-info span i {
+    color: #F1C40F;
+}
+
 .banner-countdown {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 12px;
-    padding: 12px 24px;
+    padding: 12px 28px;
     display: inline-block;
     margin-bottom: 20px;
     border: 1px solid rgba(155, 89, 182, 0.2);
@@ -668,37 +702,9 @@ img {
     font-weight: 800;
     color: #F1C40F;
     font-family: monospace;
+    letter-spacing: 2px;
 }
 
-.banner-particles {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.banner-particles::before,
-.banner-particles::after {
-    content: '⚔️';
-    position: absolute;
-    font-size: 3rem;
-    opacity: 0.1;
-    animation: floatParticle 8s ease-in-out infinite;
-}
-
-.banner-particles::before {
-    top: 10%;
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.banner-particles::after {
-    bottom: 10%;
-    right: 5%;
-    animation-delay: 4s;
-}
-
-/* ===== ANÚNCIOS GRID ===== */
 .anuncios-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1276,26 +1282,48 @@ img {
         display: none;
     }
 
-    .banner-content h2 {
+    .banner-overlay h2 {
         font-size: 2.2rem;
     }
     
+    .banner-overlay p {
+        font-size: 1rem;
+    }
+    
     .banner-features {
-        gap: 12px;
+        gap: 10px;
     }
     
     .banner-features span {
         font-size: 0.8rem;
+        padding: 3px 10px;
+    }
+    
+    .banner-info {
+        gap: 10px;
+    }
+    
+    .banner-info span {
+        font-size: 0.8rem;
+        padding: 3px 10px;
     }
     
     .banner-countdown span {
         font-size: 1.3rem;
     }
     
-    .anuncio-banner {
-        padding: 30px 20px;
+    .banner-image {
+        min-height: 350px;
     }
     
+    .banner-image img {
+        min-height: 350px;
+    }
+    
+    .banner-overlay {
+        padding: 24px;
+    }
+
     .anuncios-grid {
         grid-template-columns: 1fr;
     }
@@ -1333,11 +1361,37 @@ img {
         font-size: 0.95rem;
     }
 
-    .banner-content h2 {
-        font-size: 1.8rem;
+    .banner-overlay h2 {
+        font-size: 1.6rem;
+    }
+    
+    .banner-overlay p {
+        font-size: 0.9rem;
     }
     
     .banner-countdown span {
         font-size: 1rem;
+    }
+    
+    .banner-image {
+        min-height: 300px;
+    }
+    
+    .banner-image img {
+        min-height: 300px;
+    }
+    
+    .banner-overlay {
+        padding: 16px;
+    }
+    
+    .banner-features span {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+    }
+    
+    .banner-info span {
+        font-size: 0.7rem;
+        padding: 2px 8px;
     }
 }
