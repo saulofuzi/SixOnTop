@@ -167,7 +167,7 @@ const observer = new IntersectionObserver((entries) => {
 stats.forEach(stat => observer.observe(stat));
 
 // ===== ANIMAÇÃO DE ENTRADA AO SCROLL =====
-const revealElements = document.querySelectorAll('.info-card, .update-item, .staff-card, .rule-item, .news-card, .sobre-text, .guerra-container');
+const revealElements = document.querySelectorAll('.info-card, .update-item, .staff-card, .rule-item, .news-card, .sobre-text, .guerra-container, .anuncio-guerra');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
