@@ -18,6 +18,47 @@ function createParticles() {
 }
 createParticles();
 
+// ===== CONTAGEM REGRESSIVA PARA A GUERRA (TODO DOMINGO 19:00) =====
+function getNextSunday() {
+    const now = new Date();
+    const day = now.getDay();
+    const daysUntilSunday = day === 0 ? 0 : 7 - day;
+    
+    const nextSunday = new Date(now);
+    nextSunday.setDate(now.getDate() + daysUntilSunday);
+    nextSunday.setHours(19, 0, 0, 0);
+    
+    if (day === 0 && now.getHours() >= 19) {
+        nextSunday.setDate(now.getDate() + 7);
+    }
+    
+    return nextSunday;
+}
+
+function updateCountdown() {
+    const targetDate = getNextSunday();
+    const now = new Date().getTime();
+    const diff = targetDate.getTime() - now;
+    
+    if (diff <= 0) {
+        document.getElementById('guerraCountdown').textContent = '🔥 JÁ COMEÇOU!';
+        document.getElementById('countdown').textContent = '🔥 HOJE!';
+        return;
+    }
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    const countdownStr = `${days}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+    document.getElementById('guerraCountdown').textContent = countdownStr;
+    document.getElementById('countdown').textContent = `${days}d ${String(hours).padStart(2, '0')}h`;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.getElementById('navbar');
 
@@ -81,7 +122,7 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
 });
 
 // ===== ANIMATED COUNTERS =====
-const stats = document.querySelectorAll('.stat-number');
+const stats = document.querySelectorAll('.stat-number:not(#countdown)');
 
 const animateCounter = (el) => {
     const target = el.getAttribute('data-target');
@@ -126,7 +167,7 @@ const observer = new IntersectionObserver((entries) => {
 stats.forEach(stat => observer.observe(stat));
 
 // ===== ANIMAÇÃO DE ENTRADA AO SCROLL =====
-const revealElements = document.querySelectorAll('.info-card, .update-item, .staff-card, .rule-item, .news-card, .sobre-text');
+const revealElements = document.querySelectorAll('.info-card, .update-item, .staff-card, .rule-item, .news-card, .sobre-text, .guerra-container');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
