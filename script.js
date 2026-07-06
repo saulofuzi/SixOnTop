@@ -18,11 +18,28 @@ function createParticles() {
 }
 createParticles();
 
-// ===== CONTAGEM REGRESSIVA PARA A GUERRA =====
+// ===== CONTAGEM REGRESSIVA PARA A GUERRA (TODO DOMINGO 19:00) =====
+function getNextSunday() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Domingo, 6 = Sábado
+    const daysUntilSunday = day === 0 ? 0 : 7 - day;
+    
+    const nextSunday = new Date(now);
+    nextSunday.setDate(now.getDate() + daysUntilSunday);
+    nextSunday.setHours(19, 0, 0, 0);
+    
+    // Se já passou das 19:00 no domingo, vai para o próximo
+    if (day === 0 && now.getHours() >= 19) {
+        nextSunday.setDate(now.getDate() + 7);
+    }
+    
+    return nextSunday;
+}
+
 function updateCountdown() {
-    const targetDate = new Date('2026-07-15T20:00:00').getTime();
+    const targetDate = getNextSunday();
     const now = new Date().getTime();
-    const diff = targetDate - now;
+    const diff = targetDate.getTime() - now;
     
     if (diff <= 0) {
         document.getElementById('guerraCountdown').textContent = '🔥 JÁ COMEÇOU!';
@@ -35,9 +52,9 @@ function updateCountdown() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
     
-    const countdownStr = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    const countdownStr = `${days}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
     document.getElementById('guerraCountdown').textContent = countdownStr;
-    document.getElementById('countdown').textContent = `${days}d ${hours}h`;
+    document.getElementById('countdown').textContent = `${days}d ${String(hours).padStart(2, '0')}h`;
 }
 
 // Atualizar a cada segundo
@@ -182,8 +199,7 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
-// ===== EASTER EGG: six on top (digite no console) =====
+// ===== EASTER EGGS =====
 console.log('%c🐭 six on top 🐭', 'font-size:20px; color:#9B59B6; font-weight:bold;');
-console.log('%cfeito por saulofuzi 💜', 'font-size:14px; color:#2ECC71;');
-
+console.log('%c✨ feito por saulofuzi 💜', 'font-size:14px; color:#2ECC71;');
 console.log('🐭 Minezinho Magis - Site carregado com sucesso! 💜');
