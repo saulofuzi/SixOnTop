@@ -29,6 +29,7 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#anuncios"><i class="fas fa-bullhorn"></i> Anúncios</a></li>
                 <li><a href="#sobre"><i class="fas fa-book"></i> Sobre</a></li>
                 <li><a href="#informacoes"><i class="fas fa-info-circle"></i> Informações</a></li>
                 <li><a href="#atualizacoes"><i class="fas fa-sync-alt"></i> Atualizações</a></li>
@@ -77,10 +78,57 @@
                     <span class="stat-number" data-target="24">0</span>
                     <span class="stat-label"><i class="fas fa-circle" style="color: #2ECC71; font-size: 0.6rem;"></i> Online Agora</span>
                 </div>
+                <div class="stat floating" style="animation-delay: 0.8s;">
+                    <span class="stat-number" id="countdown">00:00:00</span>
+                    <span class="stat-label"><i class="fas fa-clock"></i> Próxima Guerra</span>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ==================== ANÚNCIOS ==================== -->
+    <section class="section anuncios" id="anuncios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-bullhorn"></i> Destaque</span>
+                <h2>📢 Anúncios Oficiais</h2>
+                <p>Fique por dentro de todas as novidades do servidor</p>
+            </div>
+
+            <!-- ===== GUERRA DE CLÃS ===== -->
+            <div class="anuncio-guerra">
+                <div class="guerra-container">
+                    <div class="guerra-imagem">
+                        <img src="imagens/guerra.jpg" alt="Guerra de Clãs" />
+                        <div class="guerra-overlay">
+                            <div class="guerra-texto">
+                                <div class="guerra-tag"><i class="fas fa-fire"></i> TODO DOMINGO 19:00</div>
+                                <h2>⚔️ GUERRA DE CLÃS</h2>
+                                <p>A maior batalha do Minezinho Magis está chegando!</p>
+                                <div class="guerra-detalhes">
+                                    <span><i class="fas fa-backpack"></i> Inventário próprio</span>
+                                    <span><i class="fas fa-ban"></i> Drop de itens OFF</span>
+                                </div>
+                                <div class="guerra-info">
+                                    <span><i class="fas fa-trophy"></i> R$ 200 em prêmios</span>
+                                    <span><i class="fas fa-users"></i> 3vs3</span>
+                                    <span><i class="fas fa-clock"></i> 19:00</span>
+                                    <span><i class="fas fa-calendar"></i> Todo Domingo</span>
+                                </div>
+                                <div class="guerra-countdown">
+                                    <span id="guerraCountdown">Carregando...</span>
+                                </div>
+                                <a href="https://discord.gg/minezinho" target="_blank" class="btn btn-primary pulse">
+                                    <i class="fab fa-discord"></i> Participe no Discord
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -175,29 +223,6 @@
                         <li><i class="fas fa-gift" style="color: #9B59B6;"></i> <strong>Caixas de Recompensas</strong> – Sorte todos os dias</li>
                         <li><i class="fas fa-paw" style="color: #2ECC71;"></i> <strong>Pets</strong> – Seu companheiro fiel</li>
                     </ul>
-                </div>
-            </div>
-
-            <!-- ===== GALERIA DE IMAGENS ===== -->
-            <div class="image-gallery">
-                <h3 style="text-align:center; margin-bottom: 20px; color: #fff;"><i class="fas fa-images"></i> Galeria do Servidor</h3>
-                <div class="gallery-grid" id="galleryGrid">
-                    <div class="gallery-item">
-                        <img src="imagens/caixas.png" alt="Caixas" />
-                        <span class="gallery-label"><i class="fas fa-box"></i> Caixas</span>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="imagens/construcoes.jpg" alt="Construções" />
-                        <span class="gallery-label"><i class="fas fa-building"></i> Construções</span>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="imagens/eventos.jpg" alt="Eventos" />
-                        <span class="gallery-label"><i class="fas fa-calendar-star"></i> Eventos</span>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="imagens/comunidade.jpg" alt="Comunidade" />
-                        <span class="gallery-label"><i class="fas fa-heart"></i> Comunidade</span>
-                    </div>
                 </div>
             </div>
         </div>
