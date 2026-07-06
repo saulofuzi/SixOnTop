@@ -1,3 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💜 Minezinho Magis - Servidor Survival</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- ==================== EASTER EGGS ==================== -->
+    <div class="easter-egg" style="position:fixed;bottom:-9999px;right:-9999px;opacity:0;pointer-events:none;font-size:1px;color:transparent;user-select:none;">six on top</div>
+    <div style="display:none;">feito por saulofuzi</div>
+
+    <!-- ==================== PARTICULAS MAGICAS ==================== -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="imagens/logo.png" alt="Logo Minezinho" class="logo-img" />
+                <span class="logo-text">Minezinho</span>
+                <span class="logo-badge">Magis</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#anuncios"><i class="fas fa-bullhorn"></i> Anúncios</a></li>
+                <li><a href="#sobre"><i class="fas fa-book"></i> Sobre</a></li>
+                <li><a href="#informacoes"><i class="fas fa-info-circle"></i> Informações</a></li>
+                <li><a href="#atualizacoes"><i class="fas fa-sync-alt"></i> Atualizações</a></li>
+                <li><a href="#staff"><i class="fas fa-users-crown"></i> Staff</a></li>
+                <li><a href="#regras"><i class="fas fa-gavel"></i> Regras</a></li>
+                <li><a href="#novidades"><i class="fas fa-fire"></i> Novidades</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HOME / HERO ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge"><i class="fas fa-star"></i> Nova Temporada</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Minezinho</span> <span class="gradient-purple">Magis</span>
+            </h1>
+            <p class="hero-subtitle">
+                O Survival mais <strong style="color: #9B59B6;">mágico</strong> da rede <strong style="color: #2ECC71;">Minezinho</strong>!
+                <br />Venha construir, explorar e viver aventuras épicas.
+            </p>
+            <div class="hero-buttons">
+                <a href="#informacoes" class="btn btn-primary pulse">
+                    <i class="fas fa-rocket"></i> Jogar Agora
+                </a>
+                <a href="https://discord.gg/minezinho" target="_blank" class="btn btn-discord pulse-delay">
+                    <i class="fab fa-discord"></i> Discord
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat floating">
+                    <span class="stat-number" data-target="1.21+">1.21+</span>
+                    <span class="stat-label"><i class="fas fa-code-branch"></i> Versão</span>
+                </div>
+                <div class="stat floating-delay">
+                    <span class="stat-number" data-target="24">0</span>
+                    <span class="stat-label"><i class="fas fa-circle" style="color: #2ECC71; font-size: 0.6rem;"></i> Online Agora</span>
+                </div>
+                <div class="stat floating" style="animation-delay: 0.8s;">
+                    <span class="stat-number" id="countdown">00:00:00</span>
+                    <span class="stat-label"><i class="fas fa-clock"></i> Próxima Guerra</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
     <!-- ==================== ANÚNCIOS ==================== -->
     <section class="section anuncios" id="anuncios">
         <div class="container">
@@ -51,3 +142,335 @@
             </div>
         </div>
     </section>
+
+    <!-- ==================== SOBRE O SERVIDOR ==================== -->
+    <section class="section sobre" id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-book-open"></i> Conheça</span>
+                <h2>Sobre o Servidor</h2>
+                <p>Entenda como funciona o Minezinho Magis</p>
+            </div>
+
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <p>
+                        <strong>Minezinho Magis</strong> é um servidor <strong>Survival</strong> com uma pegada 
+                        <strong style="color: #9B59B6;">mágica</strong>! Aqui você vai encontrar uma experiência 
+                        única, cheia de aventuras, desafios e uma comunidade incrível.
+                    </p>
+                    <p>
+                        🏆 <strong>Jogabilidade</strong>: O clássico Survival com elementos especiais como 
+                        <strong>mcMMO</strong> para evoluir suas habilidades, <strong>Clãs</strong> para 
+                        dominar o mundo e <strong>Economia</strong> dinâmica com mercado vivo.
+                    </p>
+                    <p>
+                        ⚔️ <strong>Desafios</strong>: Enfrente <strong>Bosses</strong> poderosos, participe 
+                        de <strong>eventos PvP</strong> diários e entre na <strong>Liga de Clãs</strong> 
+                        para mostrar seu poder!
+                    </p>
+                    <p>
+                        💬 <strong>Tempo Online</strong>: Fique online e ganhe <strong>Recompensas</strong> 
+                        e itens exclusivos no /tempo. Além disso, temos <strong>missões</strong> diárias para
+                        diversificar sua aventura!
+                    </p>
+                    <p>
+                        🎁 <strong>Recompensas</strong>: Temos recompensas para o <strong>Top 1 Money</strong> e para o <strong>Top 1 mcMMO</strong>, 
+                        R$ 100 no Pix para cada um!
+                    </p>
+                    <p>
+                        🎮 <strong>Como jogar</strong>: Basta entrar com o IP <strong>jogar.minezinho.com</strong> 
+                        na versão <strong>1.21.4</strong> (ou superior) e começar sua jornada! 
+                        O servidor é compatível com versões desde a <strong>1.16.5</strong>.
+                    </p>
+                    <div class="sobre-destaque">
+                        <i class="fas fa-magic" style="color: #9B59B6;"></i>
+                        <span><strong>Entre e descubra um mundo de magia!</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== INFORMAÇÕES ==================== -->
+    <section class="section informacoes" id="informacoes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-clipboard-list"></i> Sobre</span>
+                <h2>Informações do Servidor</h2>
+                <p>Tudo que você precisa saber para começar sua jornada</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>IP do Servidor</h3>
+                    <div class="ip-box">
+                        <code>jogar.minezinho.com</code>
+                        <button class="copy-btn" data-copy="jogar.minezinho.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="info-detail"><i class="fas fa-code"></i> <strong>Java:</strong> jogar.minezinho.com</p>
+                    <p class="info-detail"><i class="fas fa-mobile-alt"></i> <strong>Bedrock:</strong> jogar.minezinho.com <span class="badge">Porta 19132</span></p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Versões</h3>
+                    <p><i class="fas fa-check-circle" style="color: #2ECC71;"></i> <strong>Recomendada:</strong> 1.21.4</p>
+                    <p><i class="fas fa-check-circle" style="color: #2ECC71;"></i> <strong>Compatível:</strong> 1.16.5 até a mais recente</p>
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i> Versões abaixo de 1.21.4 podem ter funcionalidades limitadas
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Informações</h3>
+                    <ul class="info-list">
+                        <li><i class="fas fa-trophy" style="color: #F1C40F;"></i> <strong>Survival</strong> – O clássico com um toque mágico</li>
+                        <li><i class="fas fa-dumbbell" style="color: #E67E22;"></i> <strong>Skills (mcMMO)</strong> – Evolua suas habilidades</li>
+                        <li><i class="fas fa-flag" style="color: #E74C3C;"></i> <strong>Clãs e Guerras</strong> – Domine o mundo</li>
+                        <li><i class="fas fa-coins" style="color: #F1C40F;"></i> <strong>Economia Dinâmica</strong> – Mercado vivo</li>
+                        <li><i class="fas fa-gift" style="color: #9B59B6;"></i> <strong>Caixas de Recompensas</strong> – Sorte todos os dias</li>
+                        <li><i class="fas fa-paw" style="color: #2ECC71;"></i> <strong>Pets</strong> – Seu companheiro fiel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ATUALIZAÇÕES ==================== -->
+    <section class="section atualizacoes" id="atualizacoes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-sync-alt"></i> Novidades</span>
+                <h2>Atualizações do Servidor</h2>
+                <p>Fique por dentro de todas as novidades e melhorias</p>
+            </div>
+
+            <div class="updates-list" id="updatesList">
+                <div class="update-item">
+                    <div class="update-date"><i class="far fa-calendar-alt"></i> 15/07/2026</div>
+                    <div class="update-content">
+                        <h3><i class="fas fa-swords" style="color: #E74C3C;"></i> GUERRA DE CLÃS!</h3>
+                        <p>Todo domingo às 19:00! Drop OFF, Itens Próprios. Use /guerra para participar!</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date"><i class="far fa-calendar-alt"></i> 10/07/2026</div>
+                    <div class="update-content">
+                        <h3><i class="fas fa-party-horn" style="color: #F1C40F;"></i> Liga de Clãs!</h3>
+                        <p>Começamos a Temporada 1 com eventos especiais e recompensas exclusivas para o Top3 Clã.</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date"><i class="far fa-calendar-alt"></i> 05/07/2026</div>
+                    <div class="update-content">
+                        <h3><i class="fas fa-paw" style="color: #2ECC71;"></i> Sistema de pets</h3>
+                        <p>Obtenha um pet para te acompanhar na sua aventura! Diversas opções...</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date"><i class="far fa-calendar-alt"></i> 28/06/2026</div>
+                    <div class="update-content">
+                        <h3><i class="fas fa-tree" style="color: #2ECC71;"></i> Eventos PvP</h3>
+                        <p>Novos eventos de PvP adicionados (todos os dias)</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date"><i class="far fa-calendar-alt"></i> 20/06/2026</div>
+                    <div class="update-content">
+                        <h3><i class="fas fa-wrench" style="color: #F39C12;"></i> Correções de Bugs</h3>
+                        <p>Corrigimos diversos bugs reportados pela comunidade. O servidor está mais estável que nunca!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STAFF ==================== -->
+    <section class="section staff" id="staff">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-crown"></i> Equipe</span>
+                <h2>Staffs do Servidor</h2>
+                <p>Conheça quem está por trás do Minezinho Magis</p>
+            </div>
+
+            <div class="staff-grid" id="staffGrid">
+                <div class="staff-card">
+                    <div class="staff-skin">
+                        <img src="https://mc-heads.net/body/Takxs/120" alt="Skin do Taks" />
+                        <div class="skin-glow"></div>
+                    </div>
+                    <h4>Taks</h4>
+                    <span class="staff-role"><i class="fas fa-star"></i> Diretor</span>
+                    <p>Diretor do Survival Magis</p>
+                    <div class="staff-social">
+                        <a href="https://discord.com/users/340642613445263360" target="_blank" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-skin">
+                        <img src="https://mc-heads.net/body/EduUuTriste/120" alt="Skin do EduTriste" />
+                        <div class="skin-glow"></div>
+                    </div>
+                    <h4>EduTriste</h4>
+                    <span class="staff-role"><i class="fas fa-shield-halved"></i> Diretor</span>
+                    <p>Nosso melhor staff atualmente!</p>
+                    <div class="staff-social">
+                        <a href="https://discord.com/users/315278344440774657" target="_blank" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-skin">
+                        <img src="https://mc-heads.net/body/Apoph1s/120" alt="Skin do Apoph1s" />
+                        <div class="skin-glow"></div>
+                    </div>
+                    <h4>Apoph1s</h4>
+                    <span class="staff-role"><i class="fas fa-gavel"></i> Admin</span>
+                    <p>"não gosto dele mas enfim"</p>
+                    <div class="staff-social">
+                        <a href="https://discord.com/users/1040403838324191364" target="_blank" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== REGRAS ==================== -->
+    <section class="section regras" id="regras">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-scale-balanced"></i> Código</span>
+                <h2>Regras do Servidor</h2>
+                <p>Para manter a diversão e o respeito entre todos</p>
+            </div>
+
+            <div class="rules-container" id="rulesContainer">
+                <div class="rule-item">
+                    <span class="rule-number">01</span>
+                    <div class="rule-text">
+                        <h4><i class="fas fa-heart" style="color: #E74C3C;"></i> Respeito Acima de Tudo</h4>
+                        <p>Trate todos com respeito. Sem preconceito, bullying ou comportamento tóxico.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">02</span>
+                    <div class="rule-text">
+                        <h4><i class="fas fa-ban" style="color: #E74C3C;"></i> Sem Hacks ou Exploits</h4>
+                        <p>O uso de hacks, cheats ou qualquer tipo de exploit resultará em banimento permanente.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">03</span>
+                    <div class="rule-text">
+                        <h4><i class="fas fa-hammer" style="color: #F39C12;"></i> Construção Responsável</h4>
+                        <p>Não construa perto da Spawn sem autorização. Respeite as áreas de outros jogadores.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">04</span>
+                    <div class="rule-text">
+                        <h4><i class="fas fa-language" style="color: #3498DB;"></i> Abuso de bugs</h4>
+                        <p>Proibido o uso de bugs, sujeito a banimento</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">05</span>
+                    <div class="rule-text">
+                        <h4><i class="fas fa-face-smile" style="color: #F1C40F;"></i> VEJA TODAS AS REGRAS AQUI</h4>
+                        <p><a href="https://wiki.minezinho.com/" target="_blank" style="color: #9B59B6; text-decoration: underline;">https://wiki.minezinho.com/</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NOVIDADES ==================== -->
+    <section class="section novidades" id="novidades">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-fire"></i> Destaque</span>
+                <h2>Novidades</h2>
+                <p>O que está pegando fogo no Minezinho Magis</p>
+            </div>
+
+            <div class="news-grid" id="newsGrid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="imagens/liga.png" alt="Liga de Clã" />
+                        <span class="news-tag"><i class="fas fa-calendar-star"></i> Liga</span>
+                    </div>
+                    <div class="news-body">
+                        <h3><i class="fas fa-trophy" style="color: #F1C40F;"></i> LIGA DE CLÃ</h3>
+                        <p>Todos os meses temos a nossa liga de clã, com recompensas exclusivas para o top 1, 2 e 3!</p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> Termina: 01/08/2026</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="imagens/pets.png" alt="Novos Pets" />
+                        <span class="news-tag"><i class="fas fa-code"></i> Pets</span>
+                    </div>
+                    <div class="news-body">
+                        <h3><i class="fas fa-bolt" style="color: #9B59B6;"></i> Pets</h3>
+                        <p>Novos Pets com diversos poderes adicionados ao survival magis!</p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> Lançado em: 01/06/2026</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="imagens/boss.png" alt="Boss" />
+                        <span class="news-tag"><i class="fas fa-heart"></i> Boss</span>
+                    </div>
+                    <div class="news-body">
+                        <h3><i class="fas fa-users" style="color: #2ECC71;"></i> Luta contra Boss!</h3>
+                        <p>Batalhe contra diversos Bosses, e ganhe recompensas exclusivas!</p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 01/06/2026</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="imagens/pvp.png" alt="PvP" />
+                        <span class="news-tag"><i class="fas fa-star"></i> Arena PvP</span>
+                    </div>
+                    <div class="news-body">
+                        <h3><i class="fas fa-castle" style="color: #9B59B6;"></i> Arena de PvP</h3>
+                        <p>Entre na arena PvP e saia como um verdadeiro gladiador!</p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 01/06/2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="imagens/logo.png" alt="Minezinho" />
+                    <span>Minezinho <span style="color: #9B59B6;">Magis</span></span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://discord.gg/minezinho" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+                    <a href="https://www.instagram.com/minezinhoservidor" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://minezinho.com/" target="_blank"><i class="fas fa-globe"></i> Site Oficial</a>
+                </div>
+                <p class="footer-copy"><i class="far fa-copyright"></i> 2026 Minezinho. Todos os direitos reservados. <i class="fas fa-mouse"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
