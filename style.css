@@ -596,84 +596,111 @@ img {
     font-weight: 900;
     color: #fff;
     margin-bottom: 6px;
+    background: linear-gradient(135deg, #F1C40F, #F39C12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.guerra-texto-superior p {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.7);
+.guerra-descricao {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 16px;
+    line-height: 1.6;
 }
 
 .guerra-detalhes-superior {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 12px;
+    gap: 16px;
+    margin-bottom: 16px;
     flex-wrap: wrap;
 }
 
 .guerra-detalhes-superior span {
     color: rgba(255, 255, 255, 0.85);
-    font-size: 1rem;
+    font-size: 0.95rem;
     display: flex;
     align-items: center;
     gap: 8px;
     background: rgba(0, 0, 0, 0.3);
-    padding: 6px 20px;
+    padding: 6px 18px;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .guerra-detalhes-superior span i {
-    color: #F1C40F;
+    color: #E74C3C;
 }
 
-.guerra-info-superior {
+.guerra-premiacao {
+    background: rgba(241, 196, 15, 0.05);
+    border: 1px solid rgba(241, 196, 15, 0.15);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.premio-titulo {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #F1C40F;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.premio-titulo i {
+    margin-right: 6px;
+}
+
+.premio-items {
     display: flex;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 14px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-.guerra-info-superior span {
-    color: rgba(255, 255, 255, 0.7);
+.premio-items span {
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 6px;
+}
+
+.premio-items span i {
+    color: #F1C40F;
+}
+
+.guerra-como-participar {
+    margin-bottom: 16px;
+}
+
+.guerra-como-participar span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: rgba(0, 0, 0, 0.2);
-    padding: 4px 16px;
+    padding: 6px 18px;
     border-radius: 50px;
 }
 
-.guerra-info-superior span i {
+.guerra-como-participar span i {
     color: #9B59B6;
 }
 
-.guerra-status {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-}
-
-.guerra-status span {
-    font-size: 1rem;
+.guerra-como-participar code {
+    background: rgba(155, 89, 182, 0.2);
+    padding: 2px 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #9B59B6;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.status-on {
-    color: #2ECC71 !important;
-}
-
-.status-on i {
-    color: #2ECC71 !important;
 }
 
 .guerra-countdown-superior {
@@ -1326,7 +1353,7 @@ img {
         font-size: 2.5rem;
     }
     
-    .guerra-texto-superior p {
+    .guerra-descricao {
         font-size: 1rem;
     }
     
@@ -1335,17 +1362,21 @@ img {
     }
     
     .guerra-detalhes-superior span {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+    
+    .premio-items {
+        gap: 12px;
+    }
+    
+    .premio-items span {
+        font-size: 0.8rem;
+    }
+    
+    .guerra-como-participar span {
         font-size: 0.85rem;
         padding: 4px 14px;
-    }
-    
-    .guerra-info-superior {
-        gap: 10px;
-    }
-    
-    .guerra-info-superior span {
-        font-size: 0.8rem;
-        padding: 3px 12px;
     }
     
     .guerra-countdown-superior span {
@@ -1401,8 +1432,29 @@ img {
         font-size: 1.8rem;
     }
     
-    .guerra-texto-superior p {
+    .guerra-descricao {
         font-size: 0.85rem;
+    }
+    
+    .guerra-detalhes-superior span {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        gap: 4px;
+    }
+    
+    .premio-items {
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .premio-items span {
+        font-size: 0.75rem;
+    }
+    
+    .guerra-como-participar span {
+        font-size: 0.75rem;
+        padding: 3px 10px;
     }
     
     .guerra-countdown-superior span {
@@ -1411,16 +1463,6 @@ img {
     
     .guerra-imagem-inferior img {
         height: 250px;
-    }
-    
-    .guerra-detalhes-superior span {
-        font-size: 0.75rem;
-        padding: 3px 10px;
-    }
-    
-    .guerra-info-superior span {
-        font-size: 0.7rem;
-        padding: 2px 8px;
     }
     
     .guerra-texto-superior {
