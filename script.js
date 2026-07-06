@@ -18,6 +18,32 @@ function createParticles() {
 }
 createParticles();
 
+// ===== CONTAGEM REGRESSIVA PARA A GUERRA =====
+function updateCountdown() {
+    const targetDate = new Date('2026-07-15T20:00:00').getTime();
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+    
+    if (diff <= 0) {
+        document.getElementById('guerraCountdown').textContent = '🔥 JÁ COMEÇOU!';
+        document.getElementById('countdown').textContent = '🔥 HOJE!';
+        return;
+    }
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    const countdownStr = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    document.getElementById('guerraCountdown').textContent = countdownStr;
+    document.getElementById('countdown').textContent = `${days}d ${hours}h`;
+}
+
+// Atualizar a cada segundo
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.getElementById('navbar');
 
@@ -81,16 +107,18 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
 });
 
 // ===== ANIMATED COUNTERS =====
-const stats = document.querySelectorAll('.stat-number');
+const stats = document.querySelectorAll('.stat-number:not(#countdown)');
 
 const animateCounter = (el) => {
     const target = el.getAttribute('data-target');
-    if (target.includes('+')) {
+    if (target && target.includes('+')) {
         el.textContent = target;
         return;
     }
     
     const numTarget = parseFloat(target);
+    if (isNaN(numTarget)) return;
+    
     const duration = 2000;
     const startTime = performance.now();
 
@@ -124,7 +152,7 @@ const observer = new IntersectionObserver((entries) => {
 stats.forEach(stat => observer.observe(stat));
 
 // ===== ANIMAÇÃO DE ENTRADA AO SCROLL =====
-const revealElements = document.querySelectorAll('.info-card, .update-item, .staff-card, .rule-item, .news-card, .sobre-text');
+const revealElements = document.querySelectorAll('.info-card, .update-item, .staff-card, .rule-item, .anuncio-card, .sobre-text');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -153,5 +181,9 @@ document.addEventListener('mousemove', (e) => {
         shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
     });
 });
+
+// ===== EASTER EGG: six on top (digite no console) =====
+console.log('%c🐭 six on top 🐭', 'font-size:20px; color:#9B59B6; font-weight:bold;');
+console.log('%cfeito por saulofuzi 💜', 'font-size:14px; color:#2ECC71;');
 
 console.log('🐭 Minezinho Magis - Site carregado com sucesso! 💜');
