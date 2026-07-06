@@ -29,12 +29,12 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active"><i class="fas fa-home"></i> Início</a></li>
-                <li><a href="#anuncios"><i class="fas fa-bullhorn"></i> Anúncios</a></li>
                 <li><a href="#sobre"><i class="fas fa-book"></i> Sobre</a></li>
                 <li><a href="#informacoes"><i class="fas fa-info-circle"></i> Informações</a></li>
                 <li><a href="#atualizacoes"><i class="fas fa-sync-alt"></i> Atualizações</a></li>
                 <li><a href="#staff"><i class="fas fa-users-crown"></i> Staff</a></li>
                 <li><a href="#regras"><i class="fas fa-gavel"></i> Regras</a></li>
+                <li><a href="#novidades"><i class="fas fa-fire"></i> Novidades</a></li>
             </ul>
             <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -61,8 +61,8 @@
                 <br />Venha construir, explorar e viver aventuras épicas.
             </p>
             <div class="hero-buttons">
-                <a href="#anuncios" class="btn btn-primary pulse">
-                    <i class="fas fa-bullhorn"></i> Ver Anúncios
+                <a href="#informacoes" class="btn btn-primary pulse">
+                    <i class="fas fa-rocket"></i> Jogar Agora
                 </a>
                 <a href="https://discord.gg/minezinho" target="_blank" class="btn btn-discord pulse-delay">
                     <i class="fab fa-discord"></i> Discord
@@ -77,89 +77,10 @@
                     <span class="stat-number" data-target="24">0</span>
                     <span class="stat-label"><i class="fas fa-circle" style="color: #2ECC71; font-size: 0.6rem;"></i> Online Agora</span>
                 </div>
-                <div class="stat floating" style="animation-delay: 0.8s;">
-                    <span class="stat-number" id="countdown">00:00:00</span>
-                    <span class="stat-label"><i class="fas fa-clock"></i> Próxima Guerra</span>
-                </div>
             </div>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- ==================== ANÚNCIOS ==================== -->
-    <section class="section anuncios" id="anuncios">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-bullhorn"></i> Destaque</span>
-                <h2>📢 Anúncios Oficiais</h2>
-                <p>Fique por dentro de todas as novidades do servidor</p>
-            </div>
-
-            <!-- ===== GUERRA DE CLÃS - IMAGEM + TEXTO POR CIMA ===== -->
-            <div class="guerra-destaque">
-                <div class="guerra-banner">
-                    <img src="imagens/guerra.jpg" alt="Guerra de Clãs" />
-                    <div class="guerra-overlay">
-                        <div class="guerra-tag"><i class="fas fa-fire"></i> TODO DOMINGO 19:00</div>
-                        <h2>⚔️ GUERRA DE CLÃS</h2>
-                        <p>A maior batalha do Minezinho Magis está chegando!</p>
-                        <div class="guerra-info">
-                            <span><i class="fas fa-trophy"></i> R$ 200 em prêmios</span>
-                            <span><i class="fas fa-users"></i> 3vs3</span>
-                            <span><i class="fas fa-clock"></i> 19:00</span>
-                            <span><i class="fas fa-calendar"></i> Todo Domingo</span>
-                        </div>
-                        <div class="guerra-detalhes">
-                            <span><i class="fas fa-backpack"></i> Inventário próprio</span>
-                            <span><i class="fas fa-ban"></i> Drop de itens OFF</span>
-                        </div>
-                        <div class="guerra-countdown">
-                            <span id="guerraCountdown">Carregando...</span>
-                        </div>
-                        <a href="https://discord.gg/minezinho" target="_blank" class="btn btn-primary pulse">
-                            <i class="fab fa-discord"></i> Participe no Discord
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== ANÚNCIOS SECUNDÁRIOS ===== -->
-            <div class="anuncios-grid">
-                <div class="anuncio-card">
-                    <div class="anuncio-icon"><i class="fas fa-gift" style="color: #F1C40F;"></i></div>
-                    <div class="anuncio-body">
-                        <h3>🎁 Sorteio Semanal</h3>
-                        <p>Toda semana sorteamos 50 reais em dinheiro e itens exclusivos!</p>
-                        <span class="anuncio-data"><i class="far fa-calendar-alt"></i> Todo sábado</span>
-                    </div>
-                </div>
-                <div class="anuncio-card">
-                    <div class="anuncio-icon"><i class="fas fa-crown" style="color: #9B59B6;"></i></div>
-                    <div class="anuncio-body">
-                        <h3>👑 Top 1 Money</h3>
-                        <p>O jogador mais rico do servidor ganha R$ 100 no Pix todo mês!</p>
-                        <span class="anuncio-data"><i class="far fa-calendar-alt"></i> 01/08/2026</span>
-                    </div>
-                </div>
-                <div class="anuncio-card">
-                    <div class="anuncio-icon"><i class="fas fa-dumbbell" style="color: #E67E22;"></i></div>
-                    <div class="anuncio-body">
-                        <h3>🏋️ Top 1 mcMMO</h3>
-                        <p>O jogador com maior nível de mcMMO ganha R$ 100 no Pix todo mês!</p>
-                        <span class="anuncio-data"><i class="far fa-calendar-alt"></i> 01/08/2026</span>
-                    </div>
-                </div>
-                <div class="anuncio-card">
-                    <div class="anuncio-icon"><i class="fas fa-star" style="color: #2ECC71;"></i></div>
-                    <div class="anuncio-body">
-                        <h3>✨ Evento de Construção</h3>
-                        <p>Mostre sua criatividade e concorra a prêmios exclusivos!</p>
-                        <span class="anuncio-data"><i class="far fa-calendar-alt"></i> 20/07/2026</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -432,6 +353,64 @@
                     <div class="rule-text">
                         <h4><i class="fas fa-face-smile" style="color: #F1C40F;"></i> VEJA TODAS AS REGRAS AQUI</h4>
                         <p><a href="https://wiki.minezinho.com/" target="_blank" style="color: #9B59B6; text-decoration: underline;">https://wiki.minezinho.com/</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NOVIDADES ==================== -->
+    <section class="section novidades" id="novidades">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-fire"></i> Destaque</span>
+                <h2>Novidades</h2>
+                <p>O que está pegando fogo no Minezinho Magis</p>
+            </div>
+
+            <div class="news-grid" id="newsGrid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="imagens/liga.png" alt="Liga de Clã" />
+                        <span class="news-tag"><i class="fas fa-calendar-star"></i> Liga</span>
+                    </div>
+                    <div class="news-body">
+                        <h3><i class="fas fa-trophy" style="color: #F1C40F;"></i> LIGA DE CLÃ</h3>
+                        <p>Todos os meses temos a nossa liga de clã, com recompensas exclusivas para o top 1, 2 e 3!</p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> Termina: 01/08/2026</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="imagens/pets.png" alt="Novos Pets" />
+                        <span class="news-tag"><i class="fas fa-code"></i> Pets</span>
+                    </div>
+                    <div class="news-body">
+                        <h3><i class="fas fa-bolt" style="color: #9B59B6;"></i> Pets</h3>
+                        <p>Novos Pets com diversos poderes adicionados ao survival magis!</p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> Lançado em: 01/06/2026</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="imagens/boss.png" alt="Boss" />
+                        <span class="news-tag"><i class="fas fa-heart"></i> Boss</span>
+                    </div>
+                    <div class="news-body">
+                        <h3><i class="fas fa-users" style="color: #2ECC71;"></i> Luta contra Boss!</h3>
+                        <p>Batalhe contra diversos Bosses, e ganhe recompensas exclusivas!</p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 01/06/2026</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="imagens/pvp.png" alt="PvP" />
+                        <span class="news-tag"><i class="fas fa-star"></i> Arena PvP</span>
+                    </div>
+                    <div class="news-body">
+                        <h3><i class="fas fa-castle" style="color: #9B59B6;"></i> Arena de PvP</h3>
+                        <p>Entre na arena PvP e saia como um verdadeiro gladiador!</p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 01/06/2026</span>
                     </div>
                 </div>
             </div>
