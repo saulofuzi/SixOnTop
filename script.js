@@ -21,14 +21,13 @@ createParticles();
 // ===== CONTAGEM REGRESSIVA PARA A GUERRA (TODO DOMINGO 19:00) =====
 function getNextSunday() {
     const now = new Date();
-    const day = now.getDay(); // 0 = Domingo, 6 = Sábado
+    const day = now.getDay();
     const daysUntilSunday = day === 0 ? 0 : 7 - day;
     
     const nextSunday = new Date(now);
     nextSunday.setDate(now.getDate() + daysUntilSunday);
     nextSunday.setHours(19, 0, 0, 0);
     
-    // Se já passou das 19:00 no domingo, vai para o próximo
     if (day === 0 && now.getHours() >= 19) {
         nextSunday.setDate(now.getDate() + 7);
     }
@@ -57,7 +56,6 @@ function updateCountdown() {
     document.getElementById('countdown').textContent = `${days}d ${String(hours).padStart(2, '0')}h`;
 }
 
-// Atualizar a cada segundo
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
