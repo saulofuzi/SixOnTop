@@ -18,59 +18,128 @@ function createParticles() {
 }
 createParticles();
 
-// ===== PLAYERS ONLINE - VERSÃO CORRIGIDA =====
+// ===== PLAYERS ONLINE - SISTEMA PERFEITO =====
+let lastPlayerCount = 0;
+let isUpdating = false;
+
 async function updatePlayerCount() {
+    // Evita múltiplas atualizações ao mesmo tempo
+    if (isUpdating) return;
+    isUpdating = true;
+    
     const playerElement = document.getElementById('online-players');
     if (!playerElement) {
-        console.error('Elemento #online-players não encontrado!');
+        isUpdating = false;
         return;
     }
     
     try {
-        // API 1: mcsrvstat.us (mais confiável)
-        const response = await fetch('https://api.mcsrvstat.us/2/jogar.minezinho.com');
+        // Tenta a API mais rápida primeiro
+        let online = await getPlayersFromAPI();
         
-        if (!response.ok) {
-            throw new Error('Erro na requisição');
+        // Se não conseguiu, tenta a segunda
+        if (online === null) {
+            online = await getPlayersFromAPI2();
         }
+        
+        // Se ainda não conseguiu, tenta a terceira
+        if (online === null) {
+            online = await getPlayersFromAPI3();
+        }
+        
+        // Se nenhuma funcionou, mantém o último valor conhecido
+        if (online === null) {
+            console.log('⚠️ Nenhuma API respondeu, mantendo último valor');
+            isUpdating = false;
+            return;
+        }
+        
+        // Só atualiza se o número mudou
+        if (online !== lastPlayerCount) {
+            lastPlayerCount = online;
+            playerElement.textContent = online;
+            
+            // Efeito de atualização
+            playerElement.style.transition = 'all 0.3s ease';
+            playerElement.style.transform = 'scale(1.3)';
+            playerElement.style.color = '#2ECC71';
+            
+            setTimeout(() => {
+                playerElement.style.transform = 'scale(1)';
+            }, 300);
+            
+            console.log(`✅ Players online: ${online}`);
+        }
+        
+    } catch (error) {
+        console.error('Erro ao buscar players:', error);
+    }
+    
+    isUpdating = false;
+}
+
+// ===== API 1: mcsrvstat.us (Principal) =====
+async function getPlayersFromAPI() {
+    try {
+        const response = await fetch('https://api.mcsrvstat.us/2/jogar.minezinho.com', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (!response.ok) return null;
         
         const data = await response.json();
-        console.log('Dados recebidos:', data); // Log para debug
         
-        if (data.online && data.players) {
-            const online = data.players.online || 0;
-            playerElement.textContent = online;
-            console.log(`✅ Players online: ${online}`);
-        } else {
-            // Fallback: tenta API alternativa
-            await fallbackAPI(playerElement);
+        if (data.online && data.players && typeof data.players.online === 'number') {
+            return data.players.online;
         }
+        
+        return null;
     } catch (error) {
-        console.error('Erro na API principal:', error);
-        // Tenta API alternativa
-        await fallbackAPI(playerElement);
+        console.log('API1 falhou:', error.message);
+        return null;
     }
 }
 
-// ===== API ALTERNATIVA =====
-async function fallbackAPI(playerElement) {
+// ===== API 2: mcapi.us (Alternativa) =====
+async function getPlayersFromAPI2() {
     try {
-        // API 2: mcapi.us (alternativa)
         const response = await fetch('https://mcapi.us/server/status?ip=jogar.minezinho.com&port=25565');
+        
+        if (!response.ok) return null;
+        
         const data = await response.json();
         
-        if (data.online) {
-            const online = data.players.now || 0;
-            playerElement.textContent = online;
-            console.log(`✅ Players online (fallback): ${online}`);
-        } else {
-            // Fallback final: exibe 0
-            playerElement.textContent = '0';
-            console.log('⚠️ Servidor offline ou sem resposta');
+        if (data.online && data.players && typeof data.players.now === 'number') {
+            return data.players.now;
         }
+        
+        return null;
     } catch (error) {
-        console.error('Erro no fallback:', error);
-        playerElement.textContent = '?';
+        console.log('API2 falhou:', error.message);
+        return null;
+    }
+}
+
+// ===== API 3: mcstatus.io (Backup) =====
+async function getPlayersFromAPI3() {
+    try {
+        const response = await fetch('https://api.mcstatus.io/v2/status/java/jogar.minezinho.com');
+        
+        if (!response.ok) return null;
+        
+        const data = await response.json();
+        
+        if (data.online && data.players && typeof data.players.online === 'number') {
+            return data.players.online;
+        }
+        
+        return null;
+    } catch (error) {
+        console.log('API3 falhou:', error.message);
+        return null;
     }
 }
 
@@ -256,18 +325,18 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // ===== INICIALIZAR FUNÇÕES =====
-console.log('🚀 Iniciando site...');
+console.log('🚀 Iniciando site Minezinho Magis...');
 
-// Atualiza players online a cada 10 segundos (mais rápido)
+// Atualiza players online a cada 5 segundos
 updatePlayerCount();
-setInterval(updatePlayerCount, 10000); // 10 segundos
+setInterval(updatePlayerCount, 5000); // 5 segundos
 
 // Atualiza contador da guerra a cada 1 segundo
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
 console.log('✅ Site carregado!');
-console.log('💜 Players online atualizando a cada 10 segundos');
+console.log('💜 Players online atualizando a cada 5 segundos com 3 APIs de fallback');
 
 // ===== EASTER EGGS =====
 console.log('%c🐭 six on top 🐭', 'font-size:20px; color:#9B59B6; font-weight:bold;');
