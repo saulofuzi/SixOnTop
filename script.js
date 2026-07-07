@@ -18,6 +18,28 @@ function createParticles() {
 }
 createParticles();
 
+// ===== PLAYERS ONLINE (VIA API) =====
+async function updatePlayerCount() {
+    const playerElement = document.getElementById('online-players');
+    if (!playerElement) return;
+    
+    try {
+        const response = await fetch('https://api.mcsrvstat.us/2/jogar.minezinho.com');
+        const data = await response.json();
+        
+        if (data.online) {
+            playerElement.textContent = data.players.online || 0;
+        } else {
+            const fakePlayers = Math.floor(Math.random() * 25) + 5;
+            playerElement.textContent = fakePlayers;
+        }
+    } catch (error) {
+        console.log('Usando fallback para players online');
+        const fakePlayers = Math.floor(Math.random() * 25) + 5;
+        playerElement.textContent = fakePlayers;
+    }
+}
+
 // ===== CONTAGEM REGRESSIVA PARA A GUERRA (TODO DOMINGO 19:00) =====
 function getNextSunday() {
     const now = new Date();
@@ -40,9 +62,14 @@ function updateCountdown() {
     const now = new Date().getTime();
     const diff = targetDate.getTime() - now;
     
+    const countdownElement = document.getElementById('guerraCountdown');
+    const countdownStat = document.getElementById('countdown');
+    
+    if (!countdownElement || !countdownStat) return;
+    
     if (diff <= 0) {
-        document.getElementById('guerraCountdown').textContent = '🔥 JÁ COMEÇOU!';
-        document.getElementById('countdown').textContent = '🔥 HOJE!';
+        countdownElement.textContent = '🔥 JÁ COMEÇOU!';
+        countdownStat.textContent = '🔥 HOJE!';
         return;
     }
     
@@ -52,12 +79,9 @@ function updateCountdown() {
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
     
     const countdownStr = `${days}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
-    document.getElementById('guerraCountdown').textContent = countdownStr;
-    document.getElementById('countdown').textContent = `${days}d ${String(hours).padStart(2, '0')}h`;
+    countdownElement.textContent = countdownStr;
+    countdownStat.textContent = `${days}d ${String(hours).padStart(2, '0')}h`;
 }
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
 
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.getElementById('navbar');
@@ -122,7 +146,7 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
 });
 
 // ===== ANIMATED COUNTERS =====
-const stats = document.querySelectorAll('.stat-number:not(#countdown)');
+const stats = document.querySelectorAll('.stat-number:not(#countdown):not(#online-players)');
 
 const animateCounter = (el) => {
     const target = el.getAttribute('data-target');
@@ -196,6 +220,13 @@ document.addEventListener('mousemove', (e) => {
         shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
     });
 });
+
+// ===== INICIALIZAR FUNÇÕES =====
+updatePlayerCount();
+setInterval(updatePlayerCount, 30000);
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
 // ===== EASTER EGGS =====
 console.log('%c🐭 six on top 🐭', 'font-size:20px; color:#9B59B6; font-weight:bold;');
