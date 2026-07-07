@@ -18,25 +18,59 @@ function createParticles() {
 }
 createParticles();
 
-// ===== PLAYERS ONLINE (VIA API) =====
+// ===== PLAYERS ONLINE - VERSÃO CORRIGIDA =====
 async function updatePlayerCount() {
     const playerElement = document.getElementById('online-players');
-    if (!playerElement) return;
+    if (!playerElement) {
+        console.error('Elemento #online-players não encontrado!');
+        return;
+    }
     
     try {
+        // API 1: mcsrvstat.us (mais confiável)
         const response = await fetch('https://api.mcsrvstat.us/2/jogar.minezinho.com');
+        
+        if (!response.ok) {
+            throw new Error('Erro na requisição');
+        }
+        
+        const data = await response.json();
+        console.log('Dados recebidos:', data); // Log para debug
+        
+        if (data.online && data.players) {
+            const online = data.players.online || 0;
+            playerElement.textContent = online;
+            console.log(`✅ Players online: ${online}`);
+        } else {
+            // Fallback: tenta API alternativa
+            await fallbackAPI(playerElement);
+        }
+    } catch (error) {
+        console.error('Erro na API principal:', error);
+        // Tenta API alternativa
+        await fallbackAPI(playerElement);
+    }
+}
+
+// ===== API ALTERNATIVA =====
+async function fallbackAPI(playerElement) {
+    try {
+        // API 2: mcapi.us (alternativa)
+        const response = await fetch('https://mcapi.us/server/status?ip=jogar.minezinho.com&port=25565');
         const data = await response.json();
         
         if (data.online) {
-            playerElement.textContent = data.players.online || 0;
+            const online = data.players.now || 0;
+            playerElement.textContent = online;
+            console.log(`✅ Players online (fallback): ${online}`);
         } else {
-            const fakePlayers = Math.floor(Math.random() * 25) + 5;
-            playerElement.textContent = fakePlayers;
+            // Fallback final: exibe 0
+            playerElement.textContent = '0';
+            console.log('⚠️ Servidor offline ou sem resposta');
         }
     } catch (error) {
-        console.log('Usando fallback para players online');
-        const fakePlayers = Math.floor(Math.random() * 25) + 5;
-        playerElement.textContent = fakePlayers;
+        console.error('Erro no fallback:', error);
+        playerElement.textContent = '?';
     }
 }
 
@@ -222,11 +256,18 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // ===== INICIALIZAR FUNÇÕES =====
-updatePlayerCount();
-setInterval(updatePlayerCount, 30000);
+console.log('🚀 Iniciando site...');
 
+// Atualiza players online a cada 10 segundos (mais rápido)
+updatePlayerCount();
+setInterval(updatePlayerCount, 10000); // 10 segundos
+
+// Atualiza contador da guerra a cada 1 segundo
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+console.log('✅ Site carregado!');
+console.log('💜 Players online atualizando a cada 10 segundos');
 
 // ===== EASTER EGGS =====
 console.log('%c🐭 six on top 🐭', 'font-size:20px; color:#9B59B6; font-weight:bold;');
