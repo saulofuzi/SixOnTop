@@ -1,116 +1,98 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WHITE — Minecraft PvP Clan. Competição, comunidade e domínio nos campos de batalha.">
-  <title>WHITE — Minecraft PvP Clan</title>
+  <meta name="description" content="WHITE — Clã de Minecraft focado em PvP, competição e comunidade.">
+  <title>WHITE — Clã de Minecraft</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <div class="cursor-glow"></div>
 
   <header class="navbar">
-    <a href="#home" class="brand"><span>W</span> WHITE</a>
-    <nav>
-      <a href="#sobre">Clã</a>
-      <a href="#ranking">Ranking</a>
-      <a href="#membros">Membros</a>
-      <a href="#recrutamento">Recrutamento</a>
-    </nav>
-    <a class="discord-btn" href="https://discord.gg/YHuPVvdzTC" target="_blank" rel="noopener">Discord <span>↗</span></a>
-    <button class="menu-btn" aria-label="Abrir menu">☰</button>
+    <a href="#inicio" class="marca">
+      <img id="logo-principal" src="assets/logo.png" alt="Logo WHITE">
+      <span>WHITE</span>
+    </a>
+
+```
+<nav>
+  <a href="#sobre">Clã</a>
+  <a href="#ranking">Ranking</a>
+  <a href="#membros">Membros</a>
+  <a href="#recrutamento">Recrutamento</a>
+</nav>
+
+<a id="link-discord" class="botao-discord" href="#" target="_blank" rel="noopener">
+  Discord <span>↗</span>
+</a>
+
+<button class="botao-menu" aria-label="Abrir menu">☰</button>
+```
+
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <div class="hero-grid"></div>
-      <div class="hero-content reveal">
-        <div class="eyebrow"><i></i> MINECRAFT PVP CLAN</div>
-        <h1>WE ARE<br><strong>WHITE.</strong></h1>
-        <p>Competição. Disciplina. Domínio.<br>Um clã focado em PvP, em vários servidores.</p>
-        <div class="hero-actions">
-          <a href="#recrutamento" class="primary-btn">ENTRAR NA WHITE <span>→</span></a>
-          <a href="#ranking" class="ghost-btn">VER RANKING</a>
-        </div>
-      </div>
-      <div class="hero-mark">W</div>
-      <div class="scroll">SCROLL <span>↓</span></div>
-    </section>
 
-    <section id="sobre" class="section about">
-      <div class="section-label">01 / SOBRE</div>
-      <div class="about-grid">
-        <div>
-          <p class="mini-title">WHO WE ARE</p>
-          <h2>Não somos apenas<br><span>mais um clã.</span></h2>
-        </div>
-        <div class="about-copy">
-          <p>A WHITE é uma comunidade competitiva de Minecraft focada em PvP. Jogamos em diferentes servidores, treinamos juntos e buscamos sempre evoluir.</p>
-          <p>Nosso objetivo é simples: reunir jogadores bons, criar uma comunidade forte e construir nossa própria história.</p>
-        </div>
-      </div>
-      <div class="stats">
-        <div><strong>32</strong><span>MEMBROS</span></div>
-        <div><strong>18</strong><span>SERVIDORES</span></div>
-        <div><strong>07</strong><span>EVENTOS</span></div>
-        <div><strong>∞</strong><span>AMBICÃO</span></div>
-      </div>
-    </section>
+```
+<!-- INÍCIO -->
+<section id="inicio" class="hero">
 
-    <section id="ranking" class="section ranking">
-      <div class="section-top">
-        <div>
-          <div class="section-label">02 / RANKING</div>
-          <h2>TOP <span>PLAYERS</span></h2>
-        </div>
-        <div class="season">SEASON 01 <b>● LIVE</b></div>
-      </div>
-      <div class="leaderboard">
-        <div class="rank-row header"><span>#</span><span>PLAYER</span><span>RANK</span><span>ELO</span><span>W / L</span></div>
-        <div class="rank-row"><span class="place">01</span><span class="player"><b>WHITE_SAULO</b><small>LEADER</small></span><span><em class="badge white">CHAMPION</em></span><span class="elo">2481</span><span>142 / 31</span></div>
-        <div class="rank-row"><span class="place">02</span><span class="player"><b>PLAYER_02</b><small>ELITE</small></span><span><em class="badge">WARLORD</em></span><span class="elo">2302</span><span>128 / 35</span></div>
-        <div class="rank-row"><span class="place">03</span><span class="player"><b>PLAYER_03</b><small>ELITE</small></span><span><em class="badge">DEMON</em></span><span class="elo">2180</span><span>117 / 39</span></div>
-        <div class="rank-row"><span class="place">04</span><span class="player"><b>PLAYER_04</b><small>MEMBER</small></span><span><em class="badge">ELITE</em></span><span class="elo">2014</span><span>101 / 44</span></div>
-        <div class="rank-row"><span class="place">05</span><span class="player"><b>PLAYER_05</b><small>MEMBER</small></span><span><em class="badge">ELITE</em></span><span class="elo">1942</span><span>96 / 41</span></div>
-      </div>
-      <p class="demo-note">* Dados acima são exemplos. Substitua pelos jogadores e estatísticas reais da WHITE.</p>
-    </section>
+  <div class="grade-hero"></div>
 
-    <section id="membros" class="section members">
-      <div class="section-label">03 / MEMBERS</div>
-      <div class="section-heading">
-        <h2>THE <span>SQUAD.</span></h2>
-        <p>Alguns dos jogadores que fazem parte da WHITE.</p>
-      </div>
-      <div class="member-grid">
-        <article class="member-card"><div class="avatar">W</div><div><h3>WHITE_SAULO</h3><p>LEADER · CHAMPION</p></div><span>01</span></article>
-        <article class="member-card"><div class="avatar">02</div><div><h3>PLAYER_02</h3><p>ELITE · WARLORD</p></div><span>02</span></article>
-        <article class="member-card"><div class="avatar">03</div><div><h3>PLAYER_03</h3><p>ELITE · DEMON</p></div><span>03</span></article>
-        <article class="member-card"><div class="avatar">04</div><div><h3>PLAYER_04</h3><p>MEMBER · ELITE</p></div><span>04</span></article>
-      </div>
-    </section>
+  <div class="conteudo-hero revelacao">
 
-    <section id="recrutamento" class="section recruit">
-      <div class="recruit-box">
-        <div class="section-label">04 / RECRUTAMENTO</div>
-        <h2>READY TO<br><span>JOIN WHITE?</span></h2>
-        <p>Tem habilidade, atividade e vontade de competir? Faça sua aplicação e venha jogar com a gente.</p>
-        <a href="https://discord.gg/SEUCONVITE" target="_blank" rel="noopener" class="primary-btn">APLICAR PELO DISCORD <span>→</span></a>
-      </div>
-      <div class="big-w">W</div>
-    </section>
-  </main>
+    <div class="etiqueta">
+      <i></i> CLÃ DE MINECRAFT · PVP
+    </div>
 
-  <footer>
-    <div class="footer-brand"><span>W</span> WHITE</div>
-    <p>© 2026 WHITE CLAN. ALL RIGHTS RESERVED.</p>
-    <div><a href="#home">BACK TO TOP ↑</a></div>
-  </footer>
+    <h1>
+      NÓS SOMOS<br>
+      <strong>WHITE.</strong>
+    </h1>
 
-  <script src="script.js"></script>
-</body>
-</html>
+    <p id="descricao-hero"></p>
+
+    <div class="acoes-hero">
+      <a href="#recrutamento" class="botao-principal">
+        ENTRAR NA WHITE <span>→</span>
+      </a>
+
+      <a href="#ranking" class="botao-secundario">
+        VER RANKING
+      </a>
+    </div>
+
+  </div>
+
+  <div class="marca-gigante">W</div>
+
+  <div class="rolagem">
+    ROLAR <span>↓</span>
+  </div>
+
+</section>
+
+
+<!-- SOBRE -->
+<section id="sobre" class="secao sobre">
+
+  <div class="rotulo-secao">01 / SOBRE</div>
+
+  <div class="grade-sobre">
+
+    <div>
+      <p class="mini-titulo">QUEM SOMOS</p>
+
+      <h2>
+        Não
+```
