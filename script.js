@@ -1,161 +1,257 @@
 # /*
 
-# CONFIGURAÇÕES DA WHITE
+# SCRIPT PRINCIPAL DA WHITE
 
-Você pode editar praticamente todo o conteúdo
-do site neste arquivo.
-
-Não precisa mexer no HTML.
 */
 
-const CONFIGURACAO = {
+// ==================================================
+// EFEITO DO CURSOR
+// ==================================================
 
-// ==========================
-// IDENTIDADE
-// ==========================
+const brilho = document.querySelector(".cursor-glow");
 
-nome: "WHITE",
+document.addEventListener("mousemove", function(evento) {
 
-discord: "https://discord.gg/YHuPVvdzTC",
+if (!brilho) return;
 
-descricaoHero:
-"Competição. Disciplina. Domínio.\nUm clã focado em PvP, em vários servidores.",
+brilho.style.left = evento.clientX + "px";
+brilho.style.top = evento.clientY + "px";
 
-// ==========================
-// SOBRE O CLÃ
-// ==========================
+});
 
-sobre: {
+// ==================================================
+// CONFIGURAÇÕES DO SITE
+// ==================================================
 
-```
-paragrafo1:
-  "A WHITE é uma comunidade competitiva de Minecraft focada em PvP. Jogamos em diferentes servidores, treinamos juntos e buscamos sempre evoluir.",
+document.getElementById("descricao-hero").innerHTML =
+CONFIGURACAO.descricaoHero.replace(/\n/g, "<br>");
 
-paragrafo2:
-  "Nosso objetivo é simples: reunir jogadores bons, criar uma comunidade forte e construir nossa própria história."
-```
+document.getElementById("sobre-paragrafo-1").textContent =
+CONFIGURACAO.sobre.paragrafo1;
 
-},
+document.getElementById("sobre-paragrafo-2").textContent =
+CONFIGURACAO.sobre.paragrafo2;
 
-// ==========================
-// ESTATÍSTICAS
-// ==========================
+document.getElementById("texto-recrutamento").textContent =
+CONFIGURACAO.recrutamento;
 
-estatisticas: {
+document.getElementById("link-discord").href =
+CONFIGURACAO.discord;
 
-```
-membros: 32,
+document.getElementById("botao-recrutamento").href =
+CONFIGURACAO.discord;
 
-servidores: 18,
+document.getElementById("estatistica-membros").textContent =
+CONFIGURACAO.estatisticas.membros;
 
-eventos: 7
-```
+document.getElementById("estatistica-servidores").textContent =
+CONFIGURACAO.estatisticas.servidores;
 
-},
+document.getElementById("estatistica-eventos").textContent =
+CONFIGURACAO.estatisticas.eventos;
 
-// ==========================
-// RECRUTAMENTO
-// ==========================
+document.getElementById("copyright").textContent =
+`© ${CONFIGURACAO.ano} ${CONFIGURACAO.nome} CLÃ. TODOS OS DIREITOS RESERVADOS.`;
 
-recrutamento:
+// ==================================================
+// GERAR URL DA SKIN
+// ==================================================
 
-```
-"Tem habilidade, atividade e vontade de competir? Faça sua aplicação e venha jogar com a gente.",
-```
+function gerarSkin(nick) {
 
-// ==========================
-// RODAPÉ
-// ==========================
+return `https://mc-heads.net/body/${encodeURIComponent(nick)}/100`;
 
-ano: 2026,
+}
 
-// ==========================
+// ==================================================
+// GERAR LINK DO NAMEMC
+// ==================================================
+
+function gerarNameMC(nick) {
+
+return `https://namemc.com/profile/${encodeURIComponent(nick)}`;
+
+}
+
+// ==================================================
 // RANKING
-// ==========================
+// ==================================================
 
-ranking: [
+const listaRanking = document.getElementById("lista-ranking");
+
+CONFIGURACAO.ranking.forEach(function(jogador, indice) {
+
+const linha = document.createElement("div");
+
+linha.className = "linha-ranking";
+
+linha.innerHTML = `
 
 ```
-{
-  nome: "WHITE_SAULO",
-  cargo: "LÍDER",
-  patente: "CAMPEÃO",
-  elo: 2481,
-  vitorias: 142,
-  derrotas: 31
-},
+<span class="posicao">
+  ${String(indice + 1).padStart(2, "0")}
+</span>
 
-{
-  nome: "PLAYER_02",
-  cargo: "ELITE",
-  patente: "GUERREIRO",
-  elo: 2302,
-  vitorias: 128,
-  derrotas: 35
-},
+<a
+  class="jogador-ranking"
+  href="${gerarNameMC(jogador.nome)}"
+  target="_blank"
+  rel="noopener"
+>
 
-{
-  nome: "PLAYER_03",
-  cargo: "ELITE",
-  patente: "DEMÔNIO",
-  elo: 2180,
-  vitorias: 117,
-  derrotas: 39
-},
+  <img
+    src="${gerarSkin(jogador.nome)}"
+    alt="Skin de ${jogador.nome}"
+    loading="lazy"
+  >
 
-{
-  nome: "PLAYER_04",
-  cargo: "MEMBRO",
-  patente: "ELITE",
-  elo: 2014,
-  vitorias: 101,
-  derrotas: 44
-},
+  <span>
+    <b>${jogador.nome}</b>
+    <small>${jogador.cargo}</small>
+  </span>
 
-{
-  nome: "PLAYER_05",
-  cargo: "MEMBRO",
-  patente: "ELITE",
-  elo: 1942,
-  vitorias: 96,
-  derrotas: 41
-}
+</a>
+
+<span>
+  <em class="badge ${indice === 0 ? "branco" : ""}">
+    ${jogador.patente}
+  </em>
+</span>
+
+<span class="elo">
+  ${jogador.elo}
+</span>
+
+<span>
+  ${jogador.vitorias} / ${jogador.derrotas}
+</span>
 ```
 
-],
+`;
 
-// ==========================
+listaRanking.appendChild(linha);
+
+});
+
+// ==================================================
 // MEMBROS
-// ==========================
+// ==================================================
 
-membros: [
+const listaMembros = document.getElementById("lista-membros");
+
+CONFIGURACAO.membros.forEach(function(membro, indice) {
+
+const cartao = document.createElement("article");
+
+cartao.className = "cartao-membro";
+
+cartao.innerHTML = `
 
 ```
-{
-  nome: "WHITE_SAULO",
-  cargo: "LÍDER",
-  patente: "CAMPEÃO"
-},
+<a
+  href="${gerarNameMC(membro.nome)}"
+  target="_blank"
+  rel="noopener"
+  class="imagem-jogador"
+>
 
-{
-  nome: "PLAYER_02",
-  cargo: "ELITE",
-  patente: "GUERREIRO"
-},
+  <img
+    src="${gerarSkin(membro.nome)}"
+    alt="Skin de ${membro.nome}"
+    loading="lazy"
+  >
 
-{
-  nome: "PLAYER_03",
-  cargo: "ELITE",
-  patente: "DEMÔNIO"
-},
+</a>
 
-{
-  nome: "PLAYER_04",
-  cargo: "MEMBRO",
-  patente: "ELITE"
+<div class="info-membro">
+
+  <h3>${membro.nome}</h3>
+
+  <p>
+    ${membro.cargo} · ${membro.patente}
+  </p>
+
+</div>
+
+<span class="numero-membro">
+  ${String(indice + 1).padStart(2, "0")}
+</span>
+```
+
+`;
+
+listaMembros.appendChild(cartao);
+
+});
+
+// ==================================================
+// ANIMAÇÕES
+// ==================================================
+
+const elementos = document.querySelectorAll(
+".conteudo-hero, .grade-sobre, .estatisticas, .tabela-ranking, .cartao-membro, .caixa-recrutamento"
+);
+
+const observador = new IntersectionObserver(function(entradas) {
+
+entradas.forEach(function(entrada) {
+
+```
+if (entrada.isIntersecting) {
+
+  entrada.target.style.opacity = "1";
+  entrada.target.style.transform = "translateY(0)";
+
+  observador.unobserve(entrada.target);
+
 }
 ```
 
-]
+});
 
-};
+}, {
+threshold: 0.12
+});
+
+elementos.forEach(function(elemento) {
+
+elemento.style.opacity = "0";
+
+elemento.style.transform = "translateY(25px)";
+
+elemento.style.transition =
+"opacity .7s ease, transform .7s ease";
+
+observador.observe(elemento);
+
+});
+
+// ==================================================
+// MENU MOBILE
+// ==================================================
+
+const botaoMenu = document.querySelector(".botao-menu");
+
+const navegacao = document.querySelector(".navbar nav");
+
+botaoMenu?.addEventListener("click", function() {
+
+const aberto = navegacao.classList.contains("menu-aberto");
+
+navegacao.classList.toggle("menu-aberto");
+
+if (!aberto) {
+
+```
+navegacao.style.display = "flex";
+```
+
+} else {
+
+```
+navegacao.style.display = "";
+```
+
+}
+
+});
