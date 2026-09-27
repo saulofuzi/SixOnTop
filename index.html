@@ -1,98 +1,145 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WHITE — Clã de Minecraft focado em PvP, competição e comunidade.">
-  <title>WHITE — Clã de Minecraft</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="WHITE — clã de Minecraft PvP. Competição, comunidade, ranking e domínio." />
+  <title>WHITE — Minecraft PvP Clan</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://mc-heads.net" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="progress" id="progress"></div>
 
-  <div class="cursor-glow"></div>
+  <header class="nav-wrap" id="topo">
+    <nav class="navbar shell">
+      <a class="brand" href="#topo" aria-label="WHITE — início">
+        <img id="siteLogo" src="assets/logo.svg" alt="Logo WHITE" />
+        <div><strong id="brandName">WHITE</strong><span id="brandTag">PVP CLAN</span></div>
+      </a>
 
-  <header class="navbar">
-    <a href="#inicio" class="marca">
-      <img id="logo-principal" src="assets/logo.png" alt="Logo WHITE">
-      <span>WHITE</span>
-    </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
 
-```
-<nav>
-  <a href="#sobre">Clã</a>
-  <a href="#ranking">Ranking</a>
-  <a href="#membros">Membros</a>
-  <a href="#recrutamento">Recrutamento</a>
-</nav>
+      <div class="nav-links" id="navLinks">
+        <a href="#cla">Clã</a>
+        <a href="#ranking">Ranking</a>
+        <a href="#membros">Membros</a>
+        <a href="#momentos">Momentos</a>
+        <a href="#recrutamento">Recrutamento</a>
+      </div>
 
-<a id="link-discord" class="botao-discord" href="#" target="_blank" rel="noopener">
-  Discord <span>↗</span>
-</a>
-
-<button class="botao-menu" aria-label="Abrir menu">☰</button>
-```
-
+      <a class="nav-cta magnetic" id="discordTop" href="#" target="_blank" rel="noreferrer">Entrar no Discord ↗</a>
+    </nav>
   </header>
 
   <main>
+    <section class="hero shell">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span><span id="heroEyebrow">RECRUTAMENTO ABERTO</span></div>
+        <h1 id="heroTitle">NÃO JOGAMOS<br><span>PARA PARTICIPAR.</span><br>JOGAMOS PARA DOMINAR.</h1>
+        <p id="heroText">A WHITE é um clã competitivo de Minecraft PvP feito para quem entra no servidor com um objetivo simples: deixar o nick marcado.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light magnetic" id="heroDiscord" href="#" target="_blank" rel="noreferrer">ENTRAR NA WHITE <span>↗</span></a>
+          <a class="btn btn-ghost" href="#ranking">VER RANKING <span>↓</span></a>
+        </div>
+      </div>
 
-```
-<!-- INÍCIO -->
-<section id="inicio" class="hero">
+      <div class="hero-art reveal" aria-hidden="true">
+        <div class="orb orb-a"></div><div class="orb orb-b"></div>
+        <div class="monogram">W</div>
+        <div class="hero-stamp"><span>WHITE</span><small>EST. 2026 • PVP</small></div>
+      </div>
 
-  <div class="grade-hero"></div>
+      <div class="hero-bottom reveal">
+        <div><small>IDENTIDADE</small><strong>BLACK / WHITE</strong></div>
+        <div><small>FOCO</small><strong>COMPETITIVO</strong></div>
+        <div><small>PLATAFORMA</small><strong>MINECRAFT</strong></div>
+        <div><small>STATUS</small><strong class="online">● ONLINE</strong></div>
+      </div>
+    </section>
 
-  <div class="conteudo-hero revelacao">
+    <section class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"></div></section>
 
-    <div class="etiqueta">
-      <i></i> CLÃ DE MINECRAFT · PVP
+    <section class="about section shell" id="cla">
+      <div class="section-label reveal"><span>01</span> O CLÃ</div>
+      <div class="about-grid">
+        <div class="reveal">
+          <h2 id="aboutTitle">FRIO NA ESTÉTICA.<br>BRUTAL NO PVP.</h2>
+        </div>
+        <div class="about-copy reveal">
+          <p id="aboutText">A WHITE reúne players que levam PvP a sério sem transformar o jogo em emprego. Treino, call, rivalidade, clipes absurdos e uma comunidade que tem identidade própria.</p>
+          <div class="quote" id="aboutQuote">“SE É PRA ENTRAR NA FIGHT, ENTRA PRA SER LEMBRADO.”</div>
+        </div>
+      </div>
+      <div class="stats" id="statsGrid"></div>
+    </section>
+
+    <section class="ranking section" id="ranking">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-label"><span>02</span> RANKING</div>
+          <div>
+            <h2>QUEM TÁ CARREGANDO<br>A TAG NAS COSTAS?</h2>
+            <p>Ranking totalmente editável no <code>config.js</code>. Zero painel pago, zero banco de dados.</p>
+          </div>
+        </div>
+        <div class="podium" id="podium"></div>
+        <div class="rank-table reveal" id="rankTable"></div>
+      </div>
+    </section>
+
+    <section class="members section shell" id="membros">
+      <div class="section-head reveal">
+        <div class="section-label"><span>03</span> MEMBROS</div>
+        <div>
+          <h2>A TROPA DA WHITE.</h2>
+          <p>Adicione só o nick no arquivo de configuração. A skin é carregada automaticamente e cada card abre o perfil no NameMC.</p>
+        </div>
+      </div>
+      <div class="member-filters reveal" id="memberFilters"></div>
+      <div class="members-grid" id="membersGrid"></div>
+    </section>
+
+    <section class="moments section" id="momentos">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-label"><span>04</span> MOMENTOS</div>
+          <div><h2>NÃO É PRINT.<br>É EVIDÊNCIA.</h2><p>Troque as imagens da galeria pela pasta <code>assets/</code> e edite os nomes no <code>config.js</code>.</p></div>
+        </div>
+        <div class="gallery" id="gallery"></div>
+      </div>
+    </section>
+
+    <section class="recruit section shell" id="recrutamento">
+      <div class="recruit-card reveal">
+        <div class="crosshair">＋</div>
+        <div class="section-label"><span>05</span> RECRUTAMENTO</div>
+        <h2 id="recruitTitle">TEM MECÂNICA?<br>TEM MENTAL?<br><span>PROVA.</span></h2>
+        <p id="recruitText">Entre no Discord, abra um ticket e manda teu nick, servidores que joga e um clipe. Sem currículo de 14 páginas, pelo amor de Deus 😭</p>
+        <div class="requirements" id="requirements"></div>
+        <a class="btn btn-light magnetic" id="recruitDiscord" href="#" target="_blank" rel="noreferrer">QUERO FAZER TESTE <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand"><img src="assets/logo.svg" alt="" /><strong>WHITE</strong></div>
+      <p id="footerText">WHITE — Minecraft PvP Clan. Feito para competir.</p>
+      <div class="footer-links"><a id="footerDiscord" href="#" target="_blank" rel="noreferrer">Discord ↗</a><a href="#topo">Voltar ao topo ↑</a></div>
     </div>
+  </footer>
 
-    <h1>
-      NÓS SOMOS<br>
-      <strong>WHITE.</strong>
-    </h1>
+  <div class="toast" id="toast"></div>
 
-    <p id="descricao-hero"></p>
-
-    <div class="acoes-hero">
-      <a href="#recrutamento" class="botao-principal">
-        ENTRAR NA WHITE <span>→</span>
-      </a>
-
-      <a href="#ranking" class="botao-secundario">
-        VER RANKING
-      </a>
-    </div>
-
-  </div>
-
-  <div class="marca-gigante">W</div>
-
-  <div class="rolagem">
-    ROLAR <span>↓</span>
-  </div>
-
-</section>
-
-
-<!-- SOBRE -->
-<section id="sobre" class="secao sobre">
-
-  <div class="rotulo-secao">01 / SOBRE</div>
-
-  <div class="grade-sobre">
-
-    <div>
-      <p class="mini-titulo">QUEM SOMOS</p>
-
-      <h2>
-        Não
-```
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
