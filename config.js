@@ -50,7 +50,8 @@ window.WHITE_CONFIG = {
     { nick: "uJoscaEGO", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "Znewjersey", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "DontUseShield", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
-    { nick: "KauaOOPS", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" }
+    { nick: "KauaOOPS", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
+    { nick: "Vitindugreu", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" }
      
   ],
 
