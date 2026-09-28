@@ -37,7 +37,7 @@ window.WHITE_CONFIG = {
   ranking: [
     { nick: "hszin_888", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Líder" },
     { nick: "Saulofuzi", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Líder" },
-    { nick: "Jubsvaldasilva", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
+    { nick: "Jubsvaldasilva", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Líder" },
     { nick: "mnitdino", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "HenriquePr0", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "LTK7", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
