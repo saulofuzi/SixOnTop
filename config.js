@@ -37,6 +37,7 @@ window.WHITE_CONFIG = {
   ranking: [
     { nick: "hszin_888", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Líder" },
     { nick: "Saulofuzi", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Líder" },
+    { nick: "Jubsvaldasilva", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "HenriquePr0", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "LTK7", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "sou_home", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
@@ -47,7 +48,6 @@ window.WHITE_CONFIG = {
     { nick: "exaltei", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "uJoscaEGO", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "Znewjersey", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
-    { nick: "Jubsvaldasilva", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "DontUseShield", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" },
     { nick: "KauaOOPS", pontos: 0, vitorias: 0, derrotas: 0, kd: "0", funcao: "Membro" }
      
