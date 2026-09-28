@@ -9,7 +9,7 @@ window.WHITE_CONFIG = {
   site: {
     nome: "WHITE",
     tag: "PVP CLAN",
-    logo: "assets/logo.png",
+    logo: "imagens/logo.png",
     discord: "https://discord.gg/37Y4QCpx9R",
     rodape: "WHITE — Os que brilham.."
   },
