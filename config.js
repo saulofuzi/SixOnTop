@@ -28,7 +28,7 @@ window.WHITE_CONFIG = {
 
   estatisticas: [
     { numero: "30+", legenda: "MEMBROS" },
-    { numero: 20+", legenda: "GUERRAS" },
+    { numero: "20+", legenda: "GUERRAS" },
     { numero: "+999", legenda: "AURA" },
     { numero: "∞", legenda: "EGO" }
   ],
